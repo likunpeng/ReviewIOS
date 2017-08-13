@@ -53,7 +53,7 @@
 		891007551F4054620051CD27 /* StudyMasonryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyMasonryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891007591F4054620051CD27 /* StudyMasonryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyMasonryUITests.m; sourceTree = "<group>"; };
 		8910075B1F4054620051CD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		891007671F4054C70051CD27 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		891007671F4054C70051CD27 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = StudyMasonry/README.md; sourceTree = "<group>"; };
 		8910076D1F40563E0051CD27 /* Plugin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Plugin; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +85,7 @@
 		891007281F4054620051CD27 = {
 			isa = PBXGroup;
 			children = (
+				891007671F4054C70051CD27 /* README.md */,
 				8910076D1F40563E0051CD27 /* Plugin */,
 				891007331F4054620051CD27 /* StudyMasonry */,
 				8910074D1F4054620051CD27 /* StudyMasonryTests */,
@@ -115,7 +116,6 @@
 				891007421F4054620051CD27 /* LaunchScreen.storyboard */,
 				891007451F4054620051CD27 /* Info.plist */,
 				891007341F4054620051CD27 /* Supporting Files */,
-				891007671F4054C70051CD27 /* README.md */,
 			);
 			path = StudyMasonry;
 			sourceTree = "<group>";
