@@ -15,6 +15,8 @@
 		891007441F4054620051CD27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891007421F4054620051CD27 /* LaunchScreen.storyboard */; };
 		8910074F1F4054620051CD27 /* StudyMasonryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8910074E1F4054620051CD27 /* StudyMasonryTests.m */; };
 		8910075A1F4054620051CD27 /* StudyMasonryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 891007591F4054620051CD27 /* StudyMasonryUITests.m */; };
+		891007681F4054C70051CD27 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 891007671F4054C70051CD27 /* README.md */; };
+		8910076E1F40563E0051CD27 /* Plugin in Resources */ = {isa = PBXBuildFile; fileRef = 8910076D1F40563E0051CD27 /* Plugin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		891007551F4054620051CD27 /* StudyMasonryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyMasonryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		891007591F4054620051CD27 /* StudyMasonryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyMasonryUITests.m; sourceTree = "<group>"; };
 		8910075B1F4054620051CD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		891007671F4054C70051CD27 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8910076D1F40563E0051CD27 /* Plugin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Plugin; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		891007281F4054620051CD27 = {
 			isa = PBXGroup;
 			children = (
+				8910076D1F40563E0051CD27 /* Plugin */,
 				891007331F4054620051CD27 /* StudyMasonry */,
 				8910074D1F4054620051CD27 /* StudyMasonryTests */,
 				891007581F4054620051CD27 /* StudyMasonryUITests */,
@@ -110,6 +115,7 @@
 				891007421F4054620051CD27 /* LaunchScreen.storyboard */,
 				891007451F4054620051CD27 /* Info.plist */,
 				891007341F4054620051CD27 /* Supporting Files */,
+				891007671F4054C70051CD27 /* README.md */,
 			);
 			path = StudyMasonry;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				891007441F4054620051CD27 /* LaunchScreen.storyboard in Resources */,
+				8910076E1F40563E0051CD27 /* Plugin in Resources */,
 				891007411F4054620051CD27 /* Assets.xcassets in Resources */,
 				8910073F1F4054620051CD27 /* Main.storyboard in Resources */,
 			);
@@ -278,6 +285,7 @@
 			files = (
 				8910073C1F4054620051CD27 /* ViewController.m in Sources */,
 				891007391F4054620051CD27 /* AppDelegate.m in Sources */,
+				891007681F4054C70051CD27 /* README.md in Sources */,
 				891007361F4054620051CD27 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
