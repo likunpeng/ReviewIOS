@@ -13,6 +13,7 @@
 		768BB9BB1F56B9EC00546E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768BB9B91F56B9EC00546E72 /* Main.storyboard */; };
 		768BB9BD1F56B9EC00546E72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 768BB9BC1F56B9EC00546E72 /* Assets.xcassets */; };
 		768BB9C01F56B9EC00546E72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768BB9BE1F56B9EC00546E72 /* LaunchScreen.storyboard */; };
+		768BB9CC1F56BAF200546E72 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 768BB9CB1F56BAF200546E72 /* CustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		768BB9BC1F56B9EC00546E72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		768BB9BF1F56B9EC00546E72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		768BB9C11F56B9EC00546E72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		768BB9CA1F56BAF200546E72 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		768BB9CB1F56BAF200546E72 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				768BB9BE1F56B9EC00546E72 /* LaunchScreen.storyboard */,
 				768BB9C11F56B9EC00546E72 /* Info.plist */,
 				768BB9B01F56B9EC00546E72 /* Supporting Files */,
+				768BB9CA1F56BAF200546E72 /* CustomView.h */,
+				768BB9CB1F56BAF200546E72 /* CustomView.m */,
 			);
 			path = ReviewCGContextRef;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				768BB9B81F56B9EC00546E72 /* ViewController.m in Sources */,
+				768BB9CC1F56BAF200546E72 /* CustomView.m in Sources */,
 				768BB9B51F56B9EC00546E72 /* AppDelegate.m in Sources */,
 				768BB9B21F56B9EC00546E72 /* main.m in Sources */,
 			);
