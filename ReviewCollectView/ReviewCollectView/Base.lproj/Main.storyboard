@@ -51,7 +51,6 @@
                             <constraint firstAttribute="trailing" secondItem="Axb-em-YBK" secondAttribute="trailing" id="XMt-4m-73W"/>
                             <constraint firstItem="Axb-em-YBK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lbS-Mm-ZZk"/>
                             <constraint firstItem="Axb-em-YBK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oi8-rD-kjT"/>
-                            <constraint firstItem="Axb-em-YBK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="tV0-Vz-5aT"/>
                         </constraints>
                     </view>
                 </viewController>
