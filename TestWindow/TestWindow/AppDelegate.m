@@ -16,7 +16,43 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor redColor];
+    [self.window makeKeyAndVisible];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    UIViewController *home = [[UIViewController alloc] init];
+    home.view.backgroundColor = [UIColor blueColor];
+    UITabBarItem *item01 = [[UITabBarItem alloc] init];
+    [item01 setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],
+                                     NSForegroundColorAttributeName:[UIColor grayColor]
+                                     }
+                              forState:UIControlStateNormal];
+    [item01 setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],
+                                         NSForegroundColorAttributeName:[UIColor redColor]}
+                              forState:UIControlStateSelected];
+    [item01 setTitlePositionAdjustment:UIOffsetMake(0, -16)];
+    [item01 setTitle:@"首页"];
+    home.tabBarItem = item01;
+    [tabBarController addChildViewController:home];
+    
+    UIViewController *product = [[UIViewController alloc] init];
+    product.view.backgroundColor = [UIColor greenColor];
+    UITabBarItem *item02 = [[UITabBarItem alloc] init];
+    [item02 setTitle:@"产品"];
+    [item02 setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],
+                                     NSForegroundColorAttributeName:[UIColor grayColor]}
+                          forState:UIControlStateNormal];
+    [item02 setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],
+                                     NSForegroundColorAttributeName:[UIColor redColor]}
+                          forState:UIControlStateSelected];
+    [item02 setTitlePositionAdjustment:UIOffsetMake(0, -16)];
+    product.tabBarItem = item02;
+    [tabBarController addChildViewController:product];
+    
+    self.window.rootViewController = tabBarController;
     return YES;
 }
 
