@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  ReviewGCD
+//  TestWindow
 //
-//  Created by lkp on 2017/10/18.
+//  Created by lkp on 2017/11/29.
 //  Copyright © 2017年 lkp. All rights reserved.
 //
 
@@ -17,15 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    NSLog(NSDa)
-    NSLog(@"----------ready---------");
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"----------延迟两秒执行---------");
-    });
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) , ^{
-        NSLog(@"------异步任务的执行");
-    });
 }
 
 
