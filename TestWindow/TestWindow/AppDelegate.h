@@ -12,6 +12,10 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) UIWindow *alertWindlow;
+
+@property (strong, nonatomic) UIView   *view1;
+@property (strong, nonatomic) UIView   *view2;
 
 @end
 
