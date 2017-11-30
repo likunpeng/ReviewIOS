@@ -24,7 +24,9 @@
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
     UIViewController *home = [[UIViewController alloc] init];
+    home.title = @"home";
     home.view.backgroundColor = [UIColor blueColor];
+    
     UITabBarItem *item01 = [[UITabBarItem alloc] init];
     [item01 setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0f],
                                      NSForegroundColorAttributeName:[UIColor grayColor]
@@ -35,10 +37,12 @@
                               forState:UIControlStateSelected];
     [item01 setTitlePositionAdjustment:UIOffsetMake(0, -16)];
     [item01 setTitle:@"首页"];
+    
     home.tabBarItem = item01;
     [tabBarController addChildViewController:home];
     
     UIViewController *product = [[UIViewController alloc] init];
+    product.title = @"product";
     product.view.backgroundColor = [UIColor greenColor];
     UITabBarItem *item02 = [[UITabBarItem alloc] init];
     [item02 setTitle:@"产品"];
@@ -50,9 +54,17 @@
                           forState:UIControlStateSelected];
     [item02 setTitlePositionAdjustment:UIOffsetMake(0, -16)];
     product.tabBarItem = item02;
-    [tabBarController addChildViewController:product];
     
+    UINavigationController *uiNav01 = [[UINavigationController alloc] initWithRootViewController:home];
+//    [tabBarController addChildViewController:uiNav01];
+//    uiNav01.tabBarItem = item01;
+    
+    UINavigationController *uiNav02 = [[UINavigationController alloc] initWithRootViewController:product];
+//    [tabBarController addChildViewController:uiNav02];
+//    uiNav02.tabBarItem = item02;
+    tabBarController.viewControllers = @[uiNav01,uiNav02];
     self.window.rootViewController = tabBarController;
+    
     return YES;
 }
 
