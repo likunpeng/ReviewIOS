@@ -1,0 +1,12 @@
+platform:ios,'7.0'
+
+def huaXia_part_pods
+    pod 'Masonry'
+end
+
+target 'TestWave' do
+    huaXia_part_pods
+end
+
+
+
