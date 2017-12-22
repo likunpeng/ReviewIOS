@@ -46,6 +46,19 @@
     [self.view addSubview:_imageView];
 }
 
+- (void) testUIViewClcik {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 300, 400)];
+    view.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:view];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(30, 40, 100, 60)];
+    [btn setTitle:@"click" forState:UIControlStateNormal];
+    [view addSubview:btn];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+}
 #pragma mark uitableview datasource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:( NSIndexPath *)indexPath {
