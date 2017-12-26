@@ -1,0 +1,12 @@
+platform:ios,'7.0'
+
+def huaXia_part_pods
+    pod 'Masonry'
+end
+
+target 'TestUI' do
+    huaXia_part_pods
+end
+
+
+
