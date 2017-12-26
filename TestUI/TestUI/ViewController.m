@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) UIButton *btn02;
+@property (nonatomic, strong) UIButton *btn;
 @end
 CGFloat distance = 10;
 @implementation ViewController
@@ -22,24 +23,24 @@ CGFloat distance = 10;
 }
 
 - (void)createView {
-    UIButton *btn = [[UIButton alloc] init];
-    btn.backgroundColor = [UIColor redColor];
-    [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+    _btn = [[UIButton alloc] init];
+    _btn.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_btn];
+    [_btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(20);
         make.top.equalTo(self.view).offset(30);
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(20);
     }];
-    [btn setTitle:@"right move" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(BtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [_btn setTitle:@"right move" forState:UIControlStateNormal];
+    [_btn addTarget:self action:@selector(BtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     _btn02 = [[UIButton alloc] init];
     _btn02.backgroundColor = [UIColor blueColor];
     [self.view addSubview:_btn02];
     [_btn02 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(btn).offset(10);
-        make.top.equalTo(btn).offset(30);
+        make.left.equalTo(_btn).offset(10);
+        make.top.equalTo(_btn).offset(30);
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(20);
     }];
@@ -58,7 +59,7 @@ CGFloat distance = 10;
 - (void)BtnClick {
     distance += 10;
     [_btn02 mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(distance);
+        make.right.equalTo(_btn).offset(distance);
     }];
 }
 
