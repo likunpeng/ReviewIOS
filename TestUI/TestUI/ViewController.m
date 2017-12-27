@@ -19,7 +19,19 @@ CGFloat distance = 10;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self createView];
+//    [self createView];
+    [self testIntAndFloat];
+}
+
+- (void)testIntAndFloat {
+    CGFloat i = 100.0f;
+    int g = i;
+    NSLog(@"i= %d",g);
+    
+    NSString *eightBit = @"127";
+    NSLog(@"eightBit = %#o",[eightBit intValue]);
+    int idex = 080;
+    NSLog(@"%d",idex);
 }
 
 - (void)createView {
