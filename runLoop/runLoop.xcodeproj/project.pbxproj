@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */; };
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
+		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		76B4935A2004AFAD00BF0EED /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B493592004AFAD00BF0EED /* Person.m */; };
 		76DC84342010441700E7963E /* testFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76DC84332010441700E7963E /* testFile.txt */; };
 		76DC8436201044FB00E7963E /* testFile02 in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8435201044FB00E7963E /* testFile02 */; };
@@ -47,6 +48,8 @@
 		7601CE06201D6D14000139CF /* ECONetworkFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECONetworkFetcherDelegate.h; sourceTree = "<group>"; };
 		7607109C2009AB0A0068B442 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7607109D2009AB0A0068B442 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
+		7677378B20215B42002B75DD /* Person+RunPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+RunPerson.m"; sourceTree = "<group>"; };
 		76B493582004AFAD00BF0EED /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		76B493592004AFAD00BF0EED /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		76DC84332010441700E7963E /* testFile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = testFile.txt; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				7601CE02201D6C37000139CF /* EOCNetworkFetcher.h */,
 				7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */,
 				7601CE06201D6D14000139CF /* ECONetworkFetcherDelegate.h */,
+				7677378A20215B42002B75DD /* Person+RunPerson.h */,
+				7677378B20215B42002B75DD /* Person+RunPerson.m */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 				EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */,
 				7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */,
 				EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */,
+				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
 				76DC843B201187CC00E7963E /* AssetManager.m in Sources */,
 				7607109E2009AB0A0068B442 /* Student.m in Sources */,
 				76B4935A2004AFAD00BF0EED /* Person.m in Sources */,

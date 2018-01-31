@@ -10,7 +10,7 @@
 @class EOCNetworkFetcher;
 
 @protocol ECONetworkFetcherDelegate <NSObject>
-
+@required
 - (void)networkFetcher:(EOCNetworkFetcher *)fetcher didReveiceData:(NSData*)data;
 
 @end

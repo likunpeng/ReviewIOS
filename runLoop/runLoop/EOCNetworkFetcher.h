@@ -11,7 +11,5 @@
 
 
 @interface EOCNetworkFetcher : NSObject
-
-@property (nonatomic, weak) id<ECONetworkFetcherDelegate> delegate;
-
+- (void)customCreate;
 @end

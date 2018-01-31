@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "Person.h"
 #import "Student.h"
+#import "EOCNetworkFetcher.h"
+#import "Person+RunPerson.h"
 
 @interface Pet : NSObject
 
@@ -69,7 +71,22 @@
 //    [self testArray];
 //    [self testString];
 //    [self testBool];
-    [self testLoad];
+//    [self testLoad];
+//    [self testDelegate];
+//    [self testCagetory];
+    
+}
+
+- (void)testCagetory {
+    Person *person = [[Person alloc] init];
+    [person setHeight:@"100"];
+    NSLog(@"height = %@", person.height);
+}
+
+- (void)testDelegate {
+    EOCNetworkFetcher *fetcher = [[EOCNetworkFetcher alloc] init];
+    [fetcher customCreate];
+//    [fetcher.delegate networkFetcher:fetcher didReveiceData:nil];
     
 }
 
