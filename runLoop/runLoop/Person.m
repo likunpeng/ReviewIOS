@@ -21,6 +21,10 @@
     printx(101);
 }
 
++ (void)testStaticMethod {
+    NSLog(@"hhh");
+}
+
 #pragma mark personProtocol
 - (void)eat {
     NSLog(@"person eat");

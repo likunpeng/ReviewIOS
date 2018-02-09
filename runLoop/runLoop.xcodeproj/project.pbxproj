@@ -10,11 +10,14 @@
 		7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */; };
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
+		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
 		76B4935A2004AFAD00BF0EED /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B493592004AFAD00BF0EED /* Person.m */; };
 		76DC84342010441700E7963E /* testFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76DC84332010441700E7963E /* testFile.txt */; };
 		76DC8436201044FB00E7963E /* testFile02 in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8435201044FB00E7963E /* testFile02 */; };
 		76DC843820108B7100E7963E /* testXML.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76DC843720108B7100E7963E /* testXML.plist */; };
 		76DC843B201187CC00E7963E /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DC843A201187CC00E7963E /* AssetManager.m */; };
+		76FE35FE20285D1000369EDF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE35FD20285D1000369EDF /* Dog.m */; };
+		76FE3603202C21B000369EDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE3602202C21B000369EDF /* SecondViewController.m */; };
 		EAC2B7E81EF9166500AC8029 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7E71EF9166500AC8029 /* main.m */; };
 		EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7EA1EF9166500AC8029 /* AppDelegate.m */; };
 		EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7ED1EF9166500AC8029 /* ViewController.m */; };
@@ -50,6 +53,8 @@
 		7607109D2009AB0A0068B442 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
 		7677378B20215B42002B75DD /* Person+RunPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+RunPerson.m"; sourceTree = "<group>"; };
+		7677378D20232541002B75DD /* LYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPerson.h; sourceTree = "<group>"; };
+		7677378E20232541002B75DD /* LYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYPerson.m; sourceTree = "<group>"; };
 		76B493582004AFAD00BF0EED /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		76B493592004AFAD00BF0EED /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		76DC84332010441700E7963E /* testFile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = testFile.txt; sourceTree = "<group>"; };
@@ -57,6 +62,10 @@
 		76DC843720108B7100E7963E /* testXML.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = testXML.plist; sourceTree = "<group>"; };
 		76DC8439201187CC00E7963E /* AssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
 		76DC843A201187CC00E7963E /* AssetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetManager.m; sourceTree = "<group>"; };
+		76FE35FC20285D1000369EDF /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		76FE35FD20285D1000369EDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		76FE3601202C21B000369EDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		76FE3602202C21B000369EDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		EAC2B7E31EF9166500AC8029 /* runLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC2B7E71EF9166500AC8029 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAC2B7E91EF9166500AC8029 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +155,12 @@
 				7601CE06201D6D14000139CF /* ECONetworkFetcherDelegate.h */,
 				7677378A20215B42002B75DD /* Person+RunPerson.h */,
 				7677378B20215B42002B75DD /* Person+RunPerson.m */,
+				7677378D20232541002B75DD /* LYPerson.h */,
+				7677378E20232541002B75DD /* LYPerson.m */,
+				76FE35FC20285D1000369EDF /* Dog.h */,
+				76FE35FD20285D1000369EDF /* Dog.m */,
+				76FE3601202C21B000369EDF /* SecondViewController.h */,
+				76FE3602202C21B000369EDF /* SecondViewController.m */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -316,10 +331,13 @@
 			files = (
 				EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */,
 				7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */,
+				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
+				7677378F20232541002B75DD /* LYPerson.m in Sources */,
 				EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */,
 				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
 				76DC843B201187CC00E7963E /* AssetManager.m in Sources */,
 				7607109E2009AB0A0068B442 /* Student.m in Sources */,
+				76FE3603202C21B000369EDF /* SecondViewController.m in Sources */,
 				76B4935A2004AFAD00BF0EED /* Person.m in Sources */,
 				EAC2B7E81EF9166500AC8029 /* main.m in Sources */,
 			);

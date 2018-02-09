@@ -19,4 +19,5 @@
 
 @interface Person : NSObject
 - (void)test;
++ (void)testStaticMethod;
 @end

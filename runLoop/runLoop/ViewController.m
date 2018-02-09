@@ -11,33 +11,37 @@
 #import "Student.h"
 #import "EOCNetworkFetcher.h"
 #import "Person+RunPerson.h"
+#import "LYPerson.h"
+#import "Dog.h"
+#import "SecondViewController.h"
 
-@interface Pet : NSObject
-
-@end
-
-@implementation Pet
-
-+ (void)load {
-    NSLog(@"%@ %s", self, __FUNCTION__);
-}
-
-@end
-
-@interface Dog : Pet
-
-@end
-
-@implementation Dog
-
-+ (void)load {
-    NSLog(@"%@ %s", self, __FUNCTION__);
-}
-@end
+//@interface Pet : NSObject
+//
+//@end
+//
+//@implementation Pet
+//
+//+ (void)load {
+//    NSLog(@"%@ %s", self, __FUNCTION__);
+//}
+//
+//@end
+//
+//@interface Dog : Pet
+//
+//@end
+//
+//@implementation Dog
+//
+//+ (void)load {
+//    NSLog(@"%@ %s", self, __FUNCTION__);
+//}
+//@end
 
 @interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) UIScrollView *scroll;
+@property (nonatomic, strong) LYPerson *lyPerson;
 
 @end
 
@@ -74,7 +78,103 @@
 //    [self testLoad];
 //    [self testDelegate];
 //    [self testCagetory];
+//    [self testUIWebView];
+//    [self testKVO];
+//    [self testKVC];
+//    [Person testStaticMethod];
+//    [Student testStaticMethod];
+//    [self testMethodName];
+//    [self testStringAndCopy];
+    [self testEqual];
+}
+
+- (void)testEqual {
+    NSMutableSet *set = [[NSMutableSet alloc] init];
     
+    NSMutableArray *array = [@[@1,@2] mutableCopy];
+    [set addObject:array];
+    NSLog(@"set = %@", set);
+    NSLog(@"set addr = %p", array);
+    
+    NSMutableArray *array02 = [@[@1,@2] mutableCopy];
+    [set addObject:array02];
+    NSLog(@"set = %@", set);
+    NSLog(@"set addr = %p", array02);
+    if (array == array02) {
+        NSLog(@"equal");
+    }
+    
+    NSMutableArray *array03 = [@[@1] mutableCopy];
+    [set addObject:array03];
+    NSLog(@"set = %@", set);
+    
+    [array03 addObject:@2];
+    
+    NSLog(@"set = %@", set);
+    
+
+    NSSet *set02 = [set copy];
+    NSLog(@"set02 = %@", set02);
+    NSLog(@"set = %@", set);
+    
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    SecondViewController *secVC = [[SecondViewController alloc] init];
+    secVC.lyPerson.name = @"";
+    [self.navigationController pushViewController:secVC animated:YES];
+    
+}
+
+
+- (void)testStringAndCopy {
+    Student *stu = [[Student alloc] init];
+    [stu testStrongAndCopy];
+    [stu testMutabelString];
+}
+
+- (void)testMethodName {
+    Student *stu = [[Student alloc] init];
+    [stu setRight:YES];
+    NSLog(@"test %d", stu.isRight);
+}
+
+- (void)testKVC {
+    Dog* dog = [[Dog alloc] init];
+//    [dog setValue:@"newName" forKey:@"name"];
+//    NSString* name = [dog valueForKey:@"name"];
+//    NSLog(@"%@",name);
+
+    NSLog(@"%@", [dog valueForKey:@"toSetName"]);
+    [dog setValue:@"123123" forKey:@"toSetName"];
+    NSLog(@"%@", [dog valueForKey:@"toSetName"]);
+}
+
+- (void)testKVO {
+    LYPerson *person = [[LYPerson alloc] init];
+    person.height = 180;
+    person.name = @"lkp";
+    person.age = 18;
+    self.lyPerson = person;
+    
+    [person addObserver:self forKeyPath:@"height" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil];
+    
+    person.height = 121;
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    NSLog(@"%@",change);
+}
+
+- (void)testUIWebView {
+    UIWebView *uiWebView = [[UIWebView alloc] init];
+    uiWebView.backgroundColor = [UIColor redColor];
+    uiWebView.frame = CGRectMake(0, 0, 320, 480);
+    [self.view addSubview:uiWebView];
 }
 
 - (void)testCagetory {
