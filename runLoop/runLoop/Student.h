@@ -14,6 +14,7 @@ struct testStruct {
     int year;
 };
 
+extern NSString *personName;
 @interface Student : Person
 
 @property (nonatomic, getter=isRight) BOOL right;
@@ -21,7 +22,10 @@ struct testStruct {
 @property(nonatomic,strong) NSString *theStrongStr; //strong 字符串
 @property(nonatomic,copy) NSString *theCopyStr;     //copy 字符串
 
+
+
 - (void)testStrongAndCopy;
 - (void)testMutabelString;
+- (void)testExtern;
 
 @end

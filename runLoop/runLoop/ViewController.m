@@ -14,6 +14,10 @@
 #import "LYPerson.h"
 #import "Dog.h"
 #import "SecondViewController.h"
+#import "VBViewController.h"
+#import "VCViewController.h"
+#import <sqlite3.h>
+#import "TestValueViewController.h"
 
 //@interface Pet : NSObject
 //
@@ -38,10 +42,11 @@
 //}
 //@end
 
-@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate>
 
 @property (nonatomic, weak) UIScrollView *scroll;
 @property (nonatomic, strong) LYPerson *lyPerson;
+@property (nonatomic, strong) UIWebView *webView;
 
 @end
 
@@ -49,13 +54,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    scroll.backgroundColor = [UIColor cyanColor];
-    scroll.delegate = self;
-    scroll.pagingEnabled = YES;
-    [self.view addSubview:scroll];
-    scroll.contentSize = CGSizeMake(self.view.frame.size.width * 3, 0);
-    self.scroll = scroll;
+//    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+////    scroll.backgroundColor = [UIColor cyanColor];
+//    scroll.delegate = self;
+//    scroll.pagingEnabled = YES;
+//    [self.view addSubview:scroll];
+//    scroll.contentSize = CGSizeMake(self.view.frame.size.width * 3, 0);
+//    self.scroll = scroll;
 //    Person *p = [[Person alloc] init];
 //    [p test];
 //    SEL aSelector = @selector(test);
@@ -85,7 +90,234 @@
 //    [Student testStaticMethod];
 //    [self testMethodName];
 //    [self testStringAndCopy];
-    [self testEqual];
+//    [self testEqual];
+//    [self gifImg]; error
+//    [self testExtern];
+//    [self testTranslateValueInVC];
+//    [self testVC];
+//    [self testBlock];
+//    [self testBlock02];
+//    [self testBlock3];
+//    [self testCopy];
+//    [self testWebView];
+//    [self testColor];
+//    [self delArray];
+    [self testReg];
+}
+
+- (void)testReg {
+    NSString *phoneNo = @"13143503442";
+    NSRange range = [phoneNo rangeOfString:@"^1[3]\\d{9}$" options:NSRegularExpressionSearch];
+    if (range.location != NSNotFound) {
+        NSLog(@"%@", [phoneNo substringWithRange:range]);
+    }
+}
+- (void)delArray {
+//    NSMutableArray *array = [NSMutableArray arrayWithArray:@[@"1",@"2",@"3",@"4",@"5"]];
+//    for (NSString *obj in array.reverseObjectEnumerator) {
+//        if ([obj isEqualToString:@"5"]) {
+//            [array removeObject:obj];
+//        }
+//
+//        if ([obj isEqualToString:@"1"]) {
+//            [array removeObject:obj];
+//        }
+//    }
+//    NSLog(@"%@",array);
+    
+    NSMutableArray *array = [NSMutableArray arrayWithArray:@[@"1",@"2",@"5"]];
+    for (int i = array.count - 1; i >= 0; i--) {
+        NSString *obj = array[i];
+        if ([obj isEqualToString:@"1"]) {
+            [array removeObject:obj];
+        }
+        
+        if ([obj isEqualToString:@"2"]) {
+            [array removeObject:obj];
+        }
+        
+        if ([obj isEqualToString:@"5"]) {
+            [array removeObject:obj];
+        }
+    }
+    NSLog(@"%@",array);
+}
+
+- (void)testColor {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+    label.layer.backgroundColor = [UIColor redColor].CGColor;
+    label.layer.cornerRadius = 20.0f;
+    label.layer.shadowColor = [UIColor greenColor].CGColor;
+    label.layer.shadowRadius = 20.0f;
+    label.layer.shadowOpacity = 0.5;
+    [self.view addSubview:label];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 300, 200, 100)];
+    
+    btn.layer.backgroundColor = [UIColor blueColor].CGColor;
+    btn.backgroundColor = [UIColor redColor];
+    btn.layer.cornerRadius = 20.0f;
+    btn.layer.shadowColor = [UIColor greenColor].CGColor;
+    btn.layer.shadowRadius = 20.0f;
+    btn.layer.shadowOpacity = 0.5;
+    [self.view addSubview:btn];
+    
+}
+
+- (void)testWebView {
+    self.webView = [[UIWebView alloc] init];
+    self.webView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:_webView];
+    self.webView.frame = CGRectMake(0, 0, self.view.bounds.size.width , self.view.bounds.size.height);
+    self.webView.scalesPageToFit = YES;
+    self.webView.delegate = self;
+    [(UIScrollView *)[[self.webView subviews] objectAtIndex:0] setBounces:NO];
+//    NSString *urlStr = @"https://www.baidu.com";
+//    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlStr]];
+//    [self.webView loadRequest:request];
+    
+//    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+//    NSString *fileName = [path stringByAppendingPathComponent:@"index.html"];
+    NSString *htmlPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSURL *url = [[NSURL alloc] initWithString:htmlPath];
+//    [self.webView stringByEvaluatingJavaScriptFromString:url];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:htmlPath]];
+    [self.webView loadRequest:request];
+    
+}
+
+#pragma mark UIWebViewDelegate start
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+}
+
+#pragma mark UIWebViewDelegate start
+
+- (void)testBlock3 {
+    int (^blc)(int) = ^(int count) {
+        return count + 1;
+    };
+    NSLog(@"count + 1 = %d", blc(3));
+}
+
+
+- (void)testBlock02 {
+    void (^myBlock)() = ^(void) {
+        NSLog(@"111");
+    };
+    myBlock();
+}
+
+
+
+- (void)testTranslateValueInVC {
+    TestValueViewController *testVC = [[TestValueViewController alloc] init];
+    [self.navigationController pushViewController:testVC animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+//    SecondViewController *secVC = [[SecondViewController alloc] init];
+//    secVC.lyPerson.name = @"";
+//    [self.navigationController pushViewController:secVC animated:YES];
+//    [self testVC];
+//    [self testWriteToFile];
+//    [self testReadFile];
+//    [self testPreference];
+//    [self testSqlLite3];
+}
+
+- (void)testSqlLite3 {
+    sqlite3 *db;
+    NSString *path = NSHomeDirectory();
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@",path,@"Documents/data.db"];
+    int result = sqlite3_open([filePath UTF8String], &db);
+    if (result == SQLITE_OK) {
+        NSLog(@"create success");
+    } else {
+        NSLog(@"create error");
+    }
+    
+    //创建表
+//    char *errorMsg;
+//    char *sql = "create table if not exists t_person(id integer primary key autoincrement, name text, age integer);";
+//    int result01 = sqlite3_exec(db, sql, NULL, NULL, &errorMsg);
+}
+
+- (void)testPreference {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:@"lisi" forKey:@"account"];
+    [defaults setFloat:123.2f forKey:@"point"];
+    NSString *path = NSHomeDirectory();
+    NSLog(@"path : %@", path);
+}
+
+- (void)testWriteToFile {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:@"muji" forKey:@"name"];
+    [dict setObject:@"120" forKey:@"phone"];
+    NSString *path = NSHomeDirectory();
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@",path,@"Documents/stu.plist"];
+    NSLog(@"path = %@",filePath);
+    [dict writeToFile:filePath atomically:YES];
+}
+
+- (void)testReadFile {
+    NSString *path = NSHomeDirectory();
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@",path,@"Documents/stu.plist"];
+    NSLog(@"path = %@",filePath);
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    NSLog(@"name = %@", [dict objectForKey:@"name"]);
+    NSLog(@"tel = %@", [dict objectForKey:@"phone"]);
+}
+
+- (void)testVC {
+    self.title = @"AAA";
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+    btn.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+//    VCViewController *vc = [[VCViewController alloc] init];
+//    vc.view.backgroundColor = [UIColor blueColor];
+//    [vb presentViewController:vc animated:false completion:^{
+//        NSLog(@"completion turn VC");
+//    }];
+//    [self dismissModalStack];
+}
+
+- (void)btnClick:(UIButton *)btn {
+    VBViewController *vb = [[VBViewController alloc] init];
+//    vb.name = @"lkp";
+    vb.view.backgroundColor = [UIColor redColor];
+    [self presentViewController:vb animated:false completion:^{
+        NSLog(@"completion turn VB");
+    }];
+}
+
+- (void)testExtern {
+    Student *s = [[Student alloc] init];
+    [s testExtern];
+}
+
+- (void)gifImg {
+    UIImageView *imgView = [[UIImageView alloc] init];
+    imgView.frame = CGRectMake(100, 100, 400, 300);
+    imgView.image = [UIImage imageNamed:@"gifImg"];
+    [self.view addSubview:imgView];
 }
 
 - (void)testEqual {
@@ -116,16 +348,6 @@
     NSSet *set02 = [set copy];
     NSLog(@"set02 = %@", set02);
     NSLog(@"set = %@", set);
-    
-}
-
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    SecondViewController *secVC = [[SecondViewController alloc] init];
-    secVC.lyPerson.name = @"";
-    [self.navigationController pushViewController:secVC animated:YES];
     
 }
 
@@ -288,9 +510,15 @@
     
 }
 - (void)testCopy {
-//    NSString *test01 = @"123456";
-//    NSString *test02 = [test01 copy];
-//    NSLog(@"test01 = %d test02 = %d", test01, test02);
+    NSString *test01 = @"123456";
+    NSString *test02 = [test01 mutableCopy];
+    NSLog(@"test01 = %p test02 = %p", test01, test02);
+    NSLog(@"01 = %p 02 = %p", &test01, &test02);
+    NSLog(@"01 = %@ 02 = %@", test01, test02);
+    test02 = @"12";
+    NSLog(@"\n\ntest01 = %p test02 = %p", test01, test02);
+    NSLog(@"01 = %p 02 = %p", &test01, &test02);
+    NSLog(@"01 = %@ 02 = %@", test01, test02);
 //    NSString *test03 = [ test01 mutableCopy];
 //    NSLog(@"test03 = %d", test03);
 //    NSMutableString *test04 = [test01 copy];
@@ -301,7 +529,7 @@
 - (void)testCopy02 {
     NSString *test01 = @"123456";
     NSString *test02 = [test01 copy];
-    NSLog(@"test01 = %d test02 = %d", test01, test02);
+    NSLog(@"test01 = %p test02 = %p", test01, test02);
     NSString *test03 = [ test01 mutableCopy];
     NSLog(@"test03 = %d", test03);
     NSMutableString *test04 = [test01 copy];

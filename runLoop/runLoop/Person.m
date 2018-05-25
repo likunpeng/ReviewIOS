@@ -15,6 +15,7 @@
 @end
 
 @implementation Person
+NSString *personName = @"abc";
 - (void)test {
     NSLog(@"success success-------");
     [self eat];

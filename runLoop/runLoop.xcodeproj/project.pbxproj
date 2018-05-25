@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */; };
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
+		764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771D4204EA8DC00149AC3 /* VBViewController.m */; };
+		764771DB204EA90600149AC3 /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771DA204EA90600149AC3 /* VCViewController.m */; };
+		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
 		76B4935A2004AFAD00BF0EED /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B493592004AFAD00BF0EED /* Person.m */; };
@@ -16,6 +19,7 @@
 		76DC8436201044FB00E7963E /* testFile02 in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8435201044FB00E7963E /* testFile02 */; };
 		76DC843820108B7100E7963E /* testXML.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76DC843720108B7100E7963E /* testXML.plist */; };
 		76DC843B201187CC00E7963E /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DC843A201187CC00E7963E /* AssetManager.m */; };
+		76EB6B8F2074B0FB00DD9D86 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 76EB6B8E2074B0FB00DD9D86 /* index.html */; };
 		76FE35FE20285D1000369EDF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE35FD20285D1000369EDF /* Dog.m */; };
 		76FE3603202C21B000369EDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE3602202C21B000369EDF /* SecondViewController.m */; };
 		EAC2B7E81EF9166500AC8029 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7E71EF9166500AC8029 /* main.m */; };
@@ -51,6 +55,13 @@
 		7601CE06201D6D14000139CF /* ECONetworkFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECONetworkFetcherDelegate.h; sourceTree = "<group>"; };
 		7607109C2009AB0A0068B442 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7607109D2009AB0A0068B442 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		763D03652050E13A009A53E9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		764771D3204EA8DC00149AC3 /* VBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBViewController.h; sourceTree = "<group>"; };
+		764771D4204EA8DC00149AC3 /* VBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBViewController.m; sourceTree = "<group>"; };
+		764771D9204EA90600149AC3 /* VCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCViewController.h; sourceTree = "<group>"; };
+		764771DA204EA90600149AC3 /* VCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCViewController.m; sourceTree = "<group>"; };
+		765D9B4D206C83FD00422982 /* TestValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueViewController.h; sourceTree = "<group>"; };
+		765D9B4E206C83FD00422982 /* TestValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueViewController.m; sourceTree = "<group>"; };
 		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
 		7677378B20215B42002B75DD /* Person+RunPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+RunPerson.m"; sourceTree = "<group>"; };
 		7677378D20232541002B75DD /* LYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPerson.h; sourceTree = "<group>"; };
@@ -62,6 +73,7 @@
 		76DC843720108B7100E7963E /* testXML.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = testXML.plist; sourceTree = "<group>"; };
 		76DC8439201187CC00E7963E /* AssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
 		76DC843A201187CC00E7963E /* AssetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetManager.m; sourceTree = "<group>"; };
+		76EB6B8E2074B0FB00DD9D86 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		76FE35FC20285D1000369EDF /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		76FE35FD20285D1000369EDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		76FE3601202C21B000369EDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -109,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		763D03642050E13A009A53E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				763D03652050E13A009A53E9 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EAC2B7DA1EF9166400AC8029 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +136,7 @@
 				EAC2B7FF1EF9166500AC8029 /* runLoopTests */,
 				EAC2B80A1EF9166500AC8029 /* runLoopUITests */,
 				EAC2B7E41EF9166500AC8029 /* Products */,
+				763D03642050E13A009A53E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,6 +182,13 @@
 				76FE35FD20285D1000369EDF /* Dog.m */,
 				76FE3601202C21B000369EDF /* SecondViewController.h */,
 				76FE3602202C21B000369EDF /* SecondViewController.m */,
+				764771D3204EA8DC00149AC3 /* VBViewController.h */,
+				764771D4204EA8DC00149AC3 /* VBViewController.m */,
+				764771D9204EA90600149AC3 /* VCViewController.h */,
+				764771DA204EA90600149AC3 /* VCViewController.m */,
+				765D9B4D206C83FD00422982 /* TestValueViewController.h */,
+				765D9B4E206C83FD00422982 /* TestValueViewController.m */,
+				76EB6B8E2074B0FB00DD9D86 /* index.html */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -299,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76EB6B8F2074B0FB00DD9D86 /* index.html in Resources */,
 				EAC2B7F61EF9166500AC8029 /* LaunchScreen.storyboard in Resources */,
 				EAC2B7F31EF9166500AC8029 /* Assets.xcassets in Resources */,
 				76DC84342010441700E7963E /* testFile.txt in Resources */,
@@ -332,7 +361,10 @@
 				EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */,
 				7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
+				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
+				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
+				764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */,
 				EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */,
 				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
 				76DC843B201187CC00E7963E /* AssetManager.m in Sources */,

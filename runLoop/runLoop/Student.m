@@ -52,4 +52,8 @@
     NSLog(@"the copy string:%p, %p",_theCopyStr,&_theCopyStr);
 }
 
+- (void)testExtern {
+    NSLog(@"name = %@", personName);
+}
+
 @end
