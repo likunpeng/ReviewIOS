@@ -102,7 +102,46 @@
 //    [self testWebView];
 //    [self testColor];
 //    [self delArray];
-    [self testReg];
+//    [self testReg];
+//    [self testGCD];
+    [self testGCD2];
+}
+
+- (void)testGCD{
+    dispatch_queue_t currentQueue = dispatch_queue_create("com.serial.test.queue", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(currentQueue, ^{
+        for (int i = 0; i < 100; i ++) {
+            NSLog(@"串行队列异步事件：%tu ---",i);
+        }
+    });
+    
+    dispatch_sync(currentQueue, ^{
+        for (int i = 0; i < 100; i ++) {
+            NSLog(@"串行队列同步事件：%tu +++",i);
+        }
+    });
+}
+
+- (void)testGCD2 {
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.starming.gcddemo.serialqueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t firstQueue = dispatch_queue_create("com.starming.gcddemo.firstqueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t secondQueue = dispatch_queue_create("com.starming.gcddemo.secondqueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_set_target_queue(firstQueue, serialQueue);
+    dispatch_set_target_queue(secondQueue, serialQueue);
+    
+    dispatch_async(firstQueue, ^{
+        NSLog(@"1");
+        [NSThread sleepForTimeInterval:3.f];
+    });
+    dispatch_async(secondQueue, ^{
+        NSLog(@"2");
+        [NSThread sleepForTimeInterval:2.f];
+    });
+    dispatch_async(secondQueue, ^{
+        NSLog(@"3");
+        [NSThread sleepForTimeInterval:1.f];
+    });
 }
 
 - (void)testReg {
