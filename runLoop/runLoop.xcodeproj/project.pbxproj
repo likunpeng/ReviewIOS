@@ -14,6 +14,8 @@
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
+		769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 769D78B220CE6E8800E69BE2 /* TestCategaryBaseClass.m */; };
+		769D78B620CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m in Sources */ = {isa = PBXBuildFile; fileRef = 769D78B520CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m */; };
 		76B4935A2004AFAD00BF0EED /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B493592004AFAD00BF0EED /* Person.m */; };
 		76DC84342010441700E7963E /* testFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76DC84332010441700E7963E /* testFile.txt */; };
 		76DC8436201044FB00E7963E /* testFile02 in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8435201044FB00E7963E /* testFile02 */; };
@@ -66,6 +68,10 @@
 		7677378B20215B42002B75DD /* Person+RunPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+RunPerson.m"; sourceTree = "<group>"; };
 		7677378D20232541002B75DD /* LYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPerson.h; sourceTree = "<group>"; };
 		7677378E20232541002B75DD /* LYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYPerson.m; sourceTree = "<group>"; };
+		769D78B120CE6E8800E69BE2 /* TestCategaryBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCategaryBaseClass.h; sourceTree = "<group>"; };
+		769D78B220CE6E8800E69BE2 /* TestCategaryBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCategaryBaseClass.m; sourceTree = "<group>"; };
+		769D78B420CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestCategaryBaseClass+MyCategary.h"; sourceTree = "<group>"; };
+		769D78B520CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TestCategaryBaseClass+MyCategary.m"; sourceTree = "<group>"; };
 		76B493582004AFAD00BF0EED /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		76B493592004AFAD00BF0EED /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		76DC84332010441700E7963E /* testFile.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = testFile.txt; sourceTree = "<group>"; };
@@ -189,6 +195,10 @@
 				765D9B4D206C83FD00422982 /* TestValueViewController.h */,
 				765D9B4E206C83FD00422982 /* TestValueViewController.m */,
 				76EB6B8E2074B0FB00DD9D86 /* index.html */,
+				769D78B120CE6E8800E69BE2 /* TestCategaryBaseClass.h */,
+				769D78B220CE6E8800E69BE2 /* TestCategaryBaseClass.m */,
+				769D78B420CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.h */,
+				769D78B520CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -362,12 +372,14 @@
 				7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
+				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
 				764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */,
 				EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */,
 				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
 				76DC843B201187CC00E7963E /* AssetManager.m in Sources */,
+				769D78B620CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m in Sources */,
 				7607109E2009AB0A0068B442 /* Student.m in Sources */,
 				76FE3603202C21B000369EDF /* SecondViewController.m in Sources */,
 				76B4935A2004AFAD00BF0EED /* Person.m in Sources */,

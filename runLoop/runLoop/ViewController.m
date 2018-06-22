@@ -18,6 +18,8 @@
 #import "VCViewController.h"
 #import <sqlite3.h>
 #import "TestValueViewController.h"
+#import "TestCategaryBaseClass.h"
+#import "TestCategaryBaseClass+MyCategary.h"
 
 //@interface Pet : NSObject
 //
@@ -104,10 +106,16 @@
 //    [self delArray];
 //    [self testReg];
 //    [self testGCD];
-    [self testGCD2];
+//    [self testGCD2];
+//    [self testCagetory02];
 }
 
-- (void)testGCD{
+- (void)testCagetory02{
+    TestCategaryBaseClass *baseClass = [[TestCategaryBaseClass alloc] init];
+    [baseClass baseMethod];
+}
+
+- (void)testGCD {
     dispatch_queue_t currentQueue = dispatch_queue_create("com.serial.test.queue", DISPATCH_QUEUE_SERIAL);
     dispatch_async(currentQueue, ^{
         for (int i = 0; i < 100; i ++) {
@@ -272,7 +280,7 @@
 //    SecondViewController *secVC = [[SecondViewController alloc] init];
 //    secVC.lyPerson.name = @"";
 //    [self.navigationController pushViewController:secVC animated:YES];
-//    [self testVC];
+    [self testVC];
 //    [self testWriteToFile];
 //    [self testReadFile];
 //    [self testPreference];
@@ -340,7 +348,7 @@
 
 - (void)btnClick:(UIButton *)btn {
     VBViewController *vb = [[VBViewController alloc] init];
-//    vb.name = @"lkp";
+    vb.name = @"lkp";
     vb.view.backgroundColor = [UIColor redColor];
     [self presentViewController:vb animated:false completion:^{
         NSLog(@"completion turn VB");

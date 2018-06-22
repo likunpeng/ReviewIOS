@@ -32,20 +32,28 @@
 - (void)dismissModalStack {
     
     UIViewController *vc = self.presentingViewController;
-    
+    NSLog(@"vc name = %@", [vc class]);
     while (vc.presentingViewController) {
-        if ([vc isKindOfClass:[VBViewController class]]) {
-            break;
-        }
         vc = vc.presentingViewController;
-        NSLog(@"name = %@",[vc class]);
+        NSLog(@"inner vc name = %@", [vc class]);
     }
     
-    [vc dismissViewControllerAnimated:YES completion:^{
-        [vc dismissViewControllerAnimated:YES completion:^{
+    [vc dismissViewControllerAnimated:YES completion:NULL];
 
-        }];
-    }];
+    
+//    while (vc.presentingViewController) {
+//        if ([vc isKindOfClass:[VBViewController class]]) {
+//            break;
+//        }
+//        vc = vc.presentingViewController;
+//        NSLog(@"name = %@",[vc class]);
+//    }
+//
+//    [vc dismissViewControllerAnimated:YES completion:^{
+//        [vc dismissViewControllerAnimated:YES completion:^{
+//
+//        }];
+//    }];s
 }
 
 - (void)didReceiveMemoryWarning {
