@@ -5,23 +5,23 @@
       "scale" : "1x"
     },
     {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
       "resizing" : {
         "mode" : "3-part-horizontal",
         "center" : {
           "mode" : "stretch",
-          "width" : 18
+          "width" : 1
         },
         "cap-insets" : {
-          "right" : 137,
-          "left" : 100
+          "right" : 69,
+          "left" : 71
         }
       },
       "idiom" : "universal",
-      "filename" : "juan@3x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
+      "filename" : "Group 56@3x.png",
       "scale" : "3x"
     }
   ],

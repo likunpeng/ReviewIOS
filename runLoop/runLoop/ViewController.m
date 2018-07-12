@@ -49,6 +49,7 @@
 @property (nonatomic, weak) UIScrollView *scroll;
 @property (nonatomic, strong) LYPerson *lyPerson;
 @property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -78,6 +79,7 @@
 //    [self testCopy];
 //    [self testSaveXML];
 //    [self testSlicingImg];
+//    [self testSlicingImg01];
 //    [self testBlock];
 //    [self testArray];
 //    [self testString];
@@ -108,6 +110,53 @@
 //    [self testGCD];
 //    [self testGCD2];
 //    [self testCagetory02];
+//    [self testTableView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = [UIColor blackColor];
+    }
+}
+// 返回状态栏的样式
+- (UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleDefault;
+}
+
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    //    SecondViewController *secVC = [[SecondViewController alloc] init];
+    //    secVC.lyPerson.name = @"";
+    //    [self.navigationController pushViewController:secVC animated:YES];
+    //    [self testVC];
+    //    [self testWriteToFile];
+    //    [self testReadFile];
+    //    [self testPreference];
+    //    [self testSqlLite3];
+}
+
+- (void)testTableView {
+//    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+//    [self.view addSubview:view];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStyleGrouped];
+    _tableView.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:_tableView];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 300)];
+    btn.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(customClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)customClick:(UIButton*)sender {
+    NSLog(@"click");
 }
 
 - (void)testCagetory02{
@@ -274,18 +323,7 @@
     [self.navigationController pushViewController:testVC animated:YES];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-//    SecondViewController *secVC = [[SecondViewController alloc] init];
-//    secVC.lyPerson.name = @"";
-//    [self.navigationController pushViewController:secVC animated:YES];
-    [self testVC];
-//    [self testWriteToFile];
-//    [self testReadFile];
-//    [self testPreference];
-//    [self testSqlLite3];
-}
+
 
 - (void)testSqlLite3 {
     sqlite3 *db;
@@ -530,10 +568,17 @@
 }
 
 - (void)testSlicingImg {
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, 306, 84)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 200, 306, 84)];
     imageView.image = [UIImage imageNamed:@"img"];
     [self.view addSubview:imageView];
 }
+
+- (void)testSlicingImg01{
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 300, 141, [UIImage imageNamed:@"img01"].size.height)];
+    imageView.image = [UIImage imageNamed:@"img01"];
+    [self.view addSubview:imageView];
+}
+
 
 - (void)testSaveXML {
     NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
