@@ -111,6 +111,7 @@
 //    [self testGCD2];
 //    [self testCagetory02];
 //    [self testTableView];
+    [self testNSThread];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -141,6 +142,20 @@
     //    [self testReadFile];
     //    [self testPreference];
     //    [self testSqlLite3];
+}
+
+
+- (void)testNSThread {
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(threadRunMethod) object:nil];
+    [thread start];
+    [NSThread sleepForTimeInterval:2.0f];
+    NSLog(@"name11 = %@", NSThread.currentThread);
+//    [NSThread detachNewThreadSelector:@selector(threadRunMethod) toTarget:self withObject:nil];
+}
+
+- (void)threadRunMethod {
+    NSLog(@"thread run method");
+    NSLog(@"name = %@", [NSThread currentThread]);
 }
 
 - (void)testTableView {
