@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */; };
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
+		763E22A721101069002AEB49 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E22A621101069002AEB49 /* Test.swift */; };
 		764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771D4204EA8DC00149AC3 /* VBViewController.m */; };
 		764771DB204EA90600149AC3 /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771DA204EA90600149AC3 /* VCViewController.m */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
@@ -58,6 +59,8 @@
 		7607109C2009AB0A0068B442 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7607109D2009AB0A0068B442 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		763D03652050E13A009A53E9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		763E22A521101069002AEB49 /* runLoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "runLoop-Bridging-Header.h"; sourceTree = "<group>"; };
+		763E22A621101069002AEB49 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		764771D3204EA8DC00149AC3 /* VBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBViewController.h; sourceTree = "<group>"; };
 		764771D4204EA8DC00149AC3 /* VBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBViewController.m; sourceTree = "<group>"; };
 		764771D9204EA90600149AC3 /* VCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCViewController.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				769D78B220CE6E8800E69BE2 /* TestCategaryBaseClass.m */,
 				769D78B420CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.h */,
 				769D78B520CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m */,
+				763E22A621101069002AEB49 /* Test.swift */,
+				763E22A521101069002AEB49 /* runLoop-Bridging-Header.h */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				TargetAttributes = {
 					EAC2B7E21EF9166500AC8029 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Manual;
 					};
 					EAC2B7FB1EF9166500AC8029 = {
@@ -372,6 +378,7 @@
 				7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
+				763E22A721101069002AEB49 /* Test.swift in Sources */,
 				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
@@ -534,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = runLoop/Info.plist;
@@ -542,6 +550,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = picture.runLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "runLoop/runLoop-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -549,6 +560,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = runLoop/Info.plist;
@@ -557,12 +569,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = picture.runLoop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "runLoop/runLoop-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		EAC2B8141EF9166500AC8029 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopTests/Info.plist;
@@ -576,6 +591,7 @@
 		EAC2B8151EF9166500AC8029 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopTests/Info.plist;
@@ -589,6 +605,7 @@
 		EAC2B8171EF9166500AC8029 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -601,6 +618,7 @@
 		EAC2B8181EF9166500AC8029 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

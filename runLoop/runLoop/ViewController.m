@@ -111,7 +111,20 @@
 //    [self testGCD2];
 //    [self testCagetory02];
 //    [self testTableView];
-    [self testNSThread];
+//    [self testNSThread];
+//    [self testObjectForNil];
+//    [self testUrl];
+}
+
+- (void)testUrl {
+    NSString *strUrl = @"/www.baidu.com";
+    NSURL *url = [[NSURL URLWithString:strUrl] URLByAppendingPathComponent:@"12"];
+    NSLog(@"url = %@", url);
+}
+
+- (void)testObjectForNil {
+    NSDictionary *dic = [NSNull null];
+    [[dic objectForKey:@"data"] objectForKey:@"coinFlag"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

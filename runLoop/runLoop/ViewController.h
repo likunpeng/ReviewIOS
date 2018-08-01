@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (void)testUrl;
 
 @end
 
