@@ -114,6 +114,14 @@
 //    [self testNSThread];
 //    [self testObjectForNil];
 //    [self testUrl];
+//    [self testGif];
+}
+
+- (void)testGif {
+    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
+    view.backgroundColor = UIColor.redColor;
+    view.image = [UIImage imageNamed:@"git.png"];//不能正常播放
+    [self.view addSubview:view];
 }
 
 - (void)testUrl {
@@ -131,9 +139,9 @@
     [super viewWillAppear:animated];
 //    [self.navigationController setNavigationBarHidden:YES animated:animated];
     UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = [UIColor blackColor];
-    }
+//    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+//        statusBar.backgroundColor = [UIColor blackColor];
+//    }
 }
 // 返回状态栏的样式
 - (UIStatusBarStyle)preferredStatusBarStyle{
