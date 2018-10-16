@@ -50,13 +50,16 @@
 @property (nonatomic, strong) LYPerson *lyPerson;
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, strong) NSString *dff;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSMutableString test01 = [NSMutableString stringWithFormat:@"可变字符串"];
+    _dff = test01;
+    
 //    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:self.view.bounds];
 ////    scroll.backgroundColor = [UIColor cyanColor];
 //    scroll.delegate = self;
@@ -102,7 +105,7 @@
 //    [self testBlock];
 //    [self testBlock02];
 //    [self testBlock3];
-//    [self testCopy];
+    [self testCopy];
 //    [self testWebView];
 //    [self testColor];
 //    [self delArray];
@@ -115,8 +118,19 @@
 //    [self testObjectForNil];
 //    [self testUrl];
 //    [self testGif];
+//    [self testNumber];
 }
 
+- (void)testNumber {
+    NSNumber *a = @1;
+    if (a == 1) {
+        NSLog(@"wrong method");
+    }
+    
+    if ([a intValue] == 1) {
+        NSLog(@"right method");
+    }
+}
 - (void)testGif {
     UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
     view.backgroundColor = UIColor.redColor;
@@ -338,7 +352,9 @@
 #pragma mark UIWebViewDelegate start
 
 - (void)testBlock3 {
+    int a = 2;
     int (^blc)(int) = ^(int count) {
+        NSLog(@"a = %d", a);
         return count + 1;
     };
     NSLog(@"count + 1 = %d", blc(3));
@@ -595,12 +611,20 @@
 
 
 - (void)testBlock {
-    int (^someBlock)(int a, int b) = ^int(int a, int b) {
-        return a + b;
-    };
+    NSMutableString *str = [NSMutableString string];
+    int ss = 1;
+    NSLog(@"str addr = %p", str);
     
-    int sum = someBlock(10, 20);
-    NSLog(@"sum = %d", sum);
+//    int (^someBlock)(int a, int b) = ^int(int a, int b) {
+//        ss = 3;
+//        str = @"123";
+//        [str appendString:@"123"];
+//        NSLog(@"str addr = %@", str);
+//        return a + b;
+//    };
+    
+//    int sum = someBlock(10, 20);
+//    NSLog(@"sum = %d", sum);
 }
 
 - (void)testSlicingImg {
@@ -638,15 +662,18 @@
     
 }
 - (void)testCopy {
-    NSString *test01 = @"123456";
-    NSString *test02 = [test01 mutableCopy];
+    NSString *test01 = [NSString stringWithFormat:@"我爱字符串"];
+    NSLog(@"test01 = %p ", &test01);
+    NSLog(@"test01 = %p ", test01);
+    NSString *test02 = [test01 copy];
+    test01 = [NSString stringWithFormat:@"我爱字符串002"];
     NSLog(@"test01 = %p test02 = %p", test01, test02);
     NSLog(@"01 = %p 02 = %p", &test01, &test02);
     NSLog(@"01 = %@ 02 = %@", test01, test02);
-    test02 = @"12";
-    NSLog(@"\n\ntest01 = %p test02 = %p", test01, test02);
-    NSLog(@"01 = %p 02 = %p", &test01, &test02);
-    NSLog(@"01 = %@ 02 = %@", test01, test02);
+//    test02 = @"12";
+//    NSLog(@"\n\ntest01 = %p test02 = %p", test01, test02);
+//    NSLog(@"01 = %p 02 = %p", &test01, &test02);
+//    NSLog(@"01 = %@ 02 = %@", test01, test02);
 //    NSString *test03 = [ test01 mutableCopy];
 //    NSLog(@"test03 = %d", test03);
 //    NSMutableString *test04 = [test01 copy];
