@@ -20,6 +20,7 @@
 #import "TestValueViewController.h"
 #import "TestCategaryBaseClass.h"
 #import "TestCategaryBaseClass+MyCategary.h"
+#import "SingleInstanceObject.h"
 
 //@interface Pet : NSObject
 //
@@ -119,6 +120,19 @@
 //    [self testUrl];
 //    [self testGif];
 //    [self testNumber];
+    [self testInstance];
+}
+
+- (void)testInstance {
+    SingleInstanceObject *instance1 = [SingleInstanceObject sharedInstance];
+    NSLog(@"%@", instance1);
+    
+    SingleInstanceObject *instance2 = [[SingleInstanceObject alloc] init];
+    NSLog(@"%@", instance2);
+    
+    SingleInstanceObject *instance3 = [SingleInstanceObject new];
+    NSLog(@"%@", instance3);
+    
 }
 
 - (void)testNumber {
