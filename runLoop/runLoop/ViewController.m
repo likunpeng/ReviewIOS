@@ -57,8 +57,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableString test01 = [NSMutableString stringWithFormat:@"可变字符串"];
-    _dff = test01;
+//    NSMutableString *test01 = [NSMutableString stringWithFormat:@"可变字符串"];
+//    _dff = test01;
     
 //    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:self.view.bounds];
 ////    scroll.backgroundColor = [UIColor cyanColor];
@@ -105,7 +105,7 @@
 //    [self testBlock];
 //    [self testBlock02];
 //    [self testBlock3];
-    [self testCopy];
+//    [self testCopy];
 //    [self testWebView];
 //    [self testColor];
 //    [self delArray];
@@ -212,6 +212,12 @@
 - (void)testCagetory02{
     TestCategaryBaseClass *baseClass = [[TestCategaryBaseClass alloc] init];
     [baseClass baseMethod];
+    
+    baseClass.testStr = @"123";
+    
+    NSLog(@"str = %@", baseClass.testStr);
+    
+    
 }
 
 - (void)testGCD {

@@ -8,6 +8,10 @@
 
 #import "TestCategaryBaseClass.h"
 
+@interface TestCategaryBaseClass()
+
+@end
+
 @implementation TestCategaryBaseClass
 
 - (void)baseMethod {

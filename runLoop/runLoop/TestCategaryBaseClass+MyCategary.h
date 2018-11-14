@@ -9,5 +9,7 @@
 #import "TestCategaryBaseClass.h"
 
 @interface TestCategaryBaseClass (MyCategary)
+
+@property (nonatomic, strong) NSString *testStr;
 - (void)baseMethod;
 @end
