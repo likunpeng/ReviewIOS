@@ -21,6 +21,8 @@
 #import "TestCategaryBaseClass.h"
 #import "TestCategaryBaseClass+MyCategary.h"
 #import "SingleInstanceObject.h"
+#import <libkern/OSAtomic.h>
+#import <pthread.h>
 
 //@interface Pet : NSObject
 //
@@ -120,7 +122,99 @@
 //    [self testUrl];
 //    [self testGif];
 //    [self testNumber];
-    [self testInstance];
+//    [self testInstance];
+//    [self testLockForOSSpinLock];
+//    [self testLockDispatchSemaphore];
+    [self testLockPThreadMutex];
+}
+
+- (void)testLockPThreadMutex {
+    static pthread_mutex_t pLock;
+    pthread_mutex_init(&pLock, NULL);
+    //thread 01
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"thread 01 准备上锁");
+        pthread_mutex_lock(&pLock);
+        sleep(3);
+        NSLog(@"thread 01");
+        pthread_mutex_unlock(&pLock);
+    });
+    
+    //thread 02
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"thread 02 准备上锁");
+        pthread_mutex_lock(&pLock);
+        NSLog(@"thread 02");
+        pthread_mutex_unlock(&pLock);
+    });
+}
+
+- (void)testLockDispatchSemaphore {
+//    dispatch_semaphore_t signal = dispatch_semaphore_create(1);
+//    dispatch_time_t overTime = dispatch_time(DISPATCH_TIME_NOW, 3.0f *NSEC_PER_SEC);
+//    //thread 01
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSLog(@"thread 01 等待ing");
+//        dispatch_semaphore_wait(signal, overTime);
+//        NSLog(@"thread 01");
+//
+//        dispatch_semaphore_signal(signal);
+//        NSLog(@"thread 01 发送信号");
+//        NSLog(@"-------------------------------");
+//    });
+//
+//    //thread 02
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSLog(@"thread 02 等待ing");
+//        dispatch_semaphore_wait(signal, overTime);
+//        NSLog(@"thread 02");
+//        dispatch_semaphore_signal(signal);
+//        NSLog(@"thread 02 发信号了");
+//    });
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+//    __block int j = 0;
+//    dispatch_async(queue, ^{
+//        j = 100;
+//        dispatch_semaphore_signal(semaphore);
+//    });
+//
+//    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//    NSLog(@"finish j = %d", j);
+    for (int i = 0; i < 100; i++) {
+        dispatch_async(queue, ^{
+            // 相当于加锁
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            NSLog(@"i = %d semaphore = %@", i, semaphore);
+            // 相当于解锁
+            dispatch_semaphore_signal(semaphore);
+        });
+    }
+}
+
+- (void)testLockForOSSpinLock {
+    __block OSSpinLock osLock = OS_SPINLOCK_INIT;
+    //thread 01
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"thread 01 准备上锁");
+        OSSpinLockLock(&osLock);
+        sleep(4);
+        NSLog(@"thread 01");
+        OSSpinLockUnlock(&osLock);
+        NSLog(@"thread 01解锁成功");
+        NSLog(@"---------------------");
+    });
+    
+    //thread 02
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"thread 02 准备上锁");
+        OSSpinLockLock(&osLock);
+        NSLog(@"thread 02");
+        OSSpinLockUnlock(&osLock);
+        NSLog(@"thread 02 解锁成功");
+    });
+    
 }
 
 - (void)testInstance {
