@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */; };
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
+		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
+		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
 		763E22A721101069002AEB49 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E22A621101069002AEB49 /* Test.swift */; };
 		764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771D4204EA8DC00149AC3 /* VBViewController.m */; };
 		764771DB204EA90600149AC3 /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771DA204EA90600149AC3 /* VCViewController.m */; };
@@ -23,6 +24,7 @@
 		76DC8436201044FB00E7963E /* testFile02 in Resources */ = {isa = PBXBuildFile; fileRef = 76DC8435201044FB00E7963E /* testFile02 */; };
 		76DC843820108B7100E7963E /* testXML.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76DC843720108B7100E7963E /* testXML.plist */; };
 		76DC843B201187CC00E7963E /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DC843A201187CC00E7963E /* AssetManager.m */; };
+		76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E8FA6021BE70750092B4A7 /* EOCNetworkFetcher.m */; };
 		76EB6B8F2074B0FB00DD9D86 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 76EB6B8E2074B0FB00DD9D86 /* index.html */; };
 		76FE35FE20285D1000369EDF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE35FD20285D1000369EDF /* Dog.m */; };
 		76FE3603202C21B000369EDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE3602202C21B000369EDF /* SecondViewController.m */; };
@@ -54,11 +56,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7601CE02201D6C37000139CF /* EOCNetworkFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCNetworkFetcher.h; sourceTree = "<group>"; };
-		7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCNetworkFetcher.m; sourceTree = "<group>"; };
-		7601CE06201D6D14000139CF /* ECONetworkFetcherDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECONetworkFetcherDelegate.h; sourceTree = "<group>"; };
 		7607109C2009AB0A0068B442 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7607109D2009AB0A0068B442 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		7635B0A021B782EA00BCA8E6 /* EOCBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCBaseClass.h; sourceTree = "<group>"; };
+		7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCBaseClass.m; sourceTree = "<group>"; };
+		7635B0A321B7830800BCA8E6 /* EOCSubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCSubClass.h; sourceTree = "<group>"; };
+		7635B0A421B7830800BCA8E6 /* EOCSubClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCSubClass.m; sourceTree = "<group>"; };
 		763D03652050E13A009A53E9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		763E22A521101069002AEB49 /* runLoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "runLoop-Bridging-Header.h"; sourceTree = "<group>"; };
 		763E22A621101069002AEB49 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 		76DC843720108B7100E7963E /* testXML.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = testXML.plist; sourceTree = "<group>"; };
 		76DC8439201187CC00E7963E /* AssetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssetManager.h; sourceTree = "<group>"; };
 		76DC843A201187CC00E7963E /* AssetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssetManager.m; sourceTree = "<group>"; };
+		76E8FA5F21BE70750092B4A7 /* EOCNetworkFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCNetworkFetcher.h; sourceTree = "<group>"; };
+		76E8FA6021BE70750092B4A7 /* EOCNetworkFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCNetworkFetcher.m; sourceTree = "<group>"; };
 		76EB6B8E2074B0FB00DD9D86 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		76FE35FC20285D1000369EDF /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		76FE35FD20285D1000369EDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
@@ -133,6 +138,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7635B09F21B782B200BCA8E6 /* 52method */ = {
+			isa = PBXGroup;
+			children = (
+				7635B0A021B782EA00BCA8E6 /* EOCBaseClass.h */,
+				7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */,
+				7635B0A321B7830800BCA8E6 /* EOCSubClass.h */,
+				7635B0A421B7830800BCA8E6 /* EOCSubClass.m */,
+				76E8FA5F21BE70750092B4A7 /* EOCNetworkFetcher.h */,
+				76E8FA6021BE70750092B4A7 /* EOCNetworkFetcher.m */,
+			);
+			name = 52method;
+			sourceTree = "<group>";
+		};
 		763D03642050E13A009A53E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +183,7 @@
 		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
 			isa = PBXGroup;
 			children = (
+				7635B09F21B782B200BCA8E6 /* 52method */,
 				768EF803219BC2E4006C3197 /* SingleInstanceObject.h */,
 				768EF804219BC2E4006C3197 /* SingleInstanceObject.m */,
 				EAC2B7E91EF9166500AC8029 /* AppDelegate.h */,
@@ -185,9 +204,6 @@
 				76DC8435201044FB00E7963E /* testFile02 */,
 				76DC8439201187CC00E7963E /* AssetManager.h */,
 				76DC843A201187CC00E7963E /* AssetManager.m */,
-				7601CE02201D6C37000139CF /* EOCNetworkFetcher.h */,
-				7601CE03201D6C37000139CF /* EOCNetworkFetcher.m */,
-				7601CE06201D6D14000139CF /* ECONetworkFetcherDelegate.h */,
 				7677378A20215B42002B75DD /* Person+RunPerson.h */,
 				7677378B20215B42002B75DD /* Person+RunPerson.m */,
 				7677378D20232541002B75DD /* LYPerson.h */,
@@ -306,8 +322,9 @@
 				TargetAttributes = {
 					EAC2B7E21EF9166500AC8029 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = F5TDEPFG3H;
 						LastSwiftMigration = 0940;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					EAC2B7FB1EF9166500AC8029 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -380,12 +397,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */,
-				7601CE04201D6C37000139CF /* EOCNetworkFetcher.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
+				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
+				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
 				763E22A721101069002AEB49 /* Test.swift in Sources */,
 				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
+				7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
 				764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */,
@@ -548,8 +567,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F5TDEPFG3H;
 				INFOPLIST_FILE = runLoop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -567,8 +587,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F5TDEPFG3H;
 				INFOPLIST_FILE = runLoop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

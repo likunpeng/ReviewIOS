@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#define LOCK_SCREEN_NOTIFY @"LockScreenNotify"
 
 @interface AppDelegate ()
 
@@ -22,10 +23,27 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor blueColor];
     [self.window makeKeyAndVisible];
+    
+//    ViewController *vc = [[ViewController alloc] init];
     ViewController *vc = [[ViewController alloc] init];
+    
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController  = nc;
     return YES;
+}
+
+
+- (void) applicationProtectedDataDidBecomeAvailable:(UIApplication *)application
+{
+//    [[NSNotificationCenter defaultCenter] postNotificationName:UN_LOCK_SCREEN_NOTIFY
+//                                                        object:nil];
+    NSLog(@"UnLock screen.");
+}
+
+- (void)applicationProtectedDataWillBecomeUnavailable:(UIApplication *)application {
+//    [[NSNotificationCenter defaultCenter] postNotificationName:UN_LOCK_SCREEN_NOTIFY
+//                                                        object:nil];
+    NSLog(@"Lock screen.");
 }
 
 

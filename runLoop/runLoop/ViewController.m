@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Person.h"
 #import "Student.h"
-#import "EOCNetworkFetcher.h"
 #import "Person+RunPerson.h"
 #import "LYPerson.h"
 #import "Dog.h"
@@ -23,6 +22,7 @@
 #import "SingleInstanceObject.h"
 #import <libkern/OSAtomic.h>
 #import <pthread.h>
+#import "EOCSubClass.h"
 
 //@interface Pet : NSObject
 //
@@ -55,11 +55,34 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSString *dff;
 @end
+#define UN_LOCK_SCREEN_NOTIFY @"UnLockScreenNotify"
 
 @implementation ViewController
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        NSLog(@"initWithNibName");
+//    }
+//    return self;
+//}
+
+//- (instancetype)initWithCoder:(NSCoder *)coder
+//{
+//    self = [super initWithCoder:coder];
+//    if (self) {
+//        NSLog(@"initWithCoder");
+//    }
+//    return self;
+//}
+
+- (void)loadView {
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 200)];
+    NSLog(@"loadview !!");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"come VC !!!");
 //    NSMutableString *test01 = [NSMutableString stringWithFormat:@"可变字符串"];
 //    _dff = test01;
     
@@ -125,8 +148,84 @@
 //    [self testInstance];
 //    [self testLockForOSSpinLock];
 //    [self testLockDispatchSemaphore];
-    [self testLockPThreadMutex];
+//    [self testLockPThreadMutex];
+//    [self test51Method];
+//    [self testCollectionArray];
+//    [self testBlock03];
+//    [self testDispatchGroup];
+    
 }
+
+
+
+- (void)testDispatchGroup {
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.net.queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group, concurrentQueue, ^{
+        [NSThread sleepForTimeInterval:2.0];
+        NSLog(@"first download task success! %@", [NSThread currentThread]);
+    });
+    
+    dispatch_group_async(group, concurrentQueue, ^{
+        [NSThread sleepForTimeInterval:1.0];
+        NSLog(@"second download task success! %@", [NSThread currentThread]);
+    });
+    
+    dispatch_group_notify(group, concurrentQueue, ^{
+        NSLog(@"begin task three ! %@", [NSThread currentThread]);
+    });
+    NSLog(@"aaaaa");
+}
+
+- (void)testDispatchGroup02 {
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("con.net.queue02", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_enter(group);
+    dispatch_async(concurrentQueue, ^{
+        [NSThread sleepForTimeInterval:2.0];
+        NSLog(@"first download task success! %@", [NSThread currentThread]);
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(concurrentQueue, ^{
+        [NSThread sleepForTimeInterval:1.0];
+        NSLog(@"second download task success! %@", [NSThread currentThread]);
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"begin task three ! %@", [NSThread currentThread]);
+        dispatch_group_leave(group);
+    });
+}
+
+
+
+- (void)testBlock03 {
+    NSArray *array = @[@0,@1,@2,@3,@4,@5];
+    __block NSInteger count = 0;
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj compare:@2] == NSOrderedAscending) {
+            count++;
+        }
+    }];
+    NSLog(@"count = %ld", count);
+}
+
+- (void)testCollectionArray {
+    NSArray *array = @[@1,@2,@3,@4,@5];
+    CFArrayRef aCFArray = (__bridge CFArrayRef)array;
+    NSLog(@"size of array = %ld",CFArrayGetCount(aCFArray));
+    NSLog(@"arrat = %@", aCFArray);
+    
+}
+
+- (void)test51Method {
+//    EOCSubClass *subClass = [[EOCSubClass alloc] init];
+}
+
 
 - (void)testLockPThreadMutex {
     static pthread_mutex_t pLock;
@@ -657,8 +756,8 @@
 }
 
 - (void)testDelegate {
-    EOCNetworkFetcher *fetcher = [[EOCNetworkFetcher alloc] init];
-    [fetcher customCreate];
+//    EOCNetworkFetcher *fetcher = [[EOCNetworkFetcher alloc] init];
+//    [fetcher customCreate];
 //    [fetcher.delegate networkFetcher:fetcher didReveiceData:nil];
     
 }
