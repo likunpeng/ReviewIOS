@@ -75,11 +75,63 @@
 
 @end
 
+@interface Target : NSObject
+{
+   int age;
+}
+
+- (int)age;
+- (void)setAge:(int)theAge;
+@end
+
+@implementation Target
+
+- (instancetype)init {
+    self  = [super init];
+    if (nil != self) {
+        age = 10;
+    }
+    return self;
+}
+
+- (int)age {
+    return age;
+}
+
+- (void)setAge:(int)theAge {
+    [self willChangeValueForKey:@"age"];
+    age = theAge;
+    [self didChangeValueForKey:@"age"];
+}
+
++ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+    if ([key isEqualToString:@"age"]) {
+        return NO;
+    }
+    return [super automaticallyNotifiesObserversForKey:key];
+}
+
+
+@end
+
 
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         //--------------------------start----------------------------------------
+        //--------------------------end------------------------------------------
+        //--------------------------start----------------------------------------
+        //--------------------------end------------------------------------------
+        //--------------------------start----------------------------------------
+        //--------------------------end------------------------------------------
+        //--------------------------start----------------------------------------
+        //--------------------------end------------------------------------------
+        //--------------------------start----------------------------------------
+        
+        //--------------------------end------------------------------------------
+        
+        //--------------------------start----------------------------------------
+        /*
         NSArray *arrStr = @[@"englist", @"franch", @"chinese"];
         NSArray *arrCapStr = [arrStr valueForKey:@"capitalizedString"];
         
@@ -90,7 +142,7 @@ int main(int argc, char * argv[]) {
         NSArray *arrCapStrLength = [arrCapStr valueForKeyPath:@"capitalizedString.length"];
         [arrCapStrLength enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@" length = %@", obj);
-        }];
+        }];*/
         //--------------------------end------------------------------------------
         
         
