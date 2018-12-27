@@ -73,7 +73,7 @@ int main(int argc, char * argv[]) {
         book1.price = 10;
         Book *book2 = [Book new];
         book2.name = @"Time History";
-        book2.price = 20;
+        book2.price = 30;
         Book *book3 = [Book new];
         book3.name = @"Wrong Hole";
         book3.price = 30;
@@ -98,6 +98,18 @@ int main(int argc, char * argv[]) {
         
         NSNumber *max = [arrBooks valueForKeyPath:@"@max.price"];
         NSLog(@"max = %f", max.floatValue);
+        
+        //练习下集合的运算
+        NSLog(@"distinctUnionOfObjects");
+        NSArray* arrDistinct = [arrBooks valueForKeyPath:@"@distinctUnionOfObjects.price"];
+        for (NSNumber *price in arrDistinct) {
+            NSLog(@"%f",price.floatValue);
+        }
+        NSLog(@"unionOfObjects");
+        NSArray* arrUnion = [arrBooks valueForKeyPath:@"@unionOfObjects.price"];
+        for (NSNumber *price in arrUnion) {
+            NSLog(@"%f",price.floatValue);
+        }
 //        Test *test = [[Test alloc] init];
 //        [test setValue:@"xiaoming" forKey:@"name"];
 //        NSLog(@"name = %@", [test valueForKey:@"name"]);
