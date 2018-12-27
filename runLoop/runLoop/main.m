@@ -55,20 +55,60 @@
 
 @end
 
+@interface Book : NSObject
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) CGFloat price;
+@end
+
+@implementation Book
+
+@end
+
+
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        Test *test = [[Test alloc] init];
-        [test setValue:@"xiaoming" forKey:@"name"];
-        NSLog(@"name = %@", [test valueForKey:@"name"]);
+        Book *book1 = [Book new];
+        book1.name = @"The Great Gastby";
+        book1.price = 10;
+        Book *book2 = [Book new];
+        book2.name = @"Time History";
+        book2.price = 20;
+        Book *book3 = [Book new];
+        book3.name = @"Wrong Hole";
+        book3.price = 30;
         
-        NSLog(@"age = %@", [test valueForKey:@"age"]);
+        Book *book4 = [Book new];
+        book4.name = @"Wrong Hole";
+        book4.price = 40;
         
-        Test1 *test1 = [[Test1 alloc] init];
-        [test1 setValue:test forKey:@"test1"];
-        NSLog(@"name01 = %@", [test1 valueForKeyPath:@"test1.name"]);
-        [test1 setValue:@"xiaoming01" forKeyPath:@"test1.name"];
-        NSLog(@"name01 = %@", [test1 valueForKeyPath:@"test1.name"]);
+        NSArray *arrBooks = @[book1, book2, book3, book4];
+        
+        NSNumber* sum = [arrBooks valueForKeyPath:@"@sum.price"];
+        NSLog(@"sum = %f", sum.floatValue);
+        
+        NSNumber *avg = [arrBooks valueForKeyPath:@"@avg.price"];
+        NSLog(@"avg = %f", avg.floatValue);
+        
+        NSNumber *count = [arrBooks valueForKeyPath:@"@count"];
+        NSLog(@"count = %f", count.floatValue);
+        
+        NSNumber *min = [arrBooks valueForKeyPath:@"@min.price"];
+        NSLog(@"min = %f", min.floatValue);
+        
+        NSNumber *max = [arrBooks valueForKeyPath:@"@max.price"];
+        NSLog(@"max = %f", max.floatValue);
+//        Test *test = [[Test alloc] init];
+//        [test setValue:@"xiaoming" forKey:@"name"];
+//        NSLog(@"name = %@", [test valueForKey:@"name"]);
+//
+//        NSLog(@"age = %@", [test valueForKey:@"age"]);
+//
+//        Test1 *test1 = [[Test1 alloc] init];
+//        [test1 setValue:test forKey:@"test1"];
+//        NSLog(@"name01 = %@", [test1 valueForKeyPath:@"test1.name"]);
+//        [test1 setValue:@"xiaoming01" forKeyPath:@"test1.name"];
+//        NSLog(@"name01 = %@", [test1 valueForKeyPath:@"test1.name"]);
         NSLog(@"start main");
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
