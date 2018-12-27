@@ -79,7 +79,23 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
+        //--------------------------start----------------------------------------
+        NSArray *arrStr = @[@"englist", @"franch", @"chinese"];
+        NSArray *arrCapStr = [arrStr valueForKey:@"capitalizedString"];
+        
+        [arrCapStr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"str = %@", obj);
+        }];
+        
+        NSArray *arrCapStrLength = [arrCapStr valueForKeyPath:@"capitalizedString.length"];
+        [arrCapStrLength enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@" length = %@", obj);
+        }];
+        //--------------------------end------------------------------------------
+        
+        
         //------------------------------------------------------------------
+        /*
         //模型转字典
         Address *add = [[Address alloc] init];
         add.country = @"China";
@@ -95,7 +111,8 @@ int main(int argc, char * argv[]) {
         //字典转模型
         NSDictionary *modifyDict = @{@"country":@"USA", @"province":@"California", @"city":@"Los Angle"};
         [add setValuesForKeysWithDictionary:modifyDict];
-        NSLog(@"country = %@, province = %@, city = %@", add.country, add.province, add.city);
+        NSLog(@"country = %@, province = %@, city = %@", add.country, add.province, add.city);*/
+        
         //------------------------------------------------------------------
 //        Book *book1 = [Book new];
 //        book1.name = @"The Great Gastby";
