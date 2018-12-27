@@ -64,52 +64,83 @@
 
 @end
 
+@interface Address : NSObject
+@property (nonatomic, copy) NSString *country;
+@property (nonatomic, copy) NSString *province;
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *district;
+@end
+
+@implementation Address
+
+@end
+
 
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        Book *book1 = [Book new];
-        book1.name = @"The Great Gastby";
-        book1.price = 10;
-        Book *book2 = [Book new];
-        book2.name = @"Time History";
-        book2.price = 30;
-        Book *book3 = [Book new];
-        book3.name = @"Wrong Hole";
-        book3.price = 30;
+        //------------------------------------------------------------------
+        //模型转字典
+        Address *add = [[Address alloc] init];
+        add.country = @"China";
+        add.province = @"Guang Dong";
+        add.city = @"shen zhen";
+        add.district = @"Nan Shan";
         
-        Book *book4 = [Book new];
-        book4.name = @"Wrong Hole";
-        book4.price = 40;
+        NSArray *arr = @[@"country",@"province",@"city",@"district"];
         
-        NSArray *arrBooks = @[book1, book2, book3, book4];
+        NSDictionary *dict = [add dictionaryWithValuesForKeys:arr];
+        NSLog(@"dict = %@", dict);
         
-        NSNumber* sum = [arrBooks valueForKeyPath:@"@sum.price"];
-        NSLog(@"sum = %f", sum.floatValue);
-        
-        NSNumber *avg = [arrBooks valueForKeyPath:@"@avg.price"];
-        NSLog(@"avg = %f", avg.floatValue);
-        
-        NSNumber *count = [arrBooks valueForKeyPath:@"@count"];
-        NSLog(@"count = %f", count.floatValue);
-        
-        NSNumber *min = [arrBooks valueForKeyPath:@"@min.price"];
-        NSLog(@"min = %f", min.floatValue);
-        
-        NSNumber *max = [arrBooks valueForKeyPath:@"@max.price"];
-        NSLog(@"max = %f", max.floatValue);
+        //字典转模型
+        NSDictionary *modifyDict = @{@"country":@"USA", @"province":@"California", @"city":@"Los Angle"};
+        [add setValuesForKeysWithDictionary:modifyDict];
+        NSLog(@"country = %@, province = %@, city = %@", add.country, add.province, add.city);
+        //------------------------------------------------------------------
+//        Book *book1 = [Book new];
+//        book1.name = @"The Great Gastby";
+//        book1.price = 10;
+//        Book *book2 = [Book new];
+//        book2.name = @"Time History";
+//        book2.price = 30;
+//        Book *book3 = [Book new];
+//        book3.name = @"Wrong Hole";
+//        book3.price = 30;
+//
+//        Book *book4 = [Book new];
+//        book4.name = @"Wrong Hole";
+//        book4.price = 40;
+//
+//        NSArray *arrBooks = @[book1, book2, book3, book4];
+//
+//        NSNumber* sum = [arrBooks valueForKeyPath:@"@sum.price"];
+//        NSLog(@"sum = %f", sum.floatValue);
+//
+//        NSNumber *avg = [arrBooks valueForKeyPath:@"@avg.price"];
+//        NSLog(@"avg = %f", avg.floatValue);
+//
+//        NSNumber *count = [arrBooks valueForKeyPath:@"@count"];
+//        NSLog(@"count = %f", count.floatValue);
+//
+//        NSNumber *min = [arrBooks valueForKeyPath:@"@min.price"];
+//        NSLog(@"min = %f", min.floatValue);
+//
+//        NSNumber *max = [arrBooks valueForKeyPath:@"@max.price"];
+//        NSLog(@"max = %f", max.floatValue);
         
         //练习下集合的运算
-        NSLog(@"distinctUnionOfObjects");
-        NSArray* arrDistinct = [arrBooks valueForKeyPath:@"@distinctUnionOfObjects.price"];
-        for (NSNumber *price in arrDistinct) {
-            NSLog(@"%f",price.floatValue);
-        }
-        NSLog(@"unionOfObjects");
-        NSArray* arrUnion = [arrBooks valueForKeyPath:@"@unionOfObjects.price"];
-        for (NSNumber *price in arrUnion) {
-            NSLog(@"%f",price.floatValue);
-        }
+//        NSLog(@"distinctUnionOfObjects");
+//        NSArray* arrDistinct = [arrBooks valueForKeyPath:@"@distinctUnionOfObjects.price"];
+//        for (NSNumber *price in arrDistinct) {
+//            NSLog(@"%f",price.floatValue);
+//        }
+//        NSLog(@"unionOfObjects");
+//        NSArray* arrUnion = [arrBooks valueForKeyPath:@"@unionOfObjects.price"];
+//        for (NSNumber *price in arrUnion) {
+//            NSLog(@"%f",price.floatValue);
+//        }
+        
+        
 //        Test *test = [[Test alloc] init];
 //        [test setValue:@"xiaoming" forKey:@"name"];
 //        NSLog(@"name = %@", [test valueForKey:@"name"]);
