@@ -25,6 +25,9 @@ NSString *personName = @"abc";
 + (void)testStaticMethod {
     NSLog(@"hhh");
 }
+- (void)speak {
+    NSLog(@"speak");
+}
 
 #pragma mark personProtocol
 - (void)eat {

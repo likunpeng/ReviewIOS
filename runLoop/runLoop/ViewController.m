@@ -154,7 +154,24 @@
 //    [self testBlock03];
 //    [self testDispatchGroup];
     
+//    [self testSpeak];
+    [self testMulToNOMul];
 }
+
+- (void)testMulToNOMul {
+    NSString *str = [NSString stringWithFormat:@"hhhh"];
+    NSLog(@"str = %p", str);
+//    NSMutableString *str1 = [NSMutableString stringWithFormat:@"llllll"];
+//    str = str1;
+//    str = @"aaa";
+//    NSLog(@"str = %@", str);
+}
+
+//- (void)testSpeak {
+//    id cls = [Person class];
+//    void *obj = &cls;
+////    [(__bridge id)obj speak];
+//}
 
 
 

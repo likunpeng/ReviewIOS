@@ -76,49 +76,91 @@
 @end
 
 @interface Target : NSObject
-{
-   int age;
-}
+@property (nonatomic, copy) NSString *name;
 
 - (int)age;
 - (void)setAge:(int)theAge;
 @end
 
-@implementation Target
+//@implementation Target
 
-- (instancetype)init {
-    self  = [super init];
-    if (nil != self) {
-        age = 10;
+//- (instancetype)init {
+//    self  = [super init];
+//    if (nil != self) {
+//        age = 10;
+//    }
+//    return self;
+//}
+
+//- (int)age {
+//    return age;
+//}
+//
+//- (void)setAge:(int)theAge {
+//    [self willChangeValueForKey:@"age"];
+//    age = theAge;
+//    [self didChangeValueForKey:@"age"];
+//}
+
+//+ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
+//    if ([key isEqualToString:@"age"]) {
+//        return NO;
+//    }
+//    return [super automaticallyNotifiesObserversForKey:key];
+//}
+
+//- (void)speak {
+//    NSLog(@"speak name = %@", self.name);
+//}
+//@end
+
+
+@interface BaseClass : NSObject
+@property (nonatomic, copy) NSString *info;
+@end
+
+@implementation BaseClass
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.info = @"baseInfo";
     }
     return self;
 }
 
-- (int)age {
-    return age;
-}
-
-- (void)setAge:(int)theAge {
-    [self willChangeValueForKey:@"age"];
-    age = theAge;
-    [self didChangeValueForKey:@"age"];
-}
-
-+ (BOOL)automaticallyNotifiesObserversForKey:(NSString *)key {
-    if ([key isEqualToString:@"age"]) {
-        return NO;
-    }
-    return [super automaticallyNotifiesObserversForKey:key];
-}
-
-
 @end
 
+@interface SubClass : BaseClass
+@property (nonatomic, copy) NSString *subInfo;
+@end
 
+@implementation SubClass
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.info = @"subInfo";
+    }
+    return self;
+}
+
+- (void)setInfo:(NSString *)info {
+    [super setInfo:info];
+//    NSString *copyString = [NSString stringWithString:self.subInfo];
+//    NSLog(@"copyString = %@", copyString);
+}
+
+@end
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         //--------------------------start----------------------------------------
+//        id cls = [Target class];
+//        void *obj = &cls;
+//        [(__bridge id)obj speak];
         //--------------------------end------------------------------------------
         //--------------------------start----------------------------------------
         //--------------------------end------------------------------------------
@@ -127,7 +169,8 @@ int main(int argc, char * argv[]) {
         //--------------------------start----------------------------------------
         //--------------------------end------------------------------------------
         //--------------------------start----------------------------------------
-        
+            //测试不能再init里面进行调用set方法
+//        SubClass *subClass = [[SubClass alloc] init];
         //--------------------------end------------------------------------------
         
         //--------------------------start----------------------------------------
