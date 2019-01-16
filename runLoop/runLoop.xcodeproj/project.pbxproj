@@ -11,6 +11,7 @@
 		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
 		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
 		763E22A721101069002AEB49 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E22A621101069002AEB49 /* Test.swift */; };
+		764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 764244B121EF063F009252D7 /* UIImage+Addtions.m */; };
 		764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771D4204EA8DC00149AC3 /* VBViewController.m */; };
 		764771DB204EA90600149AC3 /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771DA204EA90600149AC3 /* VCViewController.m */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
@@ -65,6 +66,8 @@
 		763D03652050E13A009A53E9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		763E22A521101069002AEB49 /* runLoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "runLoop-Bridging-Header.h"; sourceTree = "<group>"; };
 		763E22A621101069002AEB49 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		764244B021EF063F009252D7 /* UIImage+Addtions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addtions.h"; sourceTree = "<group>"; };
+		764244B121EF063F009252D7 /* UIImage+Addtions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addtions.m"; sourceTree = "<group>"; };
 		764771D3204EA8DC00149AC3 /* VBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBViewController.h; sourceTree = "<group>"; };
 		764771D4204EA8DC00149AC3 /* VBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBViewController.m; sourceTree = "<group>"; };
 		764771D9204EA90600149AC3 /* VCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCViewController.h; sourceTree = "<group>"; };
@@ -159,6 +162,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		764244AC21EF05E0009252D7 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				764244B021EF063F009252D7 /* UIImage+Addtions.h */,
+				764244B121EF063F009252D7 /* UIImage+Addtions.m */,
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
 		EAC2B7DA1EF9166400AC8029 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +195,7 @@
 		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
 			isa = PBXGroup;
 			children = (
+				764244AC21EF05E0009252D7 /* Component */,
 				7635B09F21B782B200BCA8E6 /* 52method */,
 				768EF803219BC2E4006C3197 /* SingleInstanceObject.h */,
 				768EF804219BC2E4006C3197 /* SingleInstanceObject.m */,
@@ -414,6 +427,7 @@
 				769D78B620CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m in Sources */,
 				7607109E2009AB0A0068B442 /* Student.m in Sources */,
 				76FE3603202C21B000369EDF /* SecondViewController.m in Sources */,
+				764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */,
 				76B4935A2004AFAD00BF0EED /* Person.m in Sources */,
 				EAC2B7E81EF9166500AC8029 /* main.m in Sources */,
 			);

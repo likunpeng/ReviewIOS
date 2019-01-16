@@ -155,7 +155,30 @@
 //    [self testDispatchGroup];
     
 //    [self testSpeak];
-    [self testMulToNOMul];
+//    [self testMulToNOMul];
+    [self testImageView];
+
+}
+
+- (void)testImageView {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 44.0f, 100.0f, 100.0f)];
+    
+    //添加圆角 第一种方法 不过此方法会d强制core animation提前渲染屏幕的离屏绘制  而离屏绘制就会给性能带来y负面影响。
+//    imageView.layer.cornerRadius = 10.0f;
+//    imageView.layer.masksToBounds = YES;
+    
+    
+    //第二种方法使用贝塞尔曲线 裁剪图片
+    UIImage *anotherImage = [UIImage imageNamed:@"img02"];
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:10] addClip];
+    [anotherImage drawInRect:imageView.bounds];
+    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [self.view addSubview:imageView];
+    
+    
 }
 
 - (void)testMulToNOMul {
