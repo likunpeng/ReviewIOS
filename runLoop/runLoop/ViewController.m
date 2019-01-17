@@ -158,7 +158,33 @@
 //    [self testMulToNOMul];
 //    [self testImageView];
 //    [self testSync];
-    [self asyncConcurrent];
+//    [self asyncConcurrent];
+    [self syncSerial];
+    
+}
+
+- (void)syncSerial {
+    NSLog(@"current thread = %@", [NSThread currentThread]);
+    NSLog(@"current start");
+
+    for (int i = 0; i < 2; i++) {
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"1 ------- %@", [NSThread currentThread]);
+    }
+    
+    for (int i = 0; i < 2; i++) {
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"2 --------- %@", [NSThread currentThread]);
+    }
+    
+    for (int i = 0; i < 2; i++) {
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"3 --------- %@", [NSThread currentThread]);
+    }
+    
+    NSLog(@"thread end");
+               
+    
 }
 
 - (void)asyncConcurrent {
