@@ -159,9 +159,37 @@
 //    [self testImageView];
 //    [self testSync];
 //    [self asyncConcurrent];
-    [self syncSerial];
+//    [self syncSerial];
     
+    [self asyncSerial];
+}
+
+- (void)asyncSerial {
+    NSLog(@"current thread ----%@", [NSThread currentThread]);
+    NSLog(@"thread start");
+    dispatch_queue_t queue = dispatch_queue_create("com.test.lkp", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"1-------------- %@", [NSThread currentThread]);
+        }
+    });
     
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"2 ---------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"3 ------------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    NSLog(@"thread end");
 }
 
 - (void)syncSerial {
