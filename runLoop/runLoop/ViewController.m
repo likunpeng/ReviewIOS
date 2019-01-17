@@ -156,8 +156,37 @@
     
 //    [self testSpeak];
 //    [self testMulToNOMul];
-    [self testImageView];
+//    [self testImageView];
+    [self testSync];
+}
 
+- (void)testSync {
+    NSLog(@"current thread ------- %@", [NSThread currentThread]);
+    NSLog(@"syncConcurrent begin");
+    dispatch_queue_t queue = dispatch_queue_create("net.test.lkp", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_sync(queue, ^{
+        //task 01
+        for (int i = 0; i < 2;  i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"1---------%@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"2 ------ %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"3 --------- %@", [NSThread currentThread]);
+        }
+    });
+    NSLog(@"syncConcurrent end");
 }
 
 - (void)testImageView {
