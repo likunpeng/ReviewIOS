@@ -157,7 +157,35 @@
 //    [self testSpeak];
 //    [self testMulToNOMul];
 //    [self testImageView];
-    [self testSync];
+//    [self testSync];
+    [self asyncConcurrent];
+}
+
+- (void)asyncConcurrent {
+    NSLog(@"current Thread --- %@", [NSThread currentThread]);
+    NSLog(@"asyncConcurrent start");
+    dispatch_queue_t queue = dispatch_queue_create("com.test.lkp", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"1 --------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"2 ----------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"3 ---------- %@", [NSThread currentThread]);
+        }
+    });
+    NSLog(@"asyncConcurrent end");
 }
 
 - (void)testSync {
