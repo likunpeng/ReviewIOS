@@ -161,26 +161,34 @@
 //    [self asyncConcurrent];
     [self syncSerial];
     
+    
 }
 
 - (void)syncSerial {
     NSLog(@"current thread = %@", [NSThread currentThread]);
     NSLog(@"current start");
-
-    for (int i = 0; i < 2; i++) {
-        [NSThread sleepForTimeInterval:2];
-        NSLog(@"1 ------- %@", [NSThread currentThread]);
-    }
+    dispatch_queue_t queue = dispatch_queue_create("com.test.lkp", DISPATCH_QUEUE_SERIAL);
     
-    for (int i = 0; i < 2; i++) {
-        [NSThread sleepForTimeInterval:2];
-        NSLog(@"2 --------- %@", [NSThread currentThread]);
-    }
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"1 ------- %@", [NSThread currentThread]);
+        }
+    });
     
-    for (int i = 0; i < 2; i++) {
-        [NSThread sleepForTimeInterval:2];
-        NSLog(@"3 --------- %@", [NSThread currentThread]);
-    }
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"2 --------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_sync(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"3 --------- %@", [NSThread currentThread]);
+        }
+    });
     
     NSLog(@"thread end");
                
