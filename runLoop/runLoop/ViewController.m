@@ -163,7 +163,37 @@
     
 //    [self asyncSerial];
 //    [self syncMain];
-    [NSThread detachNewThreadSelector:@selector(syncMain) toTarget:self withObject:nil];
+//    [NSThread detachNewThreadSelector:@selector(syncMain) toTarget:self withObject:nil];
+    [self asyncMain];
+}
+
+- (void)asyncMain {
+    NSLog(@"current thread %@", [NSThread currentThread]);
+    NSLog(@"asyncMain begin");
+    
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"1 ------------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"2 ------------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"3 ------------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    NSLog(@"asyncMain end");
 }
 
 - (void)syncMain {
