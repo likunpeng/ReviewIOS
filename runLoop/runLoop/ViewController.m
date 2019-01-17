@@ -166,8 +166,33 @@
 //    [NSThread detachNewThreadSelector:@selector(syncMain) toTarget:self withObject:nil];
 //    [self asyncMain];
 //    [self testThreadCommunication];
-    [self testBarrier];
+//    [self testBarrier];
+//    [self testDispatchAfter];
+    [self apply];
 }
+
+- (void)apply {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    NSLog(@"apply begin");
+    dispatch_apply(6, queue, ^(size_t index) {
+        NSLog(@"%zd ---- %@", index, [NSThread currentThread]);
+    });
+    
+    NSLog(@"apply --------- end");
+}
+
+
+- (void)testDispatchAfter {
+    NSLog(@"currentThread---%@",[NSThread currentThread]);  // 打印当前线程
+    NSLog(@"asyncMain---begin");
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"after = %@", [NSThread currentThread]);
+    });
+}
+
+
+
 
 - (void)testBarrier {
     dispatch_queue_t queue = dispatch_queue_create("com.lkp.test", DISPATCH_QUEUE_CONCURRENT);
