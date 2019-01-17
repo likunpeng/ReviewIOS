@@ -165,7 +165,48 @@
 //    [self syncMain];
 //    [NSThread detachNewThreadSelector:@selector(syncMain) toTarget:self withObject:nil];
 //    [self asyncMain];
-    [self testThreadCommunication];
+//    [self testThreadCommunication];
+    [self testBarrier];
+}
+
+- (void)testBarrier {
+    dispatch_queue_t queue = dispatch_queue_create("com.lkp.test", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"1 --------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"2 --------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_barrier_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"barrier --------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"3 --------- %@", [NSThread currentThread]);
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"4 --------- %@", [NSThread currentThread]);
+        }
+    });
+    
 }
 
 - (void)testThreadCommunication {
