@@ -168,7 +168,69 @@
 //    [self testThreadCommunication];
 //    [self testBarrier];
 //    [self testDispatchAfter];
-    [self apply];
+//    [self apply];
+    
+//    [self testGroupNotify];
+    
+    [self testGroupWait];
+}
+
+- (void)testGroupWait {
+    NSLog(@"currentThread---%@",[NSThread currentThread]);  // 打印当前线程
+    NSLog(@"group---begin");
+    
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@"1---%@",[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    
+    dispatch_time_t t = dispatch_time(DISPATCH_TIME_NOW, 60);
+    dispatch_group_wait(group, t);
+    NSLog(@"group end");
+    
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@"2---%@",[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    
+    
+}
+
+- (void)testGroupNotify {
+    NSLog(@"current thread %@", [NSThread currentThread]);
+    NSLog(@"test begin");
+    
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT
+                                                        , 0), ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@"1---%@",[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    
+    
+    dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@"3---%@",[NSThread currentThread]);      // 打印当前线程
+        }
+        NSLog(@"group ---- end");
+    });
+    
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@"2---%@",[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+
 }
 
 - (void)apply {
