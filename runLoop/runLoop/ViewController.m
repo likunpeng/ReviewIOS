@@ -48,16 +48,22 @@
 //@end
 
 @interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate>
+{
+    dispatch_semaphore_t semaphoreLock;
+}
 
 @property (nonatomic, weak) UIScrollView *scroll;
 @property (nonatomic, strong) LYPerson *lyPerson;
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSString *dff;
+@property (nonatomic, assign) int ticketSurplusCount;
+
 @end
 #define UN_LOCK_SCREEN_NOTIFY @"UnLockScreenNotify"
 
 @implementation ViewController
+
 //- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 //    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 //    if (self) {
@@ -175,7 +181,65 @@
 //    [self testGroupWait];
 //    [self testGroupEnterAndLeave];
     
-    [self testGroupSemaphoreSync];
+//    [self testGroupSemaphoreSync];
+    
+    [self saleTicket];
+    
+}
+
+- (void)saleTicket {
+    NSLog(@"current thread ------- %@", [NSThread currentThread]);
+    NSLog(@"semaphore ------ begin");
+    semaphoreLock = dispatch_semaphore_create(1);
+    
+    self.ticketSurplusCount = 50;
+    
+    dispatch_queue_t queue1 = dispatch_queue_create("com.test.lkp01", DISPATCH_TARGET_QUEUE_DEFAULT);
+    
+    dispatch_queue_t queue2 = dispatch_queue_create("com.test.lkp02", DISPATCH_TARGET_QUEUE_DEFAULT);
+    
+    dispatch_queue_t queue3 = dispatch_queue_create("com.test.lkp03", DISPATCH_TARGET_QUEUE_DEFAULT);
+    
+    dispatch_queue_t queue4 = dispatch_queue_create("com.test.lkp04", DISPATCH_TARGET_QUEUE_DEFAULT);
+    
+    __weak typeof (self) weakSelf = self;
+    
+    dispatch_async(queue1, ^{
+        [weakSelf saleTicketSafe];
+    });
+    
+    dispatch_async(queue2, ^{
+        [weakSelf saleTicketSafe];
+    });
+    
+    dispatch_async(queue3, ^{
+        [weakSelf saleTicketSafe];
+    });
+    
+    dispatch_async(queue4, ^{
+        [weakSelf saleTicketSafe];
+    });
+    
+}
+
+- (void)saleTicketSafe {
+    while (YES) {
+        //相当于加锁
+        dispatch_semaphore_wait(semaphoreLock, DISPATCH_TIME_FOREVER);
+        
+        if (self.ticketSurplusCount > 0) {
+            self.ticketSurplusCount--;
+            NSLog(@"%@", [NSString stringWithFormat:@"剩余票数：%d 窗口： %@", self.ticketSurplusCount, [NSThread currentThread]]);
+            [NSThread sleepForTimeInterval:0.2];
+        } else {
+            NSLog(@"the ticket is over!!!!!!!!!!!");
+            break;
+        }
+        
+        //相当于解锁
+        dispatch_semaphore_signal(semaphoreLock);
+        
+    }
 }
 
 - (void)testGroupSemaphoreSync {
@@ -233,7 +297,6 @@
     
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     NSLog(@"group end");
-    
     
 }
 
