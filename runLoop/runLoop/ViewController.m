@@ -173,9 +173,31 @@
 //    [self testGroupNotify];
     
 //    [self testGroupWait];
-    [self testGroupEnterAndLeave];
+//    [self testGroupEnterAndLeave];
+    
+    [self testGroupSemaphoreSync];
 }
 
+- (void)testGroupSemaphoreSync {
+    NSLog(@"current thread ------- %@", [NSThread currentThread]);
+    NSLog(@"semaphore ------ begin");
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    __block int number = 0;
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"1 --------- %@", [NSThread currentThread]);
+        number = 100;
+        dispatch_semaphore_signal(semaphore);
+//        NSLog(@"hhhhh");
+    });
+//    NSLog(@"lllllllllllll");
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    NSLog(@"semaphore group end");
+    
+}
 
 - (void)testGroupEnterAndLeave {
     NSLog(@"currentThread---%@",[NSThread currentThread]);  // 打印当前线程
