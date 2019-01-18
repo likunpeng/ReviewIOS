@@ -172,8 +172,50 @@
     
 //    [self testGroupNotify];
     
-    [self testGroupWait];
+//    [self testGroupWait];
+    [self testGroupEnterAndLeave];
 }
+
+
+- (void)testGroupEnterAndLeave {
+    NSLog(@"currentThread---%@",[NSThread currentThread]);  // 打印当前线程
+    NSLog(@"group---begin");
+    
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t queue = dispatch_queue_create(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"1 ------------- %@", [NSThread currentThread]);
+        }
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(queue, ^{
+        for (int i = 0; i < 2; i++) {
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"2 -------------- %@", [NSThread currentThread]);
+        }
+        dispatch_group_leave(group);
+    });
+    
+//    dispatch_group_notify(group, queue, ^{
+//        for (int i = 0; i < 2; i++) {
+//            [NSThread sleepForTimeInterval:2];
+//            NSLog(@"3 ------------ %@", [NSThread currentThread]);
+//        }
+//        NSLog(@"group end");
+//    });
+    
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    NSLog(@"group end");
+    
+    
+}
+
+
 
 - (void)testGroupWait {
     NSLog(@"currentThread---%@",[NSThread currentThread]);  // 打印当前线程
@@ -188,7 +230,7 @@
         }
     });
     
-    dispatch_time_t t = dispatch_time(DISPATCH_TIME_NOW, 60);
+    dispatch_time_t t = dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC);
     dispatch_group_wait(group, t);
     NSLog(@"group end");
     
