@@ -9,12 +9,17 @@
 import Foundation
 
 class Person {
-     class func testClass(){
-        print("hihihi")
+    let name: String
+
+    init(name: String) {
+        self.name = name
+        print("\(name) is being initialized")
     }
-    
-    func testReturn(a:Int) -> Int {
-        return a
+
+    deinit {
+        print("\(name) is being deinitialized")
     }
+
+
     
 }

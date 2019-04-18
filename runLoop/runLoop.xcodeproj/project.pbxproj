@@ -10,7 +10,6 @@
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
 		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
 		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
-		763E22A721101069002AEB49 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E22A621101069002AEB49 /* Test.swift */; };
 		764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 764244B121EF063F009252D7 /* UIImage+Addtions.m */; };
 		764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771D4204EA8DC00149AC3 /* VBViewController.m */; };
 		764771DB204EA90600149AC3 /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771DA204EA90600149AC3 /* VCViewController.m */; };
@@ -27,6 +26,7 @@
 		76DC843B201187CC00E7963E /* AssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76DC843A201187CC00E7963E /* AssetManager.m */; };
 		76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E8FA6021BE70750092B4A7 /* EOCNetworkFetcher.m */; };
 		76EB6B8F2074B0FB00DD9D86 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 76EB6B8E2074B0FB00DD9D86 /* index.html */; };
+		76FC08502268519500A7BE38 /* TestModelWithKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FC084F2268519500A7BE38 /* TestModelWithKVC.m */; };
 		76FE35FE20285D1000369EDF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE35FD20285D1000369EDF /* Dog.m */; };
 		76FE3603202C21B000369EDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE3602202C21B000369EDF /* SecondViewController.m */; };
 		EAC2B7E81EF9166500AC8029 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7E71EF9166500AC8029 /* main.m */; };
@@ -65,7 +65,6 @@
 		7635B0A421B7830800BCA8E6 /* EOCSubClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCSubClass.m; sourceTree = "<group>"; };
 		763D03652050E13A009A53E9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		763E22A521101069002AEB49 /* runLoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "runLoop-Bridging-Header.h"; sourceTree = "<group>"; };
-		763E22A621101069002AEB49 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		764244B021EF063F009252D7 /* UIImage+Addtions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addtions.h"; sourceTree = "<group>"; };
 		764244B121EF063F009252D7 /* UIImage+Addtions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addtions.m"; sourceTree = "<group>"; };
 		764771D3204EA8DC00149AC3 /* VBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBViewController.h; sourceTree = "<group>"; };
@@ -94,6 +93,8 @@
 		76E8FA5F21BE70750092B4A7 /* EOCNetworkFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCNetworkFetcher.h; sourceTree = "<group>"; };
 		76E8FA6021BE70750092B4A7 /* EOCNetworkFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCNetworkFetcher.m; sourceTree = "<group>"; };
 		76EB6B8E2074B0FB00DD9D86 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		76FC084E2268519500A7BE38 /* TestModelWithKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModelWithKVC.h; sourceTree = "<group>"; };
+		76FC084F2268519500A7BE38 /* TestModelWithKVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestModelWithKVC.m; sourceTree = "<group>"; };
 		76FE35FC20285D1000369EDF /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		76FE35FD20285D1000369EDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		76FE3601202C21B000369EDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -236,8 +237,9 @@
 				769D78B220CE6E8800E69BE2 /* TestCategaryBaseClass.m */,
 				769D78B420CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.h */,
 				769D78B520CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m */,
-				763E22A621101069002AEB49 /* Test.swift */,
 				763E22A521101069002AEB49 /* runLoop-Bridging-Header.h */,
+				76FC084E2268519500A7BE38 /* TestModelWithKVC.h */,
+				76FC084F2268519500A7BE38 /* TestModelWithKVC.m */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -358,6 +360,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -409,13 +412,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FC08502268519500A7BE38 /* TestModelWithKVC.m in Sources */,
 				EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
-				763E22A721101069002AEB49 /* Test.swift in Sources */,
 				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
 				7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
@@ -618,7 +621,6 @@
 		EAC2B8141EF9166500AC8029 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopTests/Info.plist;
@@ -632,7 +634,6 @@
 		EAC2B8151EF9166500AC8029 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopTests/Info.plist;
@@ -646,7 +647,6 @@
 		EAC2B8171EF9166500AC8029 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -659,7 +659,6 @@
 		EAC2B8181EF9166500AC8029 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = C3GN2GN53G;
 				INFOPLIST_FILE = runLoopUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

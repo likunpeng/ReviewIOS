@@ -23,6 +23,7 @@
 #import <libkern/OSAtomic.h>
 #import <pthread.h>
 #import "EOCSubClass.h"
+#import "TestModelWithKVC.h"
 
 //@interface Pet : NSObject
 //
@@ -183,8 +184,54 @@
     
 //    [self testGroupSemaphoreSync];
     
-    [self saleTicket];
+//    [self saleTicket];
+//    [self testRoundFloorCell];
+//    NSLog(@"width = %f height = %f", [[UIScreen mainScreen] bounds].size.width,[[UIScreen mainScreen] bounds].size.height);
+
+//    [self testNilAndnil];
+
+    [self testModelKVC];
+}
+
+- (void)testModelKVC {
+    NSDictionary *dic = @{@"name": @"", @"age": @"30"};
+
+
+    TestModelWithKVC *mode = [TestModelWithKVC statusModelWithDic:dic];
+
+    NSLog(@"model = %@", [mode valueForKey:@"name"]);
+
+}
+
+//测试下nil  和 Nil的区别
+- (void)testNilAndnil {
+    personName = nil;
+    NSLog(@"start %@", personName);
+
+    personName = Nil;
+    NSLog(@"end %@", personName);
+
+    //这样测试没有测试出来
+}
+
+- (void)testRoundFloorCell {
+    float i = round(1.4f);
+    NSLog(@"i = %f", i);
     
+    float j = round(1.5f);
+    NSLog(@"j = %f", j);
+    
+    float i1 = roundf(1.5f);
+    NSLog(@"i1 = %f", i1);
+    
+    float x = ceil(-1.4f);
+    NSLog(@"x = %f", x);
+    
+    float y = ceil(-1.5f);
+    NSLog(@"y = %f", y);
+    
+    float z = ceilf(-1.5f);
+    NSLog(@"z = %f", z);
 }
 
 - (void)saleTicket {
@@ -654,7 +701,7 @@
 
 
 - (void)testDispatchGroup {
-    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.net.queue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.net.queue  ", DISPATCH_QUEUE_CONCURRENT);
     dispatch_group_t group = dispatch_group_create();
     dispatch_group_async(group, concurrentQueue, ^{
         [NSThread sleepForTimeInterval:2.0];
