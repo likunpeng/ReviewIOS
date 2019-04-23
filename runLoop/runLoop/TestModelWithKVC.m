@@ -10,6 +10,14 @@
 
 @implementation TestModelWithKVC
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _name = @"";
+    }
+
+    return self;
+}
+
 //具体实现
 + (__kindof TestModelWithKVC *)statusModelWithDic:(NSDictionary *)dic {
     TestModelWithKVC *model = [[self alloc] init];
