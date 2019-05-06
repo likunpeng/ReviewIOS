@@ -190,7 +190,30 @@
 
 //    [self testNilAndnil];
 
-    [self testModelKVC];
+//    [self testModelKVC];
+    [self testBubbleSort];
+}
+
+//测试算法
+
+- (void)testBubbleSort {
+    NSArray *arr0 = @[@2,@3,@7,@9,@3,@5,@8];
+    NSMutableArray *arr = [arr0 mutableCopy];
+
+    int times = 0;
+    for (int i = 0; i < arr.count - 1 ; i++) {
+        for (int j = 0; j < arr.count - 1- i; j++) {
+            times++;
+            if ([arr[j] intValue] > [arr[j + 1] intValue]) {
+                NSNumber *temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+        NSLog(@"i = %d, arrTemp = %@", i, arr);
+    }
+    NSLog(@"arr = %@", arr);
+    NSLog(@"times = %d", times);
 }
 
 - (void)testModelKVC {
@@ -911,8 +934,8 @@
     return UIStatusBarStyleDefault;
 }
 
-- (BOOL)prefersStatusBarHidden{
-    return YES;
+- (BOOL)prefersStatusBarHidden {
+    return NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -945,13 +968,63 @@
 - (void)testTableView {
 //    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
 //    [self.view addSubview:view];
+    self.title = @"测试";
+//    self.navigationController.navigationBar.hidden = YES;
+
+    CGRect screenBounds = [UIScreen mainScreen].bounds;
+
+
+    UIImage *img = [self createImageWithColor:[UIColor redColor] size:CGSizeMake(screenBounds.size.width, screenBounds.size.height)];
+//    [self.navigationController.navigationBar setBackgroundImage: img forBarMetrics:UIBarMetricsDefault];
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"img02"] style:UIBarButtonItemStyleDone target:self action:@selector(doneTextAction:)];
+//    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
+//    self.navigationController.navigationBar
+//    self.navigationController.navigationBar.translucent = NO;
+
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, 100)];
+    imgView.image = [UIImage imageNamed:@"img02"];
+    [self.view addSubview:imgView];
+
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStyleGrouped];
     _tableView.backgroundColor = [UIColor greenColor];
+    _tableView.delegate  = self;
+    _tableView.dataSource = self;
     [self.view addSubview:_tableView];
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 300)];
-    btn.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(customClick:) forControlEvents:UIControlEventTouchUpInside];
+
+    if (@available(iOS 11.0, *)) {
+        NSLog(@"SafeAreaInsets.top = %f", self.tableView.safeAreaInsets.top);
+        NSLog(@"SafeAreaInsets.right = %f", self.tableView.safeAreaInsets.right);
+        NSLog(@"SafeAreaInsets.bottom = %f", self.tableView.safeAreaInsets.bottom);
+        NSLog(@"SafeAreaInsets.left = %f", self.tableView.safeAreaInsets.left);
+
+        NSLog(@"adjustedContentInset.top = %f", self.tableView.adjustedContentInset.top);
+        NSLog(@"adjustedContentInset.right = %f", self.tableView.adjustedContentInset.right);
+        NSLog(@"adjustedContentInset.bottom = %f", self.tableView.adjustedContentInset.bottom);
+        NSLog(@"adjustedContentInset.left = %f", self.tableView.adjustedContentInset.left);
+    } else {
+        // Fallback on earlier versions
+    }
+
+//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 300)];
+//    btn.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:btn];
+//    [btn addTarget:self action:@selector(customClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)doneTextAction:(id)sender {
+    NSLog(@"---------------------");
+}
+
+- (UIImage *)createImageWithColor:(UIColor *)color size:(CGSize)size {
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef content = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(content, [color CGColor]);
+    CGContextFillRect(content, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    return img;
 }
 
 - (void)customClick:(UIButton*)sender {
@@ -1537,9 +1610,11 @@
     return result;
 }
 
+#pragma mark UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 50;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"abc"];
@@ -1548,6 +1623,26 @@
     }
     cell.textLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 0.01f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return nil;
 }
 
 - (void)test {

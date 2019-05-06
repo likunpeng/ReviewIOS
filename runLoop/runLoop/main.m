@@ -264,7 +264,15 @@ int main(int argc, char * argv[]) {
 //        NSLog(@"name01 = %@", [test1 valueForKeyPath:@"test1.name"]);
 //        [test1 setValue:@"xiaoming01" forKeyPath:@"test1.name"];
 //        NSLog(@"name01 = %@", [test1 valueForKeyPath:@"test1.name"]);
-        NSLog(@"start main");
+//        NSLog(@"start main");
+//        int age = 10;
+//        void (^block)(int, int) = ^(int a, int b) {
+//            NSLog(@"this is block, a = %d, b = %d", a, b);
+//            NSLog(@"this is block, age = %d", age);
+//        };
+//        block(3, 5);
+
+        
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

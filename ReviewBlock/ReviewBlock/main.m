@@ -8,20 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-
+//https://juejin.im/post/5b0181e15188254270643e88 very good article
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSString *serchText = @"hi";
-        NSRegularExpression *regu = [NSRegularExpression regularExpressionWithPattern:@"\\bhi\\b" options:NSRegularExpressionCaseInsensitive error:NULL];
-        NSTextCheckingResult *result = [regu firstMatchInString:serchText options:0 range:NSMakeRange(0, [serchText length])];
-        if (result) {
-            NSLog(@"success");
-        } else {
-            NSLog(@"fail oh no!");
-        }
-        
+//        NSString *serchText = @"hi";
+//        NSRegularExpression *regu = [NSRegularExpression regularExpressionWithPattern:@"\\bhi\\b" options:NSRegularExpressionCaseInsensitive error:NULL];
+//        NSTextCheckingResult *result = [regu firstMatchInString:serchText options:0 range:NSMakeRange(0, [serchText length])];
+//        if (result) {
+//            NSLog(@"success");
+//        } else {
+//            NSLog(@"fail oh no!");
+//        }
+
+
+
     }
     
     
