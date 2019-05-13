@@ -191,7 +191,8 @@
 //    [self testNilAndnil];
 
 //    [self testModelKVC];
-    [self testBubbleSort];
+//    [self testBubbleSort];
+    [self testInsertionSort];
 }
 
 //测试算法
@@ -210,6 +211,30 @@
                 arr[j + 1] = temp;
             }
         }
+        NSLog(@"i = %d, arrTemp = %@", i, arr);
+    }
+    NSLog(@"arr = %@", arr);
+    NSLog(@"times = %d", times);
+}
+
+- (void)testInsertionSort {
+    NSArray *arr0 = @[@2,@3,@7,@9,@3,@5,@8];
+    NSMutableArray *arr = [arr0 mutableCopy];
+
+    long len = arr.count;
+    int preIndex;
+    NSNumber *current;
+
+    int times = 0;
+    for (int i = 1; i < len ; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while (preIndex >= 0 && [arr[preIndex] intValue] > [current intValue] ) {
+            arr[preIndex + 1] = arr[preIndex];
+            preIndex--;
+            times++;
+        }
+        arr[preIndex + 1] = current;
         NSLog(@"i = %d, arrTemp = %@", i, arr);
     }
     NSLog(@"arr = %@", arr);
