@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3842FCBC810AA43EA43580FB /* libPods-runLoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D67C8C87261CE971CDBB82D /* libPods-runLoop.a */; };
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
 		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
 		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
 		764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 764244B121EF063F009252D7 /* UIImage+Addtions.m */; };
 		764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771D4204EA8DC00149AC3 /* VBViewController.m */; };
 		764771DB204EA90600149AC3 /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771DA204EA90600149AC3 /* VCViewController.m */; };
+		764A72DA228A65C500A6DDE4 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D8228A65C500A6DDE4 /* BaseView.m */; };
+		764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
@@ -57,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D67C8C87261CE971CDBB82D /* libPods-runLoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-runLoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7607109C2009AB0A0068B442 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7607109D2009AB0A0068B442 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		7635B0A021B782EA00BCA8E6 /* EOCBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCBaseClass.h; sourceTree = "<group>"; };
@@ -71,6 +75,10 @@
 		764771D4204EA8DC00149AC3 /* VBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBViewController.m; sourceTree = "<group>"; };
 		764771D9204EA90600149AC3 /* VCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCViewController.h; sourceTree = "<group>"; };
 		764771DA204EA90600149AC3 /* VCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCViewController.m; sourceTree = "<group>"; };
+		764A72D6228A65C500A6DDE4 /* BRStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRStringPickerView.h; sourceTree = "<group>"; };
+		764A72D7228A65C500A6DDE4 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		764A72D8228A65C500A6DDE4 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
 		765D9B4D206C83FD00422982 /* TestValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueViewController.h; sourceTree = "<group>"; };
 		765D9B4E206C83FD00422982 /* TestValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueViewController.m; sourceTree = "<group>"; };
 		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
@@ -99,6 +107,8 @@
 		76FE35FD20285D1000369EDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		76FE3601202C21B000369EDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		76FE3602202C21B000369EDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9FD0E3E40E0420B7DBF69E17 /* Pods-runLoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runLoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-runLoop/Pods-runLoop.release.xcconfig"; sourceTree = "<group>"; };
+		E15A767FDF5F62B8913D17C2 /* Pods-runLoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runLoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-runLoop/Pods-runLoop.debug.xcconfig"; sourceTree = "<group>"; };
 		EAC2B7E31EF9166500AC8029 /* runLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC2B7E71EF9166500AC8029 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EAC2B7E91EF9166500AC8029 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3842FCBC810AA43EA43580FB /* libPods-runLoop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +153,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E07244BF25944062287868D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E15A767FDF5F62B8913D17C2 /* Pods-runLoop.debug.xcconfig */,
+				9FD0E3E40E0420B7DBF69E17 /* Pods-runLoop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7635B09F21B782B200BCA8E6 /* 52method */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				763D03652050E13A009A53E9 /* libsqlite3.tbd */,
+				3D67C8C87261CE971CDBB82D /* libPods-runLoop.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,6 +193,17 @@
 			name = Component;
 			sourceTree = "<group>";
 		};
+		764A72D5228A655800A6DDE4 /* CustomPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				764A72D7228A65C500A6DDE4 /* BaseView.h */,
+				764A72D8228A65C500A6DDE4 /* BaseView.m */,
+				764A72D6228A65C500A6DDE4 /* BRStringPickerView.h */,
+				764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */,
+			);
+			path = CustomPickerView;
+			sourceTree = "<group>";
+		};
 		EAC2B7DA1EF9166400AC8029 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +212,7 @@
 				EAC2B80A1EF9166500AC8029 /* runLoopUITests */,
 				EAC2B7E41EF9166500AC8029 /* Products */,
 				763D03642050E13A009A53E9 /* Frameworks */,
+				5E07244BF25944062287868D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +229,7 @@
 		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
 			isa = PBXGroup;
 			children = (
+				764A72D5228A655800A6DDE4 /* CustomPickerView */,
 				764244AC21EF05E0009252D7 /* Component */,
 				7635B09F21B782B200BCA8E6 /* 52method */,
 				768EF803219BC2E4006C3197 /* SingleInstanceObject.h */,
@@ -277,6 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAC2B8101EF9166500AC8029 /* Build configuration list for PBXNativeTarget "runLoop" */;
 			buildPhases = (
+				EFBC3A80C8F87CA594B3CE9F /* [CP] Check Pods Manifest.lock */,
 				EAC2B7DF1EF9166500AC8029 /* Sources */,
 				EAC2B7E01EF9166500AC8029 /* Frameworks */,
 				EAC2B7E11EF9166500AC8029 /* Resources */,
@@ -407,6 +442,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EFBC3A80C8F87CA594B3CE9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-runLoop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EAC2B7DF1EF9166500AC8029 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -418,11 +474,13 @@
 				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
+				764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
 				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
 				7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
+				764A72DA228A65C500A6DDE4 /* BaseView.m in Sources */,
 				764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */,
 				EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */,
 				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
@@ -581,6 +639,7 @@
 		};
 		EAC2B8111EF9166500AC8029 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E15A767FDF5F62B8913D17C2 /* Pods-runLoop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -601,6 +660,7 @@
 		};
 		EAC2B8121EF9166500AC8029 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FD0E3E40E0420B7DBF69E17 /* Pods-runLoop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

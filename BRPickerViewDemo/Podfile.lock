@@ -1,0 +1,12 @@
+PODS:
+  - BRPickerView (0.0.1)
+
+DEPENDENCIES:
+  - BRPickerView (~> 0.0.1)
+
+SPEC CHECKSUMS:
+  BRPickerView: fc8f3eeefdd3d723dfe9d3087c2db57c9ab63b8b
+
+PODFILE CHECKSUM: 8cc9dc9e89d6cbe772d6e5a809ac2cc688c704d5
+
+COCOAPODS: 1.1.0.beta.1

@@ -24,6 +24,8 @@
 #import <pthread.h>
 #import "EOCSubClass.h"
 #import "TestModelWithKVC.h"
+#import "BRStringPickerView.h"
+#import "Masonry.h"
 
 //@interface Pet : NSObject
 //
@@ -192,11 +194,25 @@
 
 //    [self testModelKVC];
 //    [self testBubbleSort];
-    [self testInsertionSort];
+//    [self testInsertionSort];
+    [self testPickView];
+}
+
+- (void)testPickView {
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+    [btn setTitle:@"pickView" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(pickViewClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)pickViewClick:(id)sender {
+    [BRStringPickerView showStringPickerWithTitle:@"地区" dataSource:@[@"中国", @"美国", @"日本", @"韩国", @"英国", @"德国"] defaultSelValue:@"中国" isAutoSelect:YES resultBlock:^(id selectValue) {
+        NSLog(@"selectValue = %@", selectValue);
+    }];
 }
 
 //测试算法
-
 - (void)testBubbleSort {
     NSArray *arr0 = @[@2,@3,@7,@9,@3,@5,@8];
     NSMutableArray *arr = [arr0 mutableCopy];

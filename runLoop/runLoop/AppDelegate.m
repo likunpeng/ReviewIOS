@@ -37,8 +37,7 @@
 }
 
 
-- (void) applicationProtectedDataDidBecomeAvailable:(UIApplication *)application
-{
+- (void) applicationProtectedDataDidBecomeAvailable:(UIApplication *)application {
 //    [[NSNotificationCenter defaultCenter] postNotificationName:UN_LOCK_SCREEN_NOTIFY
 //                                                        object:nil];
     NSLog(@"UnLock screen.");
