@@ -10,6 +10,7 @@
 
 @interface TestCategaryBaseClass : NSObject
 
+
 - (void)baseMethod;
 
 @end

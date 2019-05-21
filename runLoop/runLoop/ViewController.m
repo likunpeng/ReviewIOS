@@ -26,6 +26,7 @@
 #import "TestModelWithKVC.h"
 #import "BRStringPickerView.h"
 #import "Masonry.h"
+#import "TestAVPlayerViewController.h"
 
 //@interface Pet : NSObject
 //
@@ -49,6 +50,12 @@
 //    NSLog(@"%@ %s", self, __FUNCTION__);
 //}
 //@end
+
+//#ifdef DEBUG
+//#define PPLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+//#else
+//#define PPLog(...)
+//#endif
 
 @interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate>
 {
@@ -195,7 +202,85 @@
 //    [self testModelKVC];
 //    [self testBubbleSort];
 //    [self testInsertionSort];
-    [self testPickView];
+
+//    [self testPickView];
+//    [self testAVPlayer];
+//    [self testNetWorking];
+}
+
+- (void)testNetWorking {
+    /**
+     设置网络请求参数的格式:默认为二进制格式
+     PPRequestSerializerJSON(JSON格式),
+     PPRequestSerializerHTTP(二进制格式)
+
+     设置方式 : [PPNetworkHelper setRequestSerializer:PPRequestSerializerHTTP];
+     */
+
+    /**
+     设置服务器响应数据格式:默认为JSON格式
+     PPResponseSerializerJSON(JSON格式),
+     PPResponseSerializerHTTP(二进制格式)
+
+     设置方式 : [PPNetworkHelper setResponseSerializer:PPResponseSerializerJSON];
+     */
+
+    /**
+     设置请求头 : [PPNetworkHelper setValue:@"value" forHTTPHeaderField:@"header"];
+     */
+
+    // 开启日志打印
+//    [PPNetworkHelper openLog];
+
+    // 获取网络缓存大小
+//    PPLog(@"网络缓存大小cache = %fKB",[PPNetworkCache getAllHttpCacheSize]/1024.f);
+
+    // 清理缓存 [PPNetworkCache removeAllHttpCache];
+
+    // 实时监测网络状态
+//    [self monitorNetworkStatus];
+
+    /*
+     * 一次性获取当前网络状态
+     这里延时0.1s再执行是因为程序刚刚启动,可能相关的网络服务还没有初始化完成(也有可能是AFN的BUG),
+     导致此demo检测的网络状态不正确,这仅仅只是为了演示demo的功能性, 在实际使用中可直接使用一次性网络判断,不用延时
+     */
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self getCurrentNetworkStatus];
+//    });
+
+    // 登陆
+//    NSDictionary *params = [[NSDictionary alloc] init];
+//    [params setValue:@"15810531937" forKey:@"phone"];
+//    [params setValue:@"123123" forKey:@"smsCode"];
+//    [params setValue:@"1111111" forKey:@"token"];
+//    [params setValue:@"2222222" forKey:@"uid"];
+//    [PPHTTPRequest getLoginWithParameters:params success:^(id response) {
+//
+//    } failure:^(NSError *error) {
+//
+//    }];
+
+    // 退出
+//    [PPHTTPRequest getExitWithParameters:@"参数" success:^(id response) {
+//
+//    } failure:^(NSError *error) {
+//
+//    }];
+
+}
+
+- (void)testAVPlayer {
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+    [btn setTitle:@"player" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(playerClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)playerClick:(id)sender {
+    TestAVPlayerViewController *avPlayerVC = [[TestAVPlayerViewController alloc] init];
+    [self.navigationController pushViewController:avPlayerVC animated:YES];
 }
 
 - (void)testPickView {

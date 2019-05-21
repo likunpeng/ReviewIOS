@@ -10,6 +10,11 @@
 
 @interface TestCategaryBaseClass (MyCategary)
 
-@property (nonatomic, strong) NSString *testStr;
+//@property (nonatomic, strong) NSString *testStr;
+
 - (void)baseMethod;
+
+- (void)setTestStr:(NSString *)testStr;
+
+- (NSString *)testStr;
 @end

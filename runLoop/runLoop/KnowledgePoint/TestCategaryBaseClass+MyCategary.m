@@ -10,7 +10,9 @@
 #import "objc/runtime.h"
 
 @interface TestCategaryBaseClass ()
+
 @property (nonatomic, strong) NSString *testStr02;
+
 @end
 
 static void *testStr01 = &testStr01;

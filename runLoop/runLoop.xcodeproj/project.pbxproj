@@ -16,6 +16,7 @@
 		764771DB204EA90600149AC3 /* VCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764771DA204EA90600149AC3 /* VCViewController.m */; };
 		764A72DA228A65C500A6DDE4 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D8228A65C500A6DDE4 /* BaseView.m */; };
 		764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */; };
+		764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
@@ -79,6 +80,10 @@
 		764A72D7228A65C500A6DDE4 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		764A72D8228A65C500A6DDE4 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRStringPickerView.m; sourceTree = "<group>"; };
+		764A72DE228A9B1700A6DDE4 /* TestAVPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAVPlayerViewController.h; sourceTree = "<group>"; };
+		764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAVPlayerViewController.m; sourceTree = "<group>"; };
+		764A72E2228AA0BF00A6DDE4 /* UIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMacros.h; sourceTree = "<group>"; };
+		765C6B542293FC5D00B95FB8 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		765D9B4D206C83FD00422982 /* TestValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueViewController.h; sourceTree = "<group>"; };
 		765D9B4E206C83FD00422982 /* TestValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueViewController.m; sourceTree = "<group>"; };
 		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
@@ -178,6 +183,7 @@
 		763D03642050E13A009A53E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				765C6B542293FC5D00B95FB8 /* libsqlite3.0.tbd */,
 				763D03652050E13A009A53E9 /* libsqlite3.tbd */,
 				3D67C8C87261CE971CDBB82D /* libPods-runLoop.a */,
 			);
@@ -204,46 +210,11 @@
 			path = CustomPickerView;
 			sourceTree = "<group>";
 		};
-		EAC2B7DA1EF9166400AC8029 = {
+		764A72DC228A9A4800A6DDE4 /* KnowledgePoint */ = {
 			isa = PBXGroup;
 			children = (
-				EAC2B7E51EF9166500AC8029 /* runLoop */,
-				EAC2B7FF1EF9166500AC8029 /* runLoopTests */,
-				EAC2B80A1EF9166500AC8029 /* runLoopUITests */,
-				EAC2B7E41EF9166500AC8029 /* Products */,
-				763D03642050E13A009A53E9 /* Frameworks */,
-				5E07244BF25944062287868D /* Pods */,
-			);
-			sourceTree = "<group>";
-		};
-		EAC2B7E41EF9166500AC8029 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EAC2B7E31EF9166500AC8029 /* runLoop.app */,
-				EAC2B7FC1EF9166500AC8029 /* runLoopTests.xctest */,
-				EAC2B8071EF9166500AC8029 /* runLoopUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
-			isa = PBXGroup;
-			children = (
-				764A72D5228A655800A6DDE4 /* CustomPickerView */,
-				764244AC21EF05E0009252D7 /* Component */,
-				7635B09F21B782B200BCA8E6 /* 52method */,
 				768EF803219BC2E4006C3197 /* SingleInstanceObject.h */,
 				768EF804219BC2E4006C3197 /* SingleInstanceObject.m */,
-				EAC2B7E91EF9166500AC8029 /* AppDelegate.h */,
-				EAC2B7EA1EF9166500AC8029 /* AppDelegate.m */,
-				EAC2B7EC1EF9166500AC8029 /* ViewController.h */,
-				EAC2B7ED1EF9166500AC8029 /* ViewController.m */,
-				EAC2B7EF1EF9166500AC8029 /* Main.storyboard */,
-				EAC2B7F21EF9166500AC8029 /* Assets.xcassets */,
-				EAC2B7F41EF9166500AC8029 /* LaunchScreen.storyboard */,
-				EAC2B7F71EF9166500AC8029 /* Info.plist */,
-				76DC843720108B7100E7963E /* testXML.plist */,
-				EAC2B7E61EF9166500AC8029 /* Supporting Files */,
 				76B493582004AFAD00BF0EED /* Person.h */,
 				76B493592004AFAD00BF0EED /* Person.m */,
 				7607109C2009AB0A0068B442 /* Student.h */,
@@ -274,6 +245,68 @@
 				763E22A521101069002AEB49 /* runLoop-Bridging-Header.h */,
 				76FC084E2268519500A7BE38 /* TestModelWithKVC.h */,
 				76FC084F2268519500A7BE38 /* TestModelWithKVC.m */,
+			);
+			path = KnowledgePoint;
+			sourceTree = "<group>";
+		};
+		764A72DD228A9AF200A6DDE4 /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				764A72DE228A9B1700A6DDE4 /* TestAVPlayerViewController.h */,
+				764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		764A72E1228AA06A00A6DDE4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				764A72E2228AA0BF00A6DDE4 /* UIMacros.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		EAC2B7DA1EF9166400AC8029 = {
+			isa = PBXGroup;
+			children = (
+				EAC2B7E51EF9166500AC8029 /* runLoop */,
+				EAC2B7FF1EF9166500AC8029 /* runLoopTests */,
+				EAC2B80A1EF9166500AC8029 /* runLoopUITests */,
+				EAC2B7E41EF9166500AC8029 /* Products */,
+				763D03642050E13A009A53E9 /* Frameworks */,
+				5E07244BF25944062287868D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		EAC2B7E41EF9166500AC8029 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAC2B7E31EF9166500AC8029 /* runLoop.app */,
+				EAC2B7FC1EF9166500AC8029 /* runLoopTests.xctest */,
+				EAC2B8071EF9166500AC8029 /* runLoopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
+			isa = PBXGroup;
+			children = (
+				764A72E1228AA06A00A6DDE4 /* Tools */,
+				764A72DD228A9AF200A6DDE4 /* AVPlayer */,
+				764A72DC228A9A4800A6DDE4 /* KnowledgePoint */,
+				764A72D5228A655800A6DDE4 /* CustomPickerView */,
+				764244AC21EF05E0009252D7 /* Component */,
+				7635B09F21B782B200BCA8E6 /* 52method */,
+				EAC2B7E91EF9166500AC8029 /* AppDelegate.h */,
+				EAC2B7EA1EF9166500AC8029 /* AppDelegate.m */,
+				EAC2B7EC1EF9166500AC8029 /* ViewController.h */,
+				EAC2B7ED1EF9166500AC8029 /* ViewController.m */,
+				EAC2B7EF1EF9166500AC8029 /* Main.storyboard */,
+				EAC2B7F21EF9166500AC8029 /* Assets.xcassets */,
+				EAC2B7F41EF9166500AC8029 /* LaunchScreen.storyboard */,
+				EAC2B7F71EF9166500AC8029 /* Info.plist */,
+				76DC843720108B7100E7963E /* testXML.plist */,
+				EAC2B7E61EF9166500AC8029 /* Supporting Files */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -470,6 +503,7 @@
 			files = (
 				76FC08502268519500A7BE38 /* TestModelWithKVC.m in Sources */,
 				EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */,
+				764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
