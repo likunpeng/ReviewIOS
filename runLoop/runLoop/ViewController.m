@@ -27,6 +27,9 @@
 #import "BRStringPickerView.h"
 #import "Masonry.h"
 #import "TestAVPlayerViewController.h"
+#import "PPNetworkHelper.h"
+#import "PPHTTPRequest.h"
+#import "AFNetworking.h"
 
 //@interface Pet : NSObject
 //
@@ -51,11 +54,11 @@
 //}
 //@end
 
-//#ifdef DEBUG
-//#define PPLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
-//#else
-//#define PPLog(...)
-//#endif
+#ifdef DEBUG
+#define PPLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#else
+#define PPLog(...)
+#endif
 
 @interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate>
 {
@@ -205,7 +208,7 @@
 
 //    [self testPickView];
 //    [self testAVPlayer];
-//    [self testNetWorking];
+    [self testNetWorking];
 }
 
 - (void)testNetWorking {
@@ -230,7 +233,7 @@
      */
 
     // 开启日志打印
-//    [PPNetworkHelper openLog];
+    [PPNetworkHelper openLog];
 
     // 获取网络缓存大小
 //    PPLog(@"网络缓存大小cache = %fKB",[PPNetworkCache getAllHttpCacheSize]/1024.f);
@@ -238,28 +241,28 @@
     // 清理缓存 [PPNetworkCache removeAllHttpCache];
 
     // 实时监测网络状态
-//    [self monitorNetworkStatus];
+    [self monitorNetworkStatus];
 
     /*
      * 一次性获取当前网络状态
      这里延时0.1s再执行是因为程序刚刚启动,可能相关的网络服务还没有初始化完成(也有可能是AFN的BUG),
      导致此demo检测的网络状态不正确,这仅仅只是为了演示demo的功能性, 在实际使用中可直接使用一次性网络判断,不用延时
      */
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self getCurrentNetworkStatus];
-//    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self getCurrentNetworkStatus];
+    });
 
     // 登陆
-//    NSDictionary *params = [[NSDictionary alloc] init];
-//    [params setValue:@"15810531937" forKey:@"phone"];
-//    [params setValue:@"123123" forKey:@"smsCode"];
-//    [params setValue:@"1111111" forKey:@"token"];
-//    [params setValue:@"2222222" forKey:@"uid"];
-//    [PPHTTPRequest getLoginWithParameters:params success:^(id response) {
-//
-//    } failure:^(NSError *error) {
-//
-//    }];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    [params setValue:@"15810531937" forKey:@"phone"];
+    [params setValue:@"123123" forKey:@"smsCode"];
+    [params setValue:@"1111111" forKey:@"token"];
+    [params setValue:@"2222222" forKey:@"uid"];
+    [PPHTTPRequest getLoginWithParameters:params success:^(id response) {
+        PPLog(@"success");
+    } failure:^(NSError *error) {
+
+    }];
 
     // 退出
 //    [PPHTTPRequest getExitWithParameters:@"参数" success:^(id response) {
@@ -268,6 +271,58 @@
 //
 //    }];
 
+}
+
+#pragma mark - 实时监测网络状态
+- (void)monitorNetworkStatus {
+    // 网络状态改变一次, networkStatusWithBlock就会响应一次
+    [PPNetworkHelper networkStatusWithBlock:^(PPNetworkStatusType networkStatus) {
+
+        switch (networkStatus) {
+                // 未知网络
+            case PPNetworkStatusUnknown:
+                // 无网络
+            case PPNetworkStatusNotReachable:
+//                self.networkData.text = @"没有网络";
+//                [self getData:YES url:dataUrl];
+                PPLog(@"无网络,加载缓存数据");
+                break;
+                // 手机网络
+            case PPNetworkStatusReachableViaWWAN:
+                // 无线网络
+            case PPNetworkStatusReachableViaWiFi:
+//                [self getData:[[NSUserDefaults standardUserDefaults] boolForKey:@"isOn"] url:dataUrl];
+                PPLog(@"有网络,请求网络数据");
+                break;
+        }
+
+    }];
+
+}
+
+#pragma mark - 一次性获取当前最新网络状态
+- (void)getCurrentNetworkStatus {
+    if (kIsNetwork) {
+        PPLog(@"有网络");
+        if (kIsWWANNetwork) {
+            PPLog(@"手机网络");
+        }else if (kIsWiFiNetwork){
+            PPLog(@"WiFi网络");
+        }
+    } else {
+        PPLog(@"无网络");
+    }
+    // 或
+    //    if ([PPNetworkHelper isNetwork]) {
+    //        PPLog(@"有网络");
+    //        if ([PPNetworkHelper isWWANNetwork]) {
+    //            PPLog(@"手机网络");
+    //        }else if ([PPNetworkHelper isWiFiNetwork]){
+    //            PPLog(@"WiFi网络");
+    //        }
+    //    } else {
+    //        PPLog(@"无网络");
+    //    }
 }
 
 - (void)testAVPlayer {

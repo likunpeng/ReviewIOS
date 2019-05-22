@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3842FCBC810AA43EA43580FB /* libPods-runLoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D67C8C87261CE971CDBB82D /* libPods-runLoop.a */; };
 		7607109E2009AB0A0068B442 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 7607109D2009AB0A0068B442 /* Student.m */; };
+		762F20E6229400E4008771CB /* PPInterfacedConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20DD229400E4008771CB /* PPInterfacedConst.m */; };
+		762F20E7229400E4008771CB /* PPHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20DE229400E4008771CB /* PPHTTPRequest.m */; };
+		762F20E8229400E4008771CB /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20E0229400E4008771CB /* PPNetworkHelper.m */; };
+		762F20E9229400E4008771CB /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20E3229400E4008771CB /* PPNetworkCache.m */; };
 		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
 		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
 		764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 764244B121EF063F009252D7 /* UIImage+Addtions.m */; };
@@ -64,6 +68,14 @@
 		3D67C8C87261CE971CDBB82D /* libPods-runLoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-runLoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7607109C2009AB0A0068B442 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		7607109D2009AB0A0068B442 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		762F20DD229400E4008771CB /* PPInterfacedConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPInterfacedConst.m; sourceTree = "<group>"; };
+		762F20DE229400E4008771CB /* PPHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPHTTPRequest.m; sourceTree = "<group>"; };
+		762F20E0229400E4008771CB /* PPNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkHelper.m; sourceTree = "<group>"; };
+		762F20E1229400E4008771CB /* PPNetworkCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkCache.h; sourceTree = "<group>"; };
+		762F20E2229400E4008771CB /* PPNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNetworkHelper.h; sourceTree = "<group>"; };
+		762F20E3229400E4008771CB /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
+		762F20E4229400E4008771CB /* PPHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHTTPRequest.h; sourceTree = "<group>"; };
+		762F20E5229400E4008771CB /* PPInterfacedConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPInterfacedConst.h; sourceTree = "<group>"; };
 		7635B0A021B782EA00BCA8E6 /* EOCBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCBaseClass.h; sourceTree = "<group>"; };
 		7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCBaseClass.m; sourceTree = "<group>"; };
 		7635B0A321B7830800BCA8E6 /* EOCSubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCSubClass.h; sourceTree = "<group>"; };
@@ -165,6 +177,29 @@
 				9FD0E3E40E0420B7DBF69E17 /* Pods-runLoop.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		762F20DC229400E4008771CB /* HttpService */ = {
+			isa = PBXGroup;
+			children = (
+				762F20E5229400E4008771CB /* PPInterfacedConst.h */,
+				762F20DD229400E4008771CB /* PPInterfacedConst.m */,
+				762F20E4229400E4008771CB /* PPHTTPRequest.h */,
+				762F20DE229400E4008771CB /* PPHTTPRequest.m */,
+				762F20DF229400E4008771CB /* PPNetworkHelper */,
+			);
+			path = HttpService;
+			sourceTree = "<group>";
+		};
+		762F20DF229400E4008771CB /* PPNetworkHelper */ = {
+			isa = PBXGroup;
+			children = (
+				762F20E2229400E4008771CB /* PPNetworkHelper.h */,
+				762F20E0229400E4008771CB /* PPNetworkHelper.m */,
+				762F20E1229400E4008771CB /* PPNetworkCache.h */,
+				762F20E3229400E4008771CB /* PPNetworkCache.m */,
+			);
+			path = PPNetworkHelper;
 			sourceTree = "<group>";
 		};
 		7635B09F21B782B200BCA8E6 /* 52method */ = {
@@ -291,6 +326,7 @@
 		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
 			isa = PBXGroup;
 			children = (
+				762F20DC229400E4008771CB /* HttpService */,
 				764A72E1228AA06A00A6DDE4 /* Tools */,
 				764A72DD228A9AF200A6DDE4 /* AVPlayer */,
 				764A72DC228A9A4800A6DDE4 /* KnowledgePoint */,
@@ -348,6 +384,7 @@
 				EAC2B7DF1EF9166500AC8029 /* Sources */,
 				EAC2B7E01EF9166500AC8029 /* Frameworks */,
 				EAC2B7E11EF9166500AC8029 /* Resources */,
+				FF614356E1B51A4A6C43B8FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -494,6 +531,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FF614356E1B51A4A6C43B8FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-runLoop/Pods-runLoop-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FFToast/FFToast.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FFToast.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-runLoop/Pods-runLoop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -514,13 +569,17 @@
 				7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
+				762F20E9229400E4008771CB /* PPNetworkCache.m in Sources */,
 				764A72DA228A65C500A6DDE4 /* BaseView.m in Sources */,
 				764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */,
+				762F20E6229400E4008771CB /* PPInterfacedConst.m in Sources */,
 				EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */,
 				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
 				76DC843B201187CC00E7963E /* AssetManager.m in Sources */,
+				762F20E7229400E4008771CB /* PPHTTPRequest.m in Sources */,
 				769D78B620CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m in Sources */,
 				7607109E2009AB0A0068B442 /* Student.m in Sources */,
+				762F20E8229400E4008771CB /* PPNetworkHelper.m in Sources */,
 				76FE3603202C21B000369EDF /* SecondViewController.m in Sources */,
 				764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */,
 				76B4935A2004AFAD00BF0EED /* Person.m in Sources */,
