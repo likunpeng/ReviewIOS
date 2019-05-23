@@ -25,12 +25,12 @@
 #import "EOCSubClass.h"
 #import "TestModelWithKVC.h"
 #import "BRStringPickerView.h"
-#import "Masonry.h"
 #import "TestAVPlayerViewController.h"
 #import "PPNetworkHelper.h"
 #import "PPHTTPRequest.h"
 #import "AFNetworking.h"
 #import "TestSmsCodeViewController.h"
+#import "UAV/WelcomeViewController.h"
 
 //@interface Pet : NSObject
 //
@@ -211,7 +211,25 @@
 //    [self testAVPlayer];
 //    [self testNetWorking];
 //    [self testSmsCodeUI];
+    [self testWelcome];
 }
+
+- (void)testWelcome {
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+    [btn setTitle:@"smsCode" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(welcomeClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)welcomeClick:(UIButton *)btn {
+    WelcomeViewController *welcomeVC = [[WelcomeViewController alloc] init];
+    welcomeVC.callBack = ^{
+        NSLog(@"welcome callback");
+    };
+    [self presentViewController:welcomeVC animated:YES completion:nil];
+}
+
 
 - (void)testSmsCodeUI {
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];

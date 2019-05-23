@@ -15,6 +15,8 @@
 		762F20E9229400E4008771CB /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20E3229400E4008771CB /* PPNetworkCache.m */; };
 		762F20EC22963EA9008771CB /* TestSmsCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20EB22963EA9008771CB /* TestSmsCodeViewController.m */; };
 		762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20F2229645F7008771CB /* KKValidationCodeView.m */; };
+		762F20F6229648BE008771CB /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20F5229648BE008771CB /* WelcomeViewController.m */; };
+		762F20FB22964B28008771CB /* HXSRSolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20F922964B27008771CB /* HXSRSolution.m */; };
 		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
 		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
 		764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 764244B121EF063F009252D7 /* UIImage+Addtions.m */; };
@@ -82,6 +84,11 @@
 		762F20EB22963EA9008771CB /* TestSmsCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSmsCodeViewController.m; sourceTree = "<group>"; };
 		762F20F1229645F7008771CB /* KKValidationCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKValidationCodeView.h; sourceTree = "<group>"; };
 		762F20F2229645F7008771CB /* KKValidationCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKValidationCodeView.m; sourceTree = "<group>"; };
+		762F20F4229648BE008771CB /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		762F20F5229648BE008771CB /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		762F20F722964906008771CB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		762F20F922964B27008771CB /* HXSRSolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSRSolution.m; sourceTree = "<group>"; };
+		762F20FA22964B27008771CB /* HXSRSolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSRSolution.h; sourceTree = "<group>"; };
 		7635B0A021B782EA00BCA8E6 /* EOCBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCBaseClass.h; sourceTree = "<group>"; };
 		7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCBaseClass.m; sourceTree = "<group>"; };
 		7635B0A321B7830800BCA8E6 /* EOCSubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCSubClass.h; sourceTree = "<group>"; };
@@ -215,8 +222,19 @@
 				762F20EB22963EA9008771CB /* TestSmsCodeViewController.m */,
 				762F20F1229645F7008771CB /* KKValidationCodeView.h */,
 				762F20F2229645F7008771CB /* KKValidationCodeView.m */,
+				762F20F4229648BE008771CB /* WelcomeViewController.h */,
+				762F20F5229648BE008771CB /* WelcomeViewController.m */,
 			);
 			path = UAV;
+			sourceTree = "<group>";
+		};
+		762F20F822964B27008771CB /* HXSRSolution */ = {
+			isa = PBXGroup;
+			children = (
+				762F20F922964B27008771CB /* HXSRSolution.m */,
+				762F20FA22964B27008771CB /* HXSRSolution.h */,
+			);
+			path = HXSRSolution;
 			sourceTree = "<group>";
 		};
 		7635B09F21B782B200BCA8E6 /* 52method */ = {
@@ -313,6 +331,7 @@
 		764A72E1228AA06A00A6DDE4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				762F20F822964B27008771CB /* HXSRSolution */,
 				764A72E2228AA0BF00A6DDE4 /* UIMacros.h */,
 			);
 			path = Tools;
@@ -361,6 +380,7 @@
 				EAC2B7F71EF9166500AC8029 /* Info.plist */,
 				76DC843720108B7100E7963E /* testXML.plist */,
 				EAC2B7E61EF9166500AC8029 /* Supporting Files */,
+				762F20F722964906008771CB /* PrefixHeader.pch */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -585,7 +605,9 @@
 				762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
 				762F20EC22963EA9008771CB /* TestSmsCodeViewController.m in Sources */,
+				762F20FB22964B28008771CB /* HXSRSolution.m in Sources */,
 				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
+				762F20F6229648BE008771CB /* WelcomeViewController.m in Sources */,
 				7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
@@ -759,6 +781,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5TDEPFG3H;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/runLoop/PrefixHeader.pch";
 				INFOPLIST_FILE = runLoop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -780,6 +804,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F5TDEPFG3H;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/runLoop/PrefixHeader.pch";
 				INFOPLIST_FILE = runLoop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
