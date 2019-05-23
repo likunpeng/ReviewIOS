@@ -30,6 +30,7 @@
 #import "PPNetworkHelper.h"
 #import "PPHTTPRequest.h"
 #import "AFNetworking.h"
+#import "TestSmsCodeViewController.h"
 
 //@interface Pet : NSObject
 //
@@ -208,7 +209,22 @@
 
 //    [self testPickView];
 //    [self testAVPlayer];
-    [self testNetWorking];
+//    [self testNetWorking];
+//    [self testSmsCodeUI];
+}
+
+- (void)testSmsCodeUI {
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+    [btn setTitle:@"smsCode" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(smsCodeClick:) forControlEvents:UIControlEventTouchUpInside];
+
+}
+
+- (void)smsCodeClick:(UIButton *)btn {
+    TestSmsCodeViewController *codeVC = [[TestSmsCodeViewController alloc] init];
+    [self presentViewController:codeVC animated:YES completion:nil];
 }
 
 - (void)testNetWorking {

@@ -13,6 +13,8 @@
 		762F20E7229400E4008771CB /* PPHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20DE229400E4008771CB /* PPHTTPRequest.m */; };
 		762F20E8229400E4008771CB /* PPNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20E0229400E4008771CB /* PPNetworkHelper.m */; };
 		762F20E9229400E4008771CB /* PPNetworkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20E3229400E4008771CB /* PPNetworkCache.m */; };
+		762F20EC22963EA9008771CB /* TestSmsCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20EB22963EA9008771CB /* TestSmsCodeViewController.m */; };
+		762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20F2229645F7008771CB /* KKValidationCodeView.m */; };
 		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
 		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
 		764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 764244B121EF063F009252D7 /* UIImage+Addtions.m */; };
@@ -76,6 +78,10 @@
 		762F20E3229400E4008771CB /* PPNetworkCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNetworkCache.m; sourceTree = "<group>"; };
 		762F20E4229400E4008771CB /* PPHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPHTTPRequest.h; sourceTree = "<group>"; };
 		762F20E5229400E4008771CB /* PPInterfacedConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPInterfacedConst.h; sourceTree = "<group>"; };
+		762F20EA22963EA9008771CB /* TestSmsCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSmsCodeViewController.h; sourceTree = "<group>"; };
+		762F20EB22963EA9008771CB /* TestSmsCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSmsCodeViewController.m; sourceTree = "<group>"; };
+		762F20F1229645F7008771CB /* KKValidationCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKValidationCodeView.h; sourceTree = "<group>"; };
+		762F20F2229645F7008771CB /* KKValidationCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKValidationCodeView.m; sourceTree = "<group>"; };
 		7635B0A021B782EA00BCA8E6 /* EOCBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCBaseClass.h; sourceTree = "<group>"; };
 		7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCBaseClass.m; sourceTree = "<group>"; };
 		7635B0A321B7830800BCA8E6 /* EOCSubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCSubClass.h; sourceTree = "<group>"; };
@@ -202,6 +208,17 @@
 			path = PPNetworkHelper;
 			sourceTree = "<group>";
 		};
+		762F20ED22963ED1008771CB /* UAV */ = {
+			isa = PBXGroup;
+			children = (
+				762F20EA22963EA9008771CB /* TestSmsCodeViewController.h */,
+				762F20EB22963EA9008771CB /* TestSmsCodeViewController.m */,
+				762F20F1229645F7008771CB /* KKValidationCodeView.h */,
+				762F20F2229645F7008771CB /* KKValidationCodeView.m */,
+			);
+			path = UAV;
+			sourceTree = "<group>";
+		};
 		7635B09F21B782B200BCA8E6 /* 52method */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +343,7 @@
 		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
 			isa = PBXGroup;
 			children = (
+				762F20ED22963ED1008771CB /* UAV */,
 				762F20DC229400E4008771CB /* HttpService */,
 				764A72E1228AA06A00A6DDE4 /* Tools */,
 				764A72DD228A9AF200A6DDE4 /* AVPlayer */,
@@ -564,7 +582,9 @@
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
 				764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */,
+				762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
+				762F20EC22963EA9008771CB /* TestSmsCodeViewController.m in Sources */,
 				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
 				7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */,
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
