@@ -32,7 +32,9 @@
 #import "TestSmsCodeViewController.h"
 #import "UAV/WelcomeViewController.h"
 #import "HMSegmentedControl.h"
-
+#import "UAV/Test01ViewController.h"
+#import "UAV/Text02ViewController.h"
+#import "UAV/Test03ViewController.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -214,7 +216,7 @@
 //    [self testSmsCodeUI];
 //    [self testWelcome];
 //    [self testSegment];
-    [self testMasonry];
+//    [self testMasonry];
 }
 
 - (void)testMasonry {
@@ -241,8 +243,6 @@
         make.right.equalTo(view);
     }];
 
-
-
 }
 
 - (void)testSegment {
@@ -261,11 +261,17 @@
 }
 
 - (void)welcomeClick:(UIButton *)btn {
-    WelcomeViewController *welcomeVC = [[WelcomeViewController alloc] init];
-    welcomeVC.callBack = ^{
-        NSLog(@"welcome callback");
-    };
-    [self presentViewController:welcomeVC animated:YES completion:nil];
+//    WelcomeViewController *welcomeVC = [[WelcomeViewController alloc] init];
+//    welcomeVC.callBack = ^{
+//        NSLog(@"welcome callback");
+//    };
+//    [self presentViewController:welcomeVC animated:YES completion:nil];
+
+    Test03ViewController *vc = [[Test03ViewController alloc] init];
+    //    welcomeVC.callBack = ^{
+    //        NSLog(@"welcome callback");
+    //    };
+        [self presentViewController:vc animated:YES completion:nil];
 }
 
 

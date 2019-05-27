@@ -1,5 +1,5 @@
 //
-//  TextExitViewController.h
+//  Test01ViewController.h
 //  runLoop
 //
 //  Created by lkp on 2019/5/27.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TextExitViewController : UIViewController
+@interface Test01ViewController : UIViewController
 
 @end
 

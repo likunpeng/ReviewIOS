@@ -26,7 +26,10 @@
 		764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */; };
 		764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
-		76730114229BAE45000B9ECA /* TextExitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76730113229BAE45000B9ECA /* TextExitViewController.m */; };
+		7673011A229BAFB6000B9ECA /* Test01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76730119229BAFB6000B9ECA /* Test01ViewController.m */; };
+		7673011D229BB37C000B9ECA /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7673011B229BB37C000B9ECA /* UIImage+Image.m */; };
+		76730120229BB8CE000B9ECA /* Text02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7673011F229BB8CE000B9ECA /* Text02ViewController.m */; };
+		76730123229BD2DB000B9ECA /* Test03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76730122229BD2DB000B9ECA /* Test03ViewController.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
 		768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 768EF804219BC2E4006C3197 /* SingleInstanceObject.m */; };
@@ -112,8 +115,14 @@
 		765C6B542293FC5D00B95FB8 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		765D9B4D206C83FD00422982 /* TestValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueViewController.h; sourceTree = "<group>"; };
 		765D9B4E206C83FD00422982 /* TestValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueViewController.m; sourceTree = "<group>"; };
-		76730112229BAE45000B9ECA /* TextExitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextExitViewController.h; sourceTree = "<group>"; };
-		76730113229BAE45000B9ECA /* TextExitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextExitViewController.m; sourceTree = "<group>"; };
+		76730118229BAFB6000B9ECA /* Test01ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test01ViewController.h; sourceTree = "<group>"; };
+		76730119229BAFB6000B9ECA /* Test01ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test01ViewController.m; sourceTree = "<group>"; };
+		7673011B229BB37C000B9ECA /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		7673011C229BB37C000B9ECA /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		7673011E229BB8CE000B9ECA /* Text02ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text02ViewController.h; sourceTree = "<group>"; };
+		7673011F229BB8CE000B9ECA /* Text02ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text02ViewController.m; sourceTree = "<group>"; };
+		76730121229BD2DB000B9ECA /* Test03ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test03ViewController.h; sourceTree = "<group>"; };
+		76730122229BD2DB000B9ECA /* Test03ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test03ViewController.m; sourceTree = "<group>"; };
 		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
 		7677378B20215B42002B75DD /* Person+RunPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+RunPerson.m"; sourceTree = "<group>"; };
 		7677378D20232541002B75DD /* LYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPerson.h; sourceTree = "<group>"; };
@@ -227,6 +236,12 @@
 				762F20F2229645F7008771CB /* KKValidationCodeView.m */,
 				762F20F4229648BE008771CB /* WelcomeViewController.h */,
 				762F20F5229648BE008771CB /* WelcomeViewController.m */,
+				76730118229BAFB6000B9ECA /* Test01ViewController.h */,
+				76730119229BAFB6000B9ECA /* Test01ViewController.m */,
+				7673011E229BB8CE000B9ECA /* Text02ViewController.h */,
+				7673011F229BB8CE000B9ECA /* Text02ViewController.m */,
+				76730121229BD2DB000B9ECA /* Test03ViewController.h */,
+				76730122229BD2DB000B9ECA /* Test03ViewController.m */,
 			);
 			path = UAV;
 			sourceTree = "<group>";
@@ -334,6 +349,8 @@
 		764A72E1228AA06A00A6DDE4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7673011C229BB37C000B9ECA /* UIImage+Image.h */,
+				7673011B229BB37C000B9ECA /* UIImage+Image.m */,
 				762F20F822964B27008771CB /* HXSRSolution */,
 				764A72E2228AA0BF00A6DDE4 /* UIMacros.h */,
 			);
@@ -384,8 +401,6 @@
 				76DC843720108B7100E7963E /* testXML.plist */,
 				EAC2B7E61EF9166500AC8029 /* Supporting Files */,
 				762F20F722964906008771CB /* PrefixHeader.pch */,
-				76730112229BAE45000B9ECA /* TextExitViewController.h */,
-				76730113229BAE45000B9ECA /* TextExitViewController.m */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -604,13 +619,13 @@
 				764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
-				76730114229BAE45000B9ECA /* TextExitViewController.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
 				764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */,
 				762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
 				762F20EC22963EA9008771CB /* TestSmsCodeViewController.m in Sources */,
+				76730123229BD2DB000B9ECA /* Test03ViewController.m in Sources */,
 				762F20FB22964B28008771CB /* HXSRSolution.m in Sources */,
 				769D78B320CE6E8800E69BE2 /* TestCategaryBaseClass.m in Sources */,
 				762F20F6229648BE008771CB /* WelcomeViewController.m in Sources */,
@@ -625,6 +640,8 @@
 				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
 				76DC843B201187CC00E7963E /* AssetManager.m in Sources */,
 				762F20E7229400E4008771CB /* PPHTTPRequest.m in Sources */,
+				76730120229BB8CE000B9ECA /* Text02ViewController.m in Sources */,
+				7673011D229BB37C000B9ECA /* UIImage+Image.m in Sources */,
 				769D78B620CE700600E69BE2 /* TestCategaryBaseClass+MyCategary.m in Sources */,
 				7607109E2009AB0A0068B442 /* Student.m in Sources */,
 				762F20E8229400E4008771CB /* PPNetworkHelper.m in Sources */,
@@ -632,6 +649,7 @@
 				764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */,
 				76B4935A2004AFAD00BF0EED /* Person.m in Sources */,
 				EAC2B7E81EF9166500AC8029 /* main.m in Sources */,
+				7673011A229BAFB6000B9ECA /* Test01ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
