@@ -31,6 +31,7 @@
 #import "AFNetworking.h"
 #import "TestSmsCodeViewController.h"
 #import "UAV/WelcomeViewController.h"
+#import "HMSegmentedControl.h"
 
 //@interface Pet : NSObject
 //
@@ -211,7 +212,44 @@
 //    [self testAVPlayer];
 //    [self testNetWorking];
 //    [self testSmsCodeUI];
-    [self testWelcome];
+//    [self testWelcome];
+//    [self testSegment];
+    [self testMasonry];
+}
+
+- (void)testMasonry {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 100, kWidth, 60.0f)];
+    view.backgroundColor = COLOR_BG_GRAY;
+    [self.view addSubview:view];
+
+    UILabel *label01 = [[UILabel alloc] init];
+    label01.text = @"测试测试测试测试测试测";
+    [view addSubview:label01];
+    [label01 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(view);
+        make.centerY.equalTo(view);
+    }];
+
+    UILabel *label02 = [[UILabel alloc] init];
+    label02.text = @"右边右边";
+    [label02 setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+    [label02 setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+    [view addSubview:label02];
+    [label02 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(label01.mas_right);
+        make.centerY.equalTo(view);
+        make.right.equalTo(view);
+    }];
+
+
+
+}
+
+- (void)testSegment {
+    HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"One", @"Two", @"Three"]];
+    segmentedControl.frame = CGRectMake(10, 100, 300, 60);
+    [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:segmentedControl];
 }
 
 - (void)testWelcome {

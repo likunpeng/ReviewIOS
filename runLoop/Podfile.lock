@@ -15,12 +15,14 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - FFToast (1.2.0)
+  - HMSegmentedControl (1.5.5)
   - Masonry (1.1.0)
   - YYCache (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
   - FFToast
+  - HMSegmentedControl
   - Masonry
   - YYCache
 
@@ -28,15 +30,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - FFToast
+    - HMSegmentedControl
     - Masonry
     - YYCache
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FFToast: 60e0f3c9fd8fc473205015055ee39cd200404e01
+  HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 3ac8f32debe2e2b6a303d089127c99009e636506
+PODFILE CHECKSUM: 7ed54097b3804e38d1f4546f1d43d442fa6513d2
 
 COCOAPODS: 1.5.3

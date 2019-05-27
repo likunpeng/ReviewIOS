@@ -26,6 +26,7 @@
 		764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */; };
 		764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
+		76730114229BAE45000B9ECA /* TextExitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76730113229BAE45000B9ECA /* TextExitViewController.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
 		768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 768EF804219BC2E4006C3197 /* SingleInstanceObject.m */; };
@@ -111,6 +112,8 @@
 		765C6B542293FC5D00B95FB8 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		765D9B4D206C83FD00422982 /* TestValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueViewController.h; sourceTree = "<group>"; };
 		765D9B4E206C83FD00422982 /* TestValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueViewController.m; sourceTree = "<group>"; };
+		76730112229BAE45000B9ECA /* TextExitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextExitViewController.h; sourceTree = "<group>"; };
+		76730113229BAE45000B9ECA /* TextExitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextExitViewController.m; sourceTree = "<group>"; };
 		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
 		7677378B20215B42002B75DD /* Person+RunPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+RunPerson.m"; sourceTree = "<group>"; };
 		7677378D20232541002B75DD /* LYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPerson.h; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 				76DC843720108B7100E7963E /* testXML.plist */,
 				EAC2B7E61EF9166500AC8029 /* Supporting Files */,
 				762F20F722964906008771CB /* PrefixHeader.pch */,
+				76730112229BAE45000B9ECA /* TextExitViewController.h */,
+				76730113229BAE45000B9ECA /* TextExitViewController.m */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
+				76730114229BAE45000B9ECA /* TextExitViewController.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
 				764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */,

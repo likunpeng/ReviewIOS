@@ -10,5 +10,6 @@ target 'runLoop' do
   pod 'AFNetworking'
   pod 'YYCache'
   pod 'FFToast'
+  pod 'HMSegmentedControl'
 
 end
