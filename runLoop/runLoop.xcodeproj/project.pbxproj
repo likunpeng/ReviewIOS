@@ -386,15 +386,15 @@
 			isa = PBXGroup;
 			children = (
 				76730125229BEBB2000B9ECA /* HXMenuBarSlide.h */,
-				76730126229BEBB2000B9ECA /* HXMenuBarController.m */,
-				76730127229BEBB2000B9ECA /* HXMenuBarBase.h */,
-				76730128229BEBB2000B9ECA /* HXMenuBarView.m */,
-				76730129229BEBB2000B9ECA /* HXMenuBarItem.m */,
 				7673012A229BEBB2000B9ECA /* HXMenuBarSlide.m */,
 				7673012B229BEBB2000B9ECA /* HXMenuBarController.h */,
-				7673012C229BEBB2000B9ECA /* HXMenuBarView.h */,
+				76730126229BEBB2000B9ECA /* HXMenuBarController.m */,
+				76730127229BEBB2000B9ECA /* HXMenuBarBase.h */,
 				7673012D229BEBB2000B9ECA /* HXMenuBarBase.m */,
+				7673012C229BEBB2000B9ECA /* HXMenuBarView.h */,
+				76730128229BEBB2000B9ECA /* HXMenuBarView.m */,
 				7673012E229BEBB2000B9ECA /* HXMenuBarItem.h */,
+				76730129229BEBB2000B9ECA /* HXMenuBarItem.m */,
 			);
 			path = HXMenuBar;
 			sourceTree = "<group>";

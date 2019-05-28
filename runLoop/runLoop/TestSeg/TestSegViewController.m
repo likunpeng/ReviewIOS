@@ -30,7 +30,7 @@
     [_menuBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
         make.top.equalTo(self.view).offset(60.0f);
-        make.height.mas_equalTo(S(287.0f));
+        make.height.mas_equalTo(S(400.0f));
     }];
     [self createProductMenu];
 }
@@ -39,12 +39,15 @@
 - (void)createProductMenu {
     NSMutableArray *menuBarViews = [NSMutableArray array];
 
-    UITableView *pastView = [self createView01];
+    UIView *pastView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, S(300.0f), S(400.0f))];
+    [pastView addSubview:[self createView01]];
+    pastView.backgroundColor = COLOR_RED;
     pastView.menuBarItem = [[HomrProductMenuBarItem alloc] initWithSeperator: YES];
     pastView.menuBarItem.title = @"past";
     [menuBarViews addObject:pastView];
 
-    UIView *goingView = [self createView01];
+    UIView *goingView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, S(300.0f), S(400.0f))];
+    goingView.backgroundColor = COLOR_GOLD;
     goingView.menuBarItem = [[HomrProductMenuBarItem alloc] initWithSeperator: NO];
     goingView.menuBarItem.title = @"ONGOING";
     [menuBarViews addObject:goingView];
@@ -54,7 +57,7 @@
 }
 
 - (UITableView *)createView01 {
-    self.tableView01 = [[UITableView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, kWidth, S(500.0f)) style:UITableViewStylePlain];
+    self.tableView01 = [[UITableView alloc] initWithFrame:CGRectMake(S(100.0f), 0.0f, S(251), S(500.0f)) style:UITableViewStylePlain];
     _tableView01.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView01.delegate = self;
     _tableView01.dataSource = self;
@@ -96,6 +99,7 @@
     if (!cell) {
          cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.backgroundColor = COLOR_BG_GRAY;
     return cell;
 }
 

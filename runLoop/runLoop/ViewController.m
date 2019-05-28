@@ -76,6 +76,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSString *dff;
 @property (nonatomic, assign) int ticketSurplusCount;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) HMSegmentedControl *segmentedControl4;
 
 @end
 #define UN_LOCK_SCREEN_NOTIFY @"UnLockScreenNotify"
@@ -106,6 +108,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = HEXRGB(0x275062);
     NSLog(@"come VC !!!");
 //    NSMutableString *test01 = [NSMutableString stringWithFormat:@"可变字符串"];
 //    _dff = test01;
@@ -215,7 +218,7 @@
 //    [self testAVPlayer];
 //    [self testNetWorking];
 //    [self testSmsCodeUI];
-//    [self testWelcome];
+    [self testWelcome];
     [self testSegment];
 //    [self testMasonry];
 }
@@ -247,15 +250,66 @@
 }
 
 - (void)testSegment {
-    HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"One", @"Two", @"Three"]];
-    segmentedControl.frame = CGRectMake(10, 100, 300, 60);
-    [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:segmentedControl];
+//    HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"One", @"Two", @"Three"]];
+//    segmentedControl.frame = CGRectMake(10, 100, 300, 60);
+//    [segmentedControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+//    [self.view addSubview:segmentedControl];
+    self.segmentedControl4 = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(S(50.0f), 260, S(251.0f), 50)];
+    self.segmentedControl4.sectionTitles = @[@"PASS", @"ONGOING"];
+    self.segmentedControl4.selectedSegmentIndex = 1;
+    self.segmentedControl4.backgroundColor = [UIColor clearColor];
+    self.segmentedControl4.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:13.0f]};
+    self.segmentedControl4.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor], NSFontAttributeName : [UIFont systemFontOfSize:13.0f]};
+    self.segmentedControl4.selectionIndicatorColor = COLOR_WHITE;
+    self.segmentedControl4.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+    self.segmentedControl4.selectionIndicatorHeight = S(1.0f);
+    self.segmentedControl4.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    self.segmentedControl4.tag = 2;
+
+    __weak typeof(self) weakSelf = self;
+    [self.segmentedControl4 setIndexChangeBlock:^(NSInteger index) {
+        [weakSelf.scrollView scrollRectToVisible:CGRectMake(kWidth * index, 0, kWidth, 200) animated:YES];
+    }];
+
+    [self.view addSubview:self.segmentedControl4];
+
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 310, kWidth, 210)];
+    self.scrollView.backgroundColor = COLOR_GOLD;
+    self.scrollView.pagingEnabled = YES;
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.contentSize = CGSizeMake(kWidth * 2, 200);
+    self.scrollView.delegate = self;
+    [self.scrollView scrollRectToVisible:CGRectMake(kWidth, 0, kWidth, 200) animated:NO];
+    [self.view addSubview:self.scrollView];
+
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kWidth - 100, 210)];
+
+    label1.text = @"Worldwide";
+    [self.scrollView addSubview:label1];
+
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(kWidth, 0, kWidth -100, 210)];
+
+    label2.text = @"Local";
+    [self.scrollView addSubview:label2];
 }
 
-- (void)segmentedControlChangedValue:(id)sender {
-    NSLog(@"hhhh");
+- (void)segmentedControlChangedValue:(HMSegmentedControl *)segmentedControl {
+    NSLog(@"Selected index %ld (via UIControlEventValueChanged)", (long)segmentedControl.selectedSegmentIndex);
 }
+
+- (void)uisegmentedControlChangedValue:(UISegmentedControl *)segmentedControl {
+    NSLog(@"Selected index %ld", (long)segmentedControl.selectedSegmentIndex);
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGFloat pageWidth = scrollView.frame.size.width;
+    NSInteger page = scrollView.contentOffset.x / pageWidth;
+
+    [self.segmentedControl4 setSelectedSegmentIndex:page animated:YES];
+}
+
 
 - (void)testWelcome {
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];

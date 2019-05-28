@@ -12,7 +12,8 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.menuBarItemUseDynamicWidth = YES;
+        self.menuBarItemUseDynamicWidth = NO;
+        self.bounces = NO;
         self.selectionBarOffsetY = S(-8.0f);
         self.selectionBarUseRoundedRect = YES;
         self.selectionBarExtendWidth = 1.0f;
@@ -23,10 +24,10 @@
         seperator.backgroundColor = COLOR_LINE;
         [self addSubview:seperator];
         [seperator mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self).offset(S(20.0f));
-            make.right.equalTo(self).offset(S(-20.0f));
+            make.left.equalTo(self).offset(S(0.0f));
+            make.right.equalTo(self).offset(S(0.0f));
             make.bottom.equalTo(self);
-            make.height.equalTo(@0.5f);
+            make.height.mas_equalTo(S(0.5f));
         }];
     }
     return self;
