@@ -35,6 +35,7 @@
 #import "UAV/Test01ViewController.h"
 #import "UAV/Text02ViewController.h"
 #import "UAV/Test03ViewController.h"
+#import "TestSegViewController.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -215,7 +216,7 @@
 //    [self testNetWorking];
 //    [self testSmsCodeUI];
 //    [self testWelcome];
-//    [self testSegment];
+    [self testSegment];
 //    [self testMasonry];
 }
 
@@ -252,6 +253,10 @@
     [self.view addSubview:segmentedControl];
 }
 
+- (void)segmentedControlChangedValue:(id)sender {
+    NSLog(@"hhhh");
+}
+
 - (void)testWelcome {
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
     [btn setTitle:@"smsCode" forState:UIControlStateNormal];
@@ -267,10 +272,11 @@
 //    };
 //    [self presentViewController:welcomeVC animated:YES completion:nil];
 
-    Test03ViewController *vc = [[Test03ViewController alloc] init];
+//    Test03ViewController *vc = [[Test03ViewController alloc] init];
     //    welcomeVC.callBack = ^{
     //        NSLog(@"welcome callback");
     //    };
+    TestSegViewController *vc = [[TestSegViewController alloc] init];
         [self presentViewController:vc animated:YES completion:nil];
 }
 
