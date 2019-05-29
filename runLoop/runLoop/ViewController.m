@@ -219,7 +219,7 @@
 //    [self testNetWorking];
 //    [self testSmsCodeUI];
     [self testWelcome];
-    [self testSegment];
+//    [self testSegment];
 //    [self testMasonry];
 }
 
@@ -326,11 +326,11 @@
 //    };
 //    [self presentViewController:welcomeVC animated:YES completion:nil];
 
-//    Test03ViewController *vc = [[Test03ViewController alloc] init];
-    //    welcomeVC.callBack = ^{
-    //        NSLog(@"welcome callback");
-    //    };
-    TestSegViewController *vc = [[TestSegViewController alloc] init];
+    Test03ViewController *vc = [[Test03ViewController alloc] init];
+//        welcomeVC.callBack = ^{
+//            NSLog(@"welcome callback");
+//        };
+//    TestSegViewController *vc = [[TestSegViewController alloc] init];
         [self presentViewController:vc animated:YES completion:nil];
 }
 
