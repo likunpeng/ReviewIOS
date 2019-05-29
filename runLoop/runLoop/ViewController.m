@@ -326,7 +326,8 @@
 //    };
 //    [self presentViewController:welcomeVC animated:YES completion:nil];
 
-    Test03ViewController *vc = [[Test03ViewController alloc] init];
+//    Test03ViewController *vc = [[Test03ViewController alloc] init];
+    Test01ViewController *vc = [[Test01ViewController alloc] init];
 //        welcomeVC.callBack = ^{
 //            NSLog(@"welcome callback");
 //        };
