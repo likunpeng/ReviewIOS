@@ -25,6 +25,7 @@
 		764A72DA228A65C500A6DDE4 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D8228A65C500A6DDE4 /* BaseView.m */; };
 		764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */; };
 		764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */; };
+		764CF60C22A4EE0E0065E7C8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764CF60B22A4EE0E0065E7C8 /* MessageUI.framework */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
 		7673011A229BAFB6000B9ECA /* Test01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76730119229BAFB6000B9ECA /* Test01ViewController.m */; };
 		7673011D229BB37C000B9ECA /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7673011B229BB37C000B9ECA /* UIImage+Image.m */; };
@@ -120,6 +121,7 @@
 		764A72DE228A9B1700A6DDE4 /* TestAVPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestAVPlayerViewController.h; sourceTree = "<group>"; };
 		764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAVPlayerViewController.m; sourceTree = "<group>"; };
 		764A72E2228AA0BF00A6DDE4 /* UIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMacros.h; sourceTree = "<group>"; };
+		764CF60B22A4EE0E0065E7C8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		765C6B542293FC5D00B95FB8 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		765D9B4D206C83FD00422982 /* TestValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueViewController.h; sourceTree = "<group>"; };
 		765D9B4E206C83FD00422982 /* TestValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueViewController.m; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				764CF60C22A4EE0E0065E7C8 /* MessageUI.framework in Frameworks */,
 				3842FCBC810AA43EA43580FB /* libPods-runLoop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +298,7 @@
 		763D03642050E13A009A53E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				764CF60B22A4EE0E0065E7C8 /* MessageUI.framework */,
 				765C6B542293FC5D00B95FB8 /* libsqlite3.0.tbd */,
 				763D03652050E13A009A53E9 /* libsqlite3.tbd */,
 				3D67C8C87261CE971CDBB82D /* libPods-runLoop.a */,

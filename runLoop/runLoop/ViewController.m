@@ -36,6 +36,9 @@
 #import "UAV/Text02ViewController.h"
 #import "UAV/Test03ViewController.h"
 #import "TestSegViewController.h"
+#import <MessageUI/MessageUI.h>
+#import "SKPSMTPMessage.h"
+#import "NSData+Base64Additions.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -65,7 +68,7 @@
 #define PPLog(...)
 #endif
 
-@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate>
+@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate, MFMailComposeViewControllerDelegate, SKPSMTPMessageDelegate>
 {
     dispatch_semaphore_t semaphoreLock;
 }
@@ -218,10 +221,121 @@
 //    [self testAVPlayer];
 //    [self testNetWorking];
 //    [self testSmsCodeUI];
-    [self testWelcome];
+//    [self testWelcome];
 //    [self testSegment];
 //    [self testMasonry];
+    [self testSendEmail];
 }
+
+- (void)testSendEmail {
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
+    [btn setTitle:@"smsCode" forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(emailClick:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)emailClick:(UIButton *)sender {
+    
+//    if ([MFMailComposeViewController canSendMail]) {
+//        [self sendEamil];
+//    } else {
+//        NSLog(@"setting email")
+//    }
+
+    SKPSMTPMessage *message = [[SKPSMTPMessage alloc] init];
+    message.fromEmail = @"greenboy1@163.com";
+    message.login = @"greenboy1@163.com";
+    message.pass = @"likunpeng1";
+    message.relayHost = @"smtp.163.com";
+
+    message.toEmail = @"29784038@qq.com";
+    message.requiresAuth = YES;
+    message.wantsSecure = YES;
+    message.delegate = self;
+    message.subject = @"TEST TEST";
+    NSString *content = @" 啦啦啦啦 content content 啦啦啦";
+    NSDictionary *plainPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/plain; charset=UTF-8",kSKPSMTPPartContentTypeKey, content,kSKPSMTPPartMessageKey,@"8bit",kSKPSMTPPartContentTransferEncodingKey,nil];
+
+    message.parts = [NSArray arrayWithObjects:plainPart,nil];
+    [message send];
+}
+
+#pragma mark SKPSMTPMessageDelegate
+- (void)messageFailed:(SKPSMTPMessage *)message error:(NSError *)error {
+    NSLog(@"error = %@", error);
+}
+
+- (void)messageSent:(SKPSMTPMessage *)message {
+    NSLog(@"success message = %@", message);
+}
+
+- (void)sendEamil {
+    // 邮件服务器
+    MFMailComposeViewController *mailCompose = [[MFMailComposeViewController alloc] init];
+    // 设置邮件代理
+    [mailCompose setMailComposeDelegate:self];
+
+    // 设置邮件主题
+    [mailCompose setSubject:@"我是邮件主题"];
+
+    // 设置收件人
+    [mailCompose setToRecipients:@[@"邮箱号码"]];
+    // 设置抄送人
+    [mailCompose setCcRecipients:@[@"邮箱号码"]];
+    // 设置密抄送
+    [mailCompose setBccRecipients:@[@"邮箱号码"]];
+
+    /**
+     *  设置邮件的正文内容
+     */
+    NSString *emailContent = @"我是邮件内容";
+    // 是否为HTML格式
+    [mailCompose setMessageBody:emailContent isHTML:NO];
+    // 如使用HTML格式，则为以下代码
+    //    [mailCompose setMessageBody:@"<html><body><p>Hello</p><p>World！</p></body></html>" isHTML:YES];
+
+    /**
+     *  添加附件
+     */
+    UIImage *image = [UIImage imageNamed:@"image"];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    [mailCompose addAttachmentData:imageData mimeType:@"" fileName:@"custom.png"];
+
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"pdf"];
+    NSData *pdf = [NSData dataWithContentsOfFile:file];
+    [mailCompose addAttachmentData:pdf mimeType:@"" fileName:@"pdf文件"];
+
+    // 弹出邮件发送视图
+    [self presentViewController:mailCompose animated:YES completion:nil];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+
+    switch (result) {
+        case MFMailComposeResultCancelled:
+            NSLog(@"取消发送");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"发送失败");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"保存草稿文件");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"发送成功");
+            break;
+        default:
+            break;
+    }
+
+    // 关闭邮件发送视图
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
 
 - (void)testMasonry {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 100, kWidth, 60.0f)];
@@ -1981,6 +2095,8 @@
         NSLog(@"只有tableview是跟滚动状态就会调用此方法");
     }
 }
+
+
 
 @end
 

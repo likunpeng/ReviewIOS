@@ -11,5 +11,5 @@ target 'runLoop' do
   pod 'YYCache'
   pod 'FFToast'
   pod 'HMSegmentedControl'
-
+  pod 'skpsmtpmessage'
 end

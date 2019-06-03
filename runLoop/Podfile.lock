@@ -17,6 +17,7 @@ PODS:
   - FFToast (1.2.0)
   - HMSegmentedControl (1.5.5)
   - Masonry (1.1.0)
+  - skpsmtpmessage (0.0.1)
   - YYCache (1.0.4)
 
 DEPENDENCIES:
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - FFToast
   - HMSegmentedControl
   - Masonry
+  - skpsmtpmessage
   - YYCache
 
 SPEC REPOS:
@@ -32,6 +34,7 @@ SPEC REPOS:
     - FFToast
     - HMSegmentedControl
     - Masonry
+    - skpsmtpmessage
     - YYCache
 
 SPEC CHECKSUMS:
@@ -39,8 +42,9 @@ SPEC CHECKSUMS:
   FFToast: 60e0f3c9fd8fc473205015055ee39cd200404e01
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  skpsmtpmessage: f6e913380c784dd8d4a9f83c8790a302445a5e05
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 7ed54097b3804e38d1f4546f1d43d442fa6513d2
+PODFILE CHECKSUM: 302f61bd511715b478dafbea4ac09b5e25b5cfd1
 
 COCOAPODS: 1.5.3
