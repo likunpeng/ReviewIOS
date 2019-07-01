@@ -74,6 +74,25 @@ class ViewController: UIViewController {
 //        for index in stride(from: 1, to: 6, by: 2) {
 //            print(index)
 //        }
+        testStr()
+    }
+
+    func testStr() -> Void {
+        let softWrappedQuotation = """
+
+
+The White Rabbit put on his spectacles.  "Where shall I begin, \
+please your Majesty?" he asked.
+
+"Begin at the beginning," the King said gravely, "and go on \
+till you come to the end; then stop."
+
+
+
+
+
+"""
+        print(softWrappedQuotation)
     }
 
     override func didReceiveMemoryWarning() {

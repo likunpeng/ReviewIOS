@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "TestLoginViewController.h"
+#import "AccountManager.h"
 #define LOCK_SCREEN_NOTIFY @"LockScreenNotify"
 
 @interface AppDelegate ()
@@ -30,9 +32,9 @@
     
 //    ViewController *vc = [[ViewController alloc] init];
     ViewController *vc = [[ViewController alloc] init];
-    
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController  = nc;
+
     return YES;
 }
 

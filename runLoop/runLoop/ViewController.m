@@ -39,6 +39,8 @@
 #import <MessageUI/MessageUI.h>
 #import "SKPSMTPMessage.h"
 #import "NSData+Base64Additions.h"
+#import "AccountManager.h"
+#import "TestLoginViewController.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -81,6 +83,7 @@
 @property (nonatomic, assign) int ticketSurplusCount;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl4;
+@property (nonatomic, strong) UIWindow *window;
 
 @end
 #define UN_LOCK_SCREEN_NOTIFY @"UnLockScreenNotify"
@@ -224,7 +227,67 @@
 //    [self testWelcome];
 //    [self testSegment];
 //    [self testMasonry];
-    [self testSendEmail];
+//    [self testSendEmail];
+//    [self testLabelSize];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([AccountManager hasToken]) {
+        //正常lUI
+    } else {
+        _window = [[UIWindow alloc] initWithFrame:CGRectMake(0.0, 0.0, kWidth, kHeight)];
+        _window.backgroundColor = COLOR_BLACK;
+        _window.windowLevel = normal;
+        TestLoginViewController *lc = [[TestLoginViewController alloc] init];
+        _window.rootViewController = lc;
+        [_window makeKeyAndVisible];
+
+    }
+
+    //    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    //    SecondViewController *secVC = [[SecondViewController alloc] init];
+    //    secVC.lyPerson.name = @"";
+    //    [self.navigationController pushViewController:secVC animated:YES];
+    //    [self testVC];
+    //    [self testWriteToFile];
+    //    [self testReadFile];
+    //    [self testPreference];
+    //    [self testSqlLite3];
+}
+
+- (void)testLabelSize {
+    NSString *str = @"llkdksldkfsldf  sfsdf sdfs dsdf sdf sd  df";
+
+    CGFloat titleWidth = S(288.0f);
+    UILabel *showLabel = [[UILabel alloc] init];
+    showLabel.textColor = COLOR_RED;
+    showLabel.numberOfLines = -1;
+    showLabel.font = fontAuto(16.0f);
+    [self.view addSubview:showLabel];
+    [showLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(titleWidth);
+        make.left.equalTo(self.view).offset(S(60.0f));
+        make.top.equalTo(self.view).offset(S(100.0f));
+    }];
+
+    CGFloat spacingHeight = S(42.0f);
+    CGSize titleMaxSize = CGSizeMake(titleWidth, MAXFLOAT);
+    UILabel *questionLabel = [[UILabel alloc] init];
+    questionLabel.text = @"--";
+    questionLabel.textColor = COLOR_DARKGRAY;
+    questionLabel.font = fontAuto(16.0f);
+    questionLabel.numberOfLines = -1;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:S(5.0f)];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [attributedString length])];
+    questionLabel.attributedText = attributedString;
+    CGFloat cellHeight = [questionLabel sizeThatFits:titleMaxSize].height;
+    NSLog(@"titleH = %f", cellHeight);
+    if (cellHeight - fontAuto(16.0f).lineHeight <= S(5.0f)) {//当为一行的时候去掉间距
+        cellHeight = cellHeight - S(5.0f);
+    }
+    NSLog(@"titleH === = %f", cellHeight);
 }
 
 - (void)testSendEmail {
@@ -232,7 +295,7 @@
     [btn setTitle:@"smsCode" forState:UIControlStateNormal];
     btn.backgroundColor = [UIColor grayColor];
     [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(emailClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [btn addTarget:self action:@selector(emailClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)emailClick:(UIButton *)sender {
@@ -332,10 +395,6 @@
     // 关闭邮件发送视图
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-
-
 
 - (void)testMasonry {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0, 100, kWidth, 60.0f)];
@@ -1355,14 +1414,14 @@
     [[dic objectForKey:@"data"] objectForKey:@"coinFlag"];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-//    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-//        statusBar.backgroundColor = [UIColor blackColor];
-//    }
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+////    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+////    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+////        statusBar.backgroundColor = [UIColor blackColor];
+////    }
+//}
 // 返回状态栏的样式
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleDefault;
@@ -1370,19 +1429,6 @@
 
 - (BOOL)prefersStatusBarHidden {
     return NO;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-//    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    //    SecondViewController *secVC = [[SecondViewController alloc] init];
-    //    secVC.lyPerson.name = @"";
-    //    [self.navigationController pushViewController:secVC animated:YES];
-    //    [self testVC];
-    //    [self testWriteToFile];
-    //    [self testReadFile];
-    //    [self testPreference];
-    //    [self testSqlLite3];
 }
 
 

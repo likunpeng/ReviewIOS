@@ -39,6 +39,8 @@
 		7673013D229CDA49000B9ECA /* TestCustomMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7673013C229CDA49000B9ECA /* TestCustomMenuBar.m */; };
 		76730140229CE5CF000B9ECA /* TestSegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7673013F229CE5CF000B9ECA /* TestSegViewController.m */; };
 		76730143229CF7B5000B9ECA /* HomrProductMenuBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 76730142229CF7B5000B9ECA /* HomrProductMenuBarItem.m */; };
+		7674385822B9D1DF005D2960 /* TestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7674385722B9D1DF005D2960 /* TestLoginViewController.m */; };
+		7674385B22B9D375005D2960 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7674385A22B9D375005D2960 /* AccountManager.m */; };
 		7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378B20215B42002B75DD /* Person+RunPerson.m */; };
 		7677378F20232541002B75DD /* LYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7677378E20232541002B75DD /* LYPerson.m */; };
 		768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 768EF804219BC2E4006C3197 /* SingleInstanceObject.m */; };
@@ -149,6 +151,10 @@
 		7673013F229CE5CF000B9ECA /* TestSegViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSegViewController.m; sourceTree = "<group>"; };
 		76730141229CF7B5000B9ECA /* HomrProductMenuBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomrProductMenuBarItem.h; sourceTree = "<group>"; };
 		76730142229CF7B5000B9ECA /* HomrProductMenuBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomrProductMenuBarItem.m; sourceTree = "<group>"; };
+		7674385622B9D1DF005D2960 /* TestLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLoginViewController.h; sourceTree = "<group>"; };
+		7674385722B9D1DF005D2960 /* TestLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLoginViewController.m; sourceTree = "<group>"; };
+		7674385922B9D374005D2960 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		7674385A22B9D375005D2960 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		7677378A20215B42002B75DD /* Person+RunPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+RunPerson.h"; sourceTree = "<group>"; };
 		7677378B20215B42002B75DD /* Person+RunPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+RunPerson.m"; sourceTree = "<group>"; };
 		7677378D20232541002B75DD /* LYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPerson.h; sourceTree = "<group>"; };
@@ -377,6 +383,8 @@
 		764A72E1228AA06A00A6DDE4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7674385922B9D374005D2960 /* AccountManager.h */,
+				7674385A22B9D375005D2960 /* AccountManager.m */,
 				76730124229BEBB2000B9ECA /* HXMenuBar */,
 				7673011C229BB37C000B9ECA /* UIImage+Image.h */,
 				7673011B229BB37C000B9ECA /* UIImage+Image.m */,
@@ -461,6 +469,8 @@
 				76DC843720108B7100E7963E /* testXML.plist */,
 				EAC2B7E61EF9166500AC8029 /* Supporting Files */,
 				762F20F722964906008771CB /* PrefixHeader.pch */,
+				7674385622B9D1DF005D2960 /* TestLoginViewController.h */,
+				7674385722B9D1DF005D2960 /* TestLoginViewController.m */,
 			);
 			path = runLoop;
 			sourceTree = "<group>";
@@ -683,6 +693,7 @@
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
 				764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */,
+				7674385B22B9D375005D2960 /* AccountManager.m in Sources */,
 				762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */,
 				764771DB204EA90600149AC3 /* VCViewController.m in Sources */,
 				762F20EC22963EA9008771CB /* TestSmsCodeViewController.m in Sources */,
@@ -716,6 +727,7 @@
 				76730131229BEBB2000B9ECA /* HXMenuBarItem.m in Sources */,
 				76730133229BEBB2000B9ECA /* HXMenuBarBase.m in Sources */,
 				76B4935A2004AFAD00BF0EED /* Person.m in Sources */,
+				7674385822B9D1DF005D2960 /* TestLoginViewController.m in Sources */,
 				EAC2B7E81EF9166500AC8029 /* main.m in Sources */,
 				7673011A229BAFB6000B9ECA /* Test01ViewController.m in Sources */,
 			);

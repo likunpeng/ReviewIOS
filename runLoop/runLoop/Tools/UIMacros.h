@@ -29,8 +29,10 @@
 #define IS_IPHONEX (CGSizeEqualToSize(CGSizeMake(375.0f, 812.0f), [[UIScreen mainScreen] bounds].size) || CGSizeEqualToSize(CGSizeMake(414.0f, 896.0f), [[UIScreen mainScreen] bounds].size))
 
 // Font
-#define fontAuto(size) [UIFont systemFontOfSize:S(size)]
+//#define fontAuto(size) [UIFont systemFontOfSize:S(size)]
+#define fontAuto(font) [UIFont fontWithName:@"PingFangSC-Ultralight"size:S(font)]
 #define fontBoldAuto(size) [UIFont boldSystemFontOfSize:S(size)]
+//#define fontAuto(font)  [UIFont fontWithName:@"PingFangSC-Medium"size:S(font)]
 
 // RGB(0.0f, 0.0f, 0.0f)
 #define RGBa(r,g,b,a) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:a]
