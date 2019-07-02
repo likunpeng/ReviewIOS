@@ -19,7 +19,4 @@ class Person {
     deinit {
         print("\(name) is being deinitialized")
     }
-
-
-    
 }
