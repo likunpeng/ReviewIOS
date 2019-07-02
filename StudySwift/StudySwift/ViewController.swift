@@ -19,6 +19,19 @@ class ViewController: UIViewController {
         testStr()
     }
 
+    func testCloserCapturingValue() {
+//        makeIncrementer(forIncrement: 10)
+    }
+
+    func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+        var runningTotal = 0
+        func incrementer() -> Int {
+            runningTotal += amount
+            return runningTotal
+        }
+        return incrementer
+    }
+
     func historyTestCode() {
         reference1 = Person(name: "lkp")
 
