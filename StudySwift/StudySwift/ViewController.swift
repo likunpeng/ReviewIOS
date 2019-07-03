@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum ArithmeticExpression {
+    case number(Int)
+    indirect case addition(ArithmeticExpression, ArithmeticExpression)
+    indirect case multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+
 class ViewController: UIViewController {
 
     var reference1: Person?
@@ -16,8 +22,33 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testStr()
+//        testStr()
+        testEnum()
+
     }
+
+    func testEnum() {
+        let five = ArithmeticExpression.number(5)
+        print(five)
+        let four = ArithmeticExpression.number(4)
+        print(four)
+        let sum = ArithmeticExpression.addition(five, four)
+        print(sum)
+
+        print(evaluate(sum))
+    }
+
+    func evaluate(_ expression: ArithmeticExpression) -> Int {
+        switch expression {
+        case let .number(value):
+            return value
+        case let .addition(left, right):
+            return evaluate(left) + evaluate(right)
+        case let .multiplication(left, right):
+            return evaluate(left) * evaluate(right)
+        }
+    }
+
 
     func testCloserCapturingValue() {
 //        makeIncrementer(forIncrement: 10)
