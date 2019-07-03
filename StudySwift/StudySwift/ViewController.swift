@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        testStr()
         testEnum()
-
     }
 
     func testEnum() {
