@@ -6,5 +6,5 @@ target 'StudySwift' do
   use_frameworks!
 
   # Pods for StudySwift
-pod 'SwiftLint'
+pod 'SwiftLint', '0.29.0'
 end
