@@ -15,15 +15,253 @@ enum ArithmeticExpression {
 }
 
 class ViewController: UIViewController {
-
     var reference1: Person?
     var reference2: Person?
     var reference3: Person?
 
+    var john: Person?
+    var unit4A: Apartment?
+
+    var john02: Customer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 //        testStr()
-        testEnum()
+//        testEnum()
+//        testBaseClass()
+//        testInitMethod()
+//        testCustomInit()
+//        testDefaultInit()
+//        testInit()
+
+        testARC()
+    }
+
+    func testARC() {
+//        reference1 = Person(name: "John Appleseed")
+//        reference2 = reference1
+//        reference3 = reference1
+//        reference1 = nil
+//        reference2 = nil
+//        reference3 = nil
+        john = Person(name: "John Appleseed")
+        unit4A = Apartment(unit: "4A")
+        john!.apartment = unit4A
+        unit4A!.tenant = john
+
+        john = nil
+        unit4A = nil
+
+        john02 = Customer(name: "John Appleseed")
+        john02!.card = CreditCard(number: 1234_5678_9012_3456, customer: john02!)
+        john02 = nil
+    }
+
+    class Customer {
+        let name: String
+        var card: CreditCard?
+        init(name: String) {
+            self.name = name
+        }
+        deinit { print("\(name) is being deinitialized") }
+    }
+
+    class CreditCard {
+        let number: UInt64
+        unowned let customer: Customer
+        init(number: UInt64, customer: Customer) {
+            self.number = number
+            self.customer = customer
+        }
+        deinit { print("Card #\(number) is being deinitialized") }
+    }
+
+    class Person {
+        let name: String
+        init(name: String) {
+            self.name = name
+            print("\(name) is being initialized")
+        }
+
+        var apartment: Apartment?
+        deinit {
+            print("\(name) is being deinitialized")
+        }
+    }
+
+    class Apartment {
+        let unit: String
+        init(unit: String) { self.unit = unit }
+        weak var tenant: Person?
+        deinit { print("Apartment \(unit) is being deinitialized") }
+    }
+
+    func testInit() {
+        let namedMeat = Food(name: "Bacon")
+        print(namedMeat.name)
+
+        let mysteryMeat = Food()
+        print(mysteryMeat.name)
+    }
+
+    class Food {
+        var name: String
+        init(name: String) {
+            self.name = name
+        }
+        convenience init() {
+            self.init(name: "[Unnamed]")
+        }
+    }
+
+    func testDefaultInit() {
+        let item = ShoppingListItem()
+        print(item.name)
+
+        let twoByTwo = Size(width: 2.0, height: 2.0)
+        print(twoByTwo.width)
+    }
+
+    struct Rect {
+        var origin = Point()
+        var size = Size()
+        init() {}
+        init(origin: Point, size: Size) {
+            self.origin = origin
+            self.size = size
+        }
+        init(center: Point, size: Size) {
+            let originX = center.x - (size.width / 2)
+            let originY = center.y - (size.height / 2)
+            self.init(origin: Point(x: originX, y: originY), size: size)
+        }
+    }
+
+    struct Size {
+        var width = 0.0, height = 0.0
+    }
+
+    struct Point {
+        // swiftlint:disable identifier_name
+        var x = 0.0, y = 0.0
+    }
+
+    class ShoppingListItem {
+        var name: String?
+        var quantity = 1
+        var purchased = false
+    }
+
+    class SurveyQuestion {
+        var text: String
+        var response: String?
+        init(text: String) {
+            self.text = text
+        }
+        func ask() {
+            print(text)
+        }
+    }
+
+    struct Color {
+        let red, green, blue: Double
+        init(red: Double, green: Double, blue: Double) {
+            self.red   = red
+            self.green = green
+            self.blue  = blue
+        }
+        init(white: Double) {
+            red   = white
+            green = white
+            blue  = white
+        }
+    }
+
+    struct Celsius {
+        var temperatureInCelsius: Double
+        init(fromFahrenheit fahrenheit: Double) {
+            temperatureInCelsius = (fahrenheit - 32.0) / 1.8
+        }
+
+        init(fromKelvin kelvin: Double) {
+            temperatureInCelsius = kelvin - 273.15
+        }
+
+        init(_ celsius: Double) {
+            temperatureInCelsius = celsius
+        }
+    }
+
+    func testCustomInit() {
+        let boilingPointOfWater = Celsius(fromFahrenheit: 212.0)
+        // boilingPointOfWater.temperatureInCelsius 是 100.0
+        print(boilingPointOfWater)
+        let freezingPointOfWater = Celsius(fromKelvin: 273.15)
+        print(freezingPointOfWater)
+
+        let cheeseQuestion = SurveyQuestion(text: "Do you like cheese?")
+        cheeseQuestion.ask()
+        // 打印 "Do you like cheese?"
+        cheeseQuestion.response = "Yes, I do like cheese."
+
+//        let magenta = Color(red: 1.0, green: 0.0, blue: 1.0)
+//        let halfGray = Color(white: 0.5)
+    }
+
+    struct Fahrenheit {
+        var temperature: Double
+        init() {
+            temperature = 32.0
+        }
+    }
+
+    func testInitMethod() {
+        let fah = Fahrenheit()
+        print("The default temperature is \(fah.temperature)° Fahrenheit")
+    }
+
+    func testBaseClass() {
+        let someValue = Vehicle()
+        print("Vehicle:\(someValue.description)")
+
+        let bicycle = Bicycle()
+        bicycle.hasBasket = true
+        bicycle.currentSpeed = 15.0
+        print("bicycle:\(bicycle.description)")
+
+        let tandem = Tandem()
+        tandem.hasBasket = true
+        tandem.currentNumberOfPassengers = 2
+        tandem.currentSpeed = 22.0
+        print("Tandem: \(tandem.description)")
+
+        let train = Train()
+        train.makeNoise()
+
+    }
+
+    class Train: Vehicle {
+        override func makeNoise() {
+            print("Choo Choo")
+        }
+    }
+
+    class Tandem: Bicycle {
+        var currentNumberOfPassengers = 0
+    }
+
+    class Bicycle: Vehicle {
+        var hasBasket = false
+    }
+
+    class Vehicle {
+        var currentSpeed = 0.0
+        var description: String {
+            return "traveling at \(currentSpeed) miles per hour"
+        }
+        func makeNoise() {
+            // 什么也不做-因为车辆不一定会有噪音
+        }
     }
 
     func testEnum() {
@@ -63,14 +301,14 @@ class ViewController: UIViewController {
     }
 
     func historyTestCode() {
-        reference1 = Person(name: "lkp")
-
-        reference2 = reference1
-        reference3 = reference1
-
-        reference1 = nil
-        reference2 = nil
-        reference3 = nil
+//        reference1 = Person(name: "lkp")
+//
+//        reference2 = reference1
+//        reference3 = reference1
+//
+//        reference1 = nil
+//        reference2 = nil
+//        reference3 = nil
 
         //        let digitNames = [
         //            0: "Zero",1: "One",2: "Two",  3: "Three",4: "Four",
@@ -145,3 +383,4 @@ till you come to the end; then stop."
         // Dispose of any resources that can be recreated.
     }
 }
+
