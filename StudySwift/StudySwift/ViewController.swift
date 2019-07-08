@@ -34,7 +34,121 @@ class ViewController: UIViewController {
 //        testDefaultInit()
 //        testInit()
 
-        testARC()
+//        testARC()
+//        testOptional()
+//        testASIS()
+        testExtension()
+    }
+
+    func testExtension() {
+        let oneInch = 25.4.mm
+        print("One inch is \(oneInch) meters")
+        // 打印“One inch is 0.0254 meters”
+        let threeFeet = 3.ft
+        print("Three feet is \(threeFeet) meters")
+    }
+
+    func testSuit() {
+        struct BlackjackCard {
+
+            // 嵌套的 Suit 枚举
+            enum Suit: Character {
+                case spades = "♠", hearts = "♡", diamonds = "♢", clubs = "♣"
+            }
+
+            // 嵌套的 Rank 枚举
+            enum Rank: Int {
+                case two = 2, three, four, five, six, seven, eight, nine, ten
+                case jack, queen, king, ace
+                struct Values {
+                    let first: Int, second: Int?
+                }
+                var values: Values {
+                    switch self {
+                    case .ace:
+                        return Values(first: 1, second: 11)
+                    case .jack, .queen, .king:
+                        return Values(first: 10, second: nil)
+                    default:
+                        return Values(first: self.rawValue, second: nil)
+                    }
+                }
+            }
+
+            // BlackjackCard 的属性和方法
+            let rank: Rank, suit: Suit
+            var description: String {
+                var output = "suit is \(suit.rawValue),"
+                output += " value is \(rank.values.first)"
+                if let second = rank.values.second {
+                    output += " or \(second)"
+                }
+                return output
+            }
+        }
+    }
+
+    func testASIS() {
+        let library = [
+            Movie(name: "Casablanca", director: "Michael Curtiz"),
+            Song(name: "Blue Suede Shoes", artist: "Elvis Presley"),
+            Movie(name: "Citizen Kane", director: "Orson Welles"),
+            Song(name: "The One And Only", artist: "Chesney Hawkes"),
+            Song(name: "Never Gonna Give You Up", artist: "Rick Astley")
+        ]
+        // 数组 library 的类型被推断为 [MediaItem]
+        var movieCount = 0
+        var songCount = 0
+
+        for item in library {
+            if item is Movie {
+                movieCount += 1
+            } else if item is Song {
+                songCount += 1
+            }
+        }
+        print("Media library contains \(movieCount) movies and \(songCount) songs")
+
+        for item in library {
+            if let movie = item as? Movie {
+                print("Movie: \(movie.name), dir. \(movie.director)")
+            } else if let song = item as? Song {
+                print("Song: \(song.name), by \(song.artist)")
+            }
+        }
+    }
+
+    class Movie: MediaItem {
+        var director: String
+        init(name: String, director: String) {
+            self.director = director
+            super.init(name: name)
+        }
+    }
+
+    class Song: MediaItem {
+        var artist: String
+        init(name: String, artist: String) {
+            self.artist = artist
+            super.init(name: name)
+        }
+    }
+
+    class MediaItem {
+        var name: String
+        init(name: String) {
+            self.name = name
+        }
+    }
+
+    func testOptional() {
+        let john = Person()
+//        let roomCount = john.residence!.numberOfRooms
+        if let roomCount = john.residence?.numberOfRooms {
+            print("John's residence has \(roomCount) room(s).")
+        } else {
+            print("Unable to retrieve the number of rooms.")
+        }
     }
 
     func testARC() {
@@ -44,17 +158,17 @@ class ViewController: UIViewController {
 //        reference1 = nil
 //        reference2 = nil
 //        reference3 = nil
-        john = Person(name: "John Appleseed")
-        unit4A = Apartment(unit: "4A")
-        john!.apartment = unit4A
-        unit4A!.tenant = john
+//        john = Person(name: "John Appleseed")
+//        unit4A = Apartment(unit: "4A")
+//        john!.apartment = unit4A
+//        unit4A!.tenant = john
 
-        john = nil
-        unit4A = nil
-
-        john02 = Customer(name: "John Appleseed")
-        john02!.card = CreditCard(number: 1234_5678_9012_3456, customer: john02!)
-        john02 = nil
+//        john = nil
+//        unit4A = nil
+//
+//        john02 = Customer(name: "John Appleseed")
+//        john02!.card = CreditCard(number: 1234_5678_9012_3456, customer: john02!)
+//        john02 = nil
     }
 
     class Customer {
@@ -76,17 +190,58 @@ class ViewController: UIViewController {
         deinit { print("Card #\(number) is being deinitialized") }
     }
 
-    class Person {
-        let name: String
-        init(name: String) {
-            self.name = name
-            print("\(name) is being initialized")
+    class Residence {
+        var rooms = [Room]()
+        var numberOfRooms: Int {
+            return rooms.count
         }
+        subscript(i: Int) -> Room {
+            get {
+                return rooms[i]
+            }
+            set {
+                rooms[i] = newValue
+            }
+        }
+        func printNumberOfRooms() {
+            print("The number of rooms is \(numberOfRooms)")
+        }
+        var address: Address?
+    }
 
-        var apartment: Apartment?
-        deinit {
-            print("\(name) is being deinitialized")
+    class Room {
+        let name: String
+        init(name: String) { self.name = name }
+    }
+
+    class Address {
+        var buildingName: String?
+        var buildingNumber: String?
+        var street: String?
+        func buildingIdentifier() -> String? {
+            if buildingName != nil {
+                return buildingName
+            } else if let buildingNumber = buildingNumber, let street = street {
+                return "\(buildingNumber) \(street)"
+            } else {
+                return nil
+            }
         }
+    }
+
+    class Person {
+        var residence: Residence?
+//        let name: String
+
+//        init(name: String) {
+//            self.name = name
+//            print("\(name) is being initialized")
+//        }
+
+//        var apartment: Apartment?
+//        deinit {
+//            print("\(name) is being deinitialized")
+//        }
     }
 
     class Apartment {
@@ -382,5 +537,13 @@ till you come to the end; then stop."
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+extension Double {
+    var km: Double { return self * 1_000.0 }
+    var m: Double { return self }
+    var cm: Double { return self / 100.0 }
+    var mm: Double { return self / 1_000.0 }
+    var ft: Double { return self / 3.28084 }
 }
 
