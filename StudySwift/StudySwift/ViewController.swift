@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 //        testARC()
 //        testOptional()
 //        testASIS()
-        testExtension()
+//        testExtension()
     }
 
     func testExtension() {
