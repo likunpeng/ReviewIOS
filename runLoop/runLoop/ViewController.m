@@ -41,6 +41,7 @@
 #import "NSData+Base64Additions.h"
 #import "AccountManager.h"
 #import "TestLoginViewController.h"
+#import "Study/StudyGCD.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -70,8 +71,7 @@
 #define PPLog(...)
 #endif
 
-@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate, MFMailComposeViewControllerDelegate, SKPSMTPMessageDelegate>
-{
+@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource ,UIWebViewDelegate, MFMailComposeViewControllerDelegate, SKPSMTPMessageDelegate> {
     dispatch_semaphore_t semaphoreLock;
 }
 
@@ -229,6 +229,13 @@
 //    [self testMasonry];
 //    [self testSendEmail];
 //    [self testLabelSize];
+    [self studyCGD];
+}
+
+- (void)studyCGD {
+    StudyGCD *gcd = [[StudyGCD alloc] init];
+//    [gcd createQueue];
+    [gcd useGCD];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

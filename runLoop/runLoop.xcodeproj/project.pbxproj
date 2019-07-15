@@ -26,6 +26,7 @@
 		764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72D9228A65C500A6DDE4 /* BRStringPickerView.m */; };
 		764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */; };
 		764CF60C22A4EE0E0065E7C8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764CF60B22A4EE0E0065E7C8 /* MessageUI.framework */; };
+		764DF6EF22D82D710026DB14 /* StudyGCD.m in Sources */ = {isa = PBXBuildFile; fileRef = 764DF6EE22D82D710026DB14 /* StudyGCD.m */; };
 		765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 765D9B4E206C83FD00422982 /* TestValueViewController.m */; };
 		7673011A229BAFB6000B9ECA /* Test01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76730119229BAFB6000B9ECA /* Test01ViewController.m */; };
 		7673011D229BB37C000B9ECA /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 7673011B229BB37C000B9ECA /* UIImage+Image.m */; };
@@ -124,6 +125,8 @@
 		764A72DF228A9B1700A6DDE4 /* TestAVPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestAVPlayerViewController.m; sourceTree = "<group>"; };
 		764A72E2228AA0BF00A6DDE4 /* UIMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMacros.h; sourceTree = "<group>"; };
 		764CF60B22A4EE0E0065E7C8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		764DF6ED22D82D710026DB14 /* StudyGCD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyGCD.h; sourceTree = "<group>"; };
+		764DF6EE22D82D710026DB14 /* StudyGCD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyGCD.m; sourceTree = "<group>"; };
 		765C6B542293FC5D00B95FB8 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		765D9B4D206C83FD00422982 /* TestValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestValueViewController.h; sourceTree = "<group>"; };
 		765D9B4E206C83FD00422982 /* TestValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestValueViewController.m; sourceTree = "<group>"; };
@@ -394,6 +397,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		764DF6EC22D82D4D0026DB14 /* Study */ = {
+			isa = PBXGroup;
+			children = (
+				764DF6ED22D82D710026DB14 /* StudyGCD.h */,
+				764DF6EE22D82D710026DB14 /* StudyGCD.m */,
+			);
+			path = Study;
+			sourceTree = "<group>";
+		};
 		76730124229BEBB2000B9ECA /* HXMenuBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +461,7 @@
 		EAC2B7E51EF9166500AC8029 /* runLoop */ = {
 			isa = PBXGroup;
 			children = (
+				764DF6EC22D82D4D0026DB14 /* Study */,
 				76730134229CD27A000B9ECA /* TestSeg */,
 				762F20ED22963ED1008771CB /* UAV */,
 				762F20DC229400E4008771CB /* HttpService */,
@@ -665,7 +678,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-runLoop/Pods-runLoop-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-runLoop/Pods-runLoop-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FFToast/FFToast.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -674,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-runLoop/Pods-runLoop-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-runLoop/Pods-runLoop-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -692,6 +705,7 @@
 				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
+				764DF6EF22D82D710026DB14 /* StudyGCD.m in Sources */,
 				764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */,
 				7674385B22B9D375005D2960 /* AccountManager.m in Sources */,
 				762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */,
