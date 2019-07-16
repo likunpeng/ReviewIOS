@@ -17,6 +17,8 @@
 		762F20F3229645F7008771CB /* KKValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20F2229645F7008771CB /* KKValidationCodeView.m */; };
 		762F20F6229648BE008771CB /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20F5229648BE008771CB /* WelcomeViewController.m */; };
 		762F20FB22964B28008771CB /* HXSRSolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 762F20F922964B27008771CB /* HXSRSolution.m */; };
+		7632672322DDD4DE007CEAC8 /* StudyExtern.m in Sources */ = {isa = PBXBuildFile; fileRef = 7632672222DDD4DE007CEAC8 /* StudyExtern.m */; };
+		7632672622DDD502007CEAC8 /* MyExtern.m in Sources */ = {isa = PBXBuildFile; fileRef = 7632672522DDD502007CEAC8 /* MyExtern.m */; };
 		7635B0A221B782EA00BCA8E6 /* EOCBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */; };
 		7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7635B0A421B7830800BCA8E6 /* EOCSubClass.m */; };
 		764244B221EF063F009252D7 /* UIImage+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 764244B121EF063F009252D7 /* UIImage+Addtions.m */; };
@@ -105,6 +107,10 @@
 		762F20F722964906008771CB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		762F20F922964B27008771CB /* HXSRSolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSRSolution.m; sourceTree = "<group>"; };
 		762F20FA22964B27008771CB /* HXSRSolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSRSolution.h; sourceTree = "<group>"; };
+		7632672122DDD4DE007CEAC8 /* StudyExtern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyExtern.h; sourceTree = "<group>"; };
+		7632672222DDD4DE007CEAC8 /* StudyExtern.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyExtern.m; sourceTree = "<group>"; };
+		7632672422DDD502007CEAC8 /* MyExtern.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyExtern.h; sourceTree = "<group>"; };
+		7632672522DDD502007CEAC8 /* MyExtern.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyExtern.m; sourceTree = "<group>"; };
 		7635B0A021B782EA00BCA8E6 /* EOCBaseClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCBaseClass.h; sourceTree = "<group>"; };
 		7635B0A121B782EA00BCA8E6 /* EOCBaseClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCBaseClass.m; sourceTree = "<group>"; };
 		7635B0A321B7830800BCA8E6 /* EOCSubClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCSubClass.h; sourceTree = "<group>"; };
@@ -402,6 +408,10 @@
 			children = (
 				764DF6ED22D82D710026DB14 /* StudyGCD.h */,
 				764DF6EE22D82D710026DB14 /* StudyGCD.m */,
+				7632672122DDD4DE007CEAC8 /* StudyExtern.h */,
+				7632672222DDD4DE007CEAC8 /* StudyExtern.m */,
+				7632672422DDD502007CEAC8 /* MyExtern.h */,
+				7632672522DDD502007CEAC8 /* MyExtern.m */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -704,6 +714,7 @@
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				7635B0A521B7830800BCA8E6 /* EOCSubClass.m in Sources */,
 				768EF805219BC2E4006C3197 /* SingleInstanceObject.m in Sources */,
+				7632672322DDD4DE007CEAC8 /* StudyExtern.m in Sources */,
 				76E8FA6121BE70750092B4A7 /* EOCNetworkFetcher.m in Sources */,
 				764DF6EF22D82D710026DB14 /* StudyGCD.m in Sources */,
 				764A72DB228A65C500A6DDE4 /* BRStringPickerView.m in Sources */,
@@ -727,6 +738,7 @@
 				EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */,
 				7677378C20215B42002B75DD /* Person+RunPerson.m in Sources */,
 				76DC843B201187CC00E7963E /* AssetManager.m in Sources */,
+				7632672622DDD502007CEAC8 /* MyExtern.m in Sources */,
 				762F20E7229400E4008771CB /* PPHTTPRequest.m in Sources */,
 				76730120229BB8CE000B9ECA /* Text02ViewController.m in Sources */,
 				7673011D229BB37C000B9ECA /* UIImage+Image.m in Sources */,

@@ -42,6 +42,8 @@
 #import "AccountManager.h"
 #import "TestLoginViewController.h"
 #import "Study/StudyGCD.h"
+#import "Study/StudyExtern.h"
+#import "Study/MyExtern.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -229,7 +231,13 @@
 //    [self testMasonry];
 //    [self testSendEmail];
 //    [self testLabelSize];
-    [self studyCGD];
+//    [self studyCGD];
+    [self studyExtern];
+}
+
+- (void)studyExtern {
+    [StudyExtern testExtern];
+    [MyExtern testExtern];
 }
 
 - (void)studyCGD {
