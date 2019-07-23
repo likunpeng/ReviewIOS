@@ -60,6 +60,7 @@
 		76FC08502268519500A7BE38 /* TestModelWithKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FC084F2268519500A7BE38 /* TestModelWithKVC.m */; };
 		76FE35FE20285D1000369EDF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE35FD20285D1000369EDF /* Dog.m */; };
 		76FE3603202C21B000369EDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE3602202C21B000369EDF /* SecondViewController.m */; };
+		89882ED222E6DC20001F2270 /* StudyBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 89882ED122E6DC20001F2270 /* StudyBlock.m */; };
 		EAC2B7E81EF9166500AC8029 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7E71EF9166500AC8029 /* main.m */; };
 		EAC2B7EB1EF9166500AC8029 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7EA1EF9166500AC8029 /* AppDelegate.m */; };
 		EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7ED1EF9166500AC8029 /* ViewController.m */; };
@@ -193,6 +194,8 @@
 		76FE35FD20285D1000369EDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		76FE3601202C21B000369EDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		76FE3602202C21B000369EDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		89882ED022E6DC20001F2270 /* StudyBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyBlock.h; sourceTree = "<group>"; };
+		89882ED122E6DC20001F2270 /* StudyBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyBlock.m; sourceTree = "<group>"; };
 		9FD0E3E40E0420B7DBF69E17 /* Pods-runLoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runLoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-runLoop/Pods-runLoop.release.xcconfig"; sourceTree = "<group>"; };
 		E15A767FDF5F62B8913D17C2 /* Pods-runLoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-runLoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-runLoop/Pods-runLoop.debug.xcconfig"; sourceTree = "<group>"; };
 		EAC2B7E31EF9166500AC8029 /* runLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = runLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,6 +420,8 @@
 				7632672522DDD502007CEAC8 /* MyExtern.m */,
 				7632672722DEC4D8007CEAC8 /* StudyConst.h */,
 				7632672822DEC4D8007CEAC8 /* StudyConst.m */,
+				89882ED022E6DC20001F2270 /* StudyBlock.h */,
+				89882ED122E6DC20001F2270 /* StudyBlock.m */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -715,6 +720,7 @@
 				76FC08502268519500A7BE38 /* TestModelWithKVC.m in Sources */,
 				76730130229BEBB2000B9ECA /* HXMenuBarView.m in Sources */,
 				EAC2B7EE1EF9166500AC8029 /* ViewController.m in Sources */,
+				89882ED222E6DC20001F2270 /* StudyBlock.m in Sources */,
 				764A72E0228A9B1700A6DDE4 /* TestAVPlayerViewController.m in Sources */,
 				76FE35FE20285D1000369EDF /* Dog.m in Sources */,
 				7632672922DEC4D8007CEAC8 /* StudyConst.m in Sources */,

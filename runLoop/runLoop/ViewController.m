@@ -44,6 +44,7 @@
 #import "Study/StudyGCD.h"
 #import "Study/StudyExtern.h"
 #import "Study/MyExtern.h"
+#import "Study/StudyBlock.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -232,7 +233,8 @@
 //    [self testSendEmail];
 //    [self testLabelSize];
 //    [self studyCGD];
-    [self studyExtern];
+//    [self studyExtern];
+    [self testBlock];
 }
 
 - (void)studyExtern {
@@ -1934,9 +1936,14 @@
 
 
 - (void)testBlock {
-    NSMutableString *str = [NSMutableString string];
-    int ss = 1;
-    NSLog(@"str addr = %p", str);
+    
+    StudyBlock *st = [[StudyBlock alloc] init];
+    [st testBlock];
+    [st testCaptureValueBlock];
+    [st testTypeOfBlock];
+//    NSMutableString *str = [NSMutableString string];
+//    int ss = 1;
+//    NSLog(@"str addr = %p", str);
     
 //    int (^someBlock)(int a, int b) = ^int(int a, int b) {
 //        ss = 3;
