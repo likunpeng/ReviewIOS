@@ -45,6 +45,7 @@
 #import "Study/StudyExtern.h"
 #import "Study/MyExtern.h"
 #import "Study/StudyBlock.h"
+#import "Study/StudyRuntime.h"
 //@interface Pet : NSObject
 //
 //@end
@@ -234,7 +235,13 @@
 //    [self testLabelSize];
 //    [self studyCGD];
 //    [self studyExtern];
-    [self testBlock];
+//    [self testBlock];
+    [self testRuntime];
+}
+
+- (void)testRuntime {
+    StudyRuntime *sr = [[StudyRuntime alloc] init];
+    [sr testMSGForword];
 }
 
 - (void)studyExtern {
