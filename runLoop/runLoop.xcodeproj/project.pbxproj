@@ -60,6 +60,7 @@
 		76FC08502268519500A7BE38 /* TestModelWithKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FC084F2268519500A7BE38 /* TestModelWithKVC.m */; };
 		76FE35FE20285D1000369EDF /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE35FD20285D1000369EDF /* Dog.m */; };
 		76FE3603202C21B000369EDF /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FE3602202C21B000369EDF /* SecondViewController.m */; };
+		8919618F22F2CEC1006A1696 /* StudySynch.m in Sources */ = {isa = PBXBuildFile; fileRef = 8919618E22F2CEC1006A1696 /* StudySynch.m */; };
 		89882ED222E6DC20001F2270 /* StudyBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 89882ED122E6DC20001F2270 /* StudyBlock.m */; };
 		89882ED522E7FF74001F2270 /* StudyRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 89882ED422E7FF74001F2270 /* StudyRuntime.m */; };
 		EAC2B7E81EF9166500AC8029 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC2B7E71EF9166500AC8029 /* main.m */; };
@@ -195,6 +196,8 @@
 		76FE35FD20285D1000369EDF /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		76FE3601202C21B000369EDF /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		76FE3602202C21B000369EDF /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		8919618D22F2CEC1006A1696 /* StudySynch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudySynch.h; sourceTree = "<group>"; };
+		8919618E22F2CEC1006A1696 /* StudySynch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudySynch.m; sourceTree = "<group>"; };
 		89882ED022E6DC20001F2270 /* StudyBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyBlock.h; sourceTree = "<group>"; };
 		89882ED122E6DC20001F2270 /* StudyBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudyBlock.m; sourceTree = "<group>"; };
 		89882ED322E7FF74001F2270 /* StudyRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudyRuntime.h; sourceTree = "<group>"; };
@@ -427,6 +430,8 @@
 				89882ED122E6DC20001F2270 /* StudyBlock.m */,
 				89882ED322E7FF74001F2270 /* StudyRuntime.h */,
 				89882ED422E7FF74001F2270 /* StudyRuntime.m */,
+				8919618D22F2CEC1006A1696 /* StudySynch.h */,
+				8919618E22F2CEC1006A1696 /* StudySynch.m */,
 			);
 			path = Study;
 			sourceTree = "<group>";
@@ -749,6 +754,7 @@
 				765D9B4F206C83FD00422982 /* TestValueViewController.m in Sources */,
 				7677378F20232541002B75DD /* LYPerson.m in Sources */,
 				762F20E9229400E4008771CB /* PPNetworkCache.m in Sources */,
+				8919618F22F2CEC1006A1696 /* StudySynch.m in Sources */,
 				764A72DA228A65C500A6DDE4 /* BaseView.m in Sources */,
 				764771D5204EA8DC00149AC3 /* VBViewController.m in Sources */,
 				762F20E6229400E4008771CB /* PPInterfacedConst.m in Sources */,
