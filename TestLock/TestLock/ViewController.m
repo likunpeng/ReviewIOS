@@ -23,9 +23,41 @@
 //    [self testRecursiveLock];
 //    [self testNSLock];
 //    [self testConditionLock];
-    [self testConditionLock02];
+//    [self testConditionLock02];
+    [self testRecursiveLock02];
 }
 
+
+//联系递归锁
+- (void)testRecursiveLock02 {
+    //先使用一种锁看看是否可以递归
+//    NSLock *nLock = [[NSLock alloc] init];
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        static void (^RecursiveBlock)(int);
+//        RecursiveBlock = ^(int value) {
+//            [nLock lock];
+//            if (value > 0) {
+//                NSLog(@"value = %d", value);
+//                RecursiveBlock(value - 1);
+//            }
+//            [nLock unlock];
+//        };
+//        RecursiveBlock(4);
+//    });
+    // 上面这种循环会导致死锁一直不释放相关的资源 如何解决这个问题 我们可以使用递归锁
+    NSRecursiveLock *rLock = [[NSRecursiveLock alloc] init];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        static void (^RecursiveBlock)(int);
+        RecursiveBlock = ^(int value) {
+            [rLock lock];
+            if (value > 0) {
+                NSLog(@"value = %d", value);
+                RecursiveBlock(value - 1);
+            }
+        };
+        RecursiveBlock(4);
+    });
+}
 
 // 练习下如何使用NSConfition的唤醒
 - (void)testConditionLock02 {
