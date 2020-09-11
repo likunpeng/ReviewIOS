@@ -20,8 +20,31 @@
     // Do any additional setup after loading the view.
 //    [self testSemaphore];
 //    [self testPthreadMutex];
-    [self testRecursiveLock];
+//    [self testRecursiveLock];
+    [self testNSLock];
+}
+
+- (void)testNSLock {
+    NSLock *lock = [[NSLock alloc] init];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"---- 准备加锁----");
+        [lock lock];
+        sleep(3);
+        NSLog(@"thread 01 ing");
+        [lock unlock];
+        NSLog(@"thread 01 unlock success");
+    });
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"thread start to locking");
+        BOOL x = [lock lockBeforeDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+        if (x) {
+            NSLog(@"tread 2 ing");
+            [lock unlock];
+        } else {
+            NSLog(@"fail");
+        }
+    });
 }
 /**
  实现递归锁
