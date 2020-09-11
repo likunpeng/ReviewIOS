@@ -24,11 +24,30 @@
 //    [self testNSLock];
 //    [self testConditionLock];
 //    [self testConditionLock02];
-    [self testRecursiveLock02];
+//    [self testRecursiveLock02];
+    [self testSynchronized];
 }
 
 
-//联系递归锁
+- (void)testSynchronized {
+    // thread 01
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        @synchronized (self) {
+            NSLog(@"11 enter ");
+            sleep(3);
+            NSLog(@"11111111");
+        };
+    });
+    
+    // thread 02
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        @synchronized (self) {
+            NSLog(@"222222");
+        };
+    });
+}
+
+//练习递归锁
 - (void)testRecursiveLock02 {
     //先使用一种锁看看是否可以递归
 //    NSLock *nLock = [[NSLock alloc] init];
