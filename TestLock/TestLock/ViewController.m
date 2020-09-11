@@ -25,9 +25,33 @@
 //    [self testConditionLock];
 //    [self testConditionLock02];
 //    [self testRecursiveLock02];
-    [self testSynchronized];
+//    [self testSynchronized];
+    [self testConditionLockX];
 }
-
+// 条件锁 看看后面跟的相关条件
+- (void)testConditionLockX {
+    NSConditionLock *ncLock = [[NSConditionLock alloc] initWithCondition:0];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if ([ncLock tryLockWhenCondition:0]) {
+            NSLog(@"11111111");
+            [ncLock unlockWithCondition:1];
+        } else {
+            NSLog(@"fail");
+        }
+    });
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [ncLock lockWhenCondition:3];
+        NSLog(@"Ï22222222");
+        [ncLock unlockWithCondition:2];
+    });
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [ncLock lockWhenCondition:1];
+        NSLog(@"33333333333");
+        [ncLock unlockWithCondition:3];
+    });
+}
 
 - (void)testSynchronized {
     // thread 01
