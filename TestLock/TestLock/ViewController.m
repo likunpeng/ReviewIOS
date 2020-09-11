@@ -21,7 +21,51 @@
 //    [self testSemaphore];
 //    [self testPthreadMutex];
 //    [self testRecursiveLock];
-    [self testNSLock];
+//    [self testNSLock];
+//    [self testConditionLock];
+    [self testConditionLock02];
+}
+
+
+// 练习下如何使用NSConfition的唤醒
+- (void)testConditionLock02 {
+    //Thread 01
+    NSCondition *cLock = [[NSCondition alloc] init];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Thread 01");
+        [cLock lock];
+        [cLock wait];
+        NSLog(@"Thread 01 content");
+        [cLock unlock];
+    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"Thread 02");
+        [cLock lock];
+        [cLock wait];
+        NSLog(@"Thread 02 content");
+        [cLock unlock];
+    });
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        sleep(2);
+//        NSLog(@"唤醒一个等待的线程");
+//        [cLock signal];
+        NSLog(@"唤醒所有等待的线程");
+        [cLock broadcast];
+        
+    });
+}
+
+- (void)testConditionLock {
+    NSCondition *cLock = [[NSCondition alloc] init];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"running");
+        [cLock lock];
+//        sleep(3);
+        [cLock waitUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
+        NSLog(@"1111111");
+        [cLock unlock];
+    });
 }
 
 - (void)testNSLock {
