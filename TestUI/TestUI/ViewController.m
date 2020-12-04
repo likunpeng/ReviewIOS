@@ -33,8 +33,8 @@ CGFloat distance = 10;
     
     NSString *eightBit = @"127";
     NSLog(@"eightBit = %#o",[eightBit intValue]);
-    int idex = 080;
-    NSLog(@"%d",idex);
+//    int idex = 080;
+//    NSLog(@"%d",idex);
 }
 
 - (void)testBlock {

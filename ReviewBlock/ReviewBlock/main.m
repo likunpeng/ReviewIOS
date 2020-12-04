@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //https://juejin.im/post/5b0181e15188254270643e88 very good article
+static int a = 1;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -21,8 +22,12 @@ int main(int argc, const char * argv[]) {
 //        } else {
 //            NSLog(@"fail oh no!");
 //        }
+        int b = 2;
+        
 
-
+        NSLog(@"%@", ^(){
+            NSLog(@"a = %d", a);
+        });
 
     }
     
