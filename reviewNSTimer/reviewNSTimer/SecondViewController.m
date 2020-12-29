@@ -8,7 +8,9 @@
 #import "SecondViewController.h"
 
 @interface SecondViewController ()
-@property (nonatomic, strong) NSTimer *timer;
+
+//@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation SecondViewController
@@ -25,12 +27,16 @@
     
     // 这种调用方式
     __block int i = 1;
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
         NSLog(@"inter vc count = %ld", CFGetRetainCount((__bridge CFTypeRef)self));
         i = i + 2;
         NSLog(@"i = %d", i);
+        if (i == 11 && timer) {
+            [timer invalidate];
+            timer = nil;
+        }
     }];
-    [self.timer fire];
+//    [self.timer fire];
 }
 
 /*
@@ -52,10 +58,10 @@
  */
 - (void)viewDidDisappear:(BOOL)animated {
     NSLog(@"viewDidDisappear");
-    if (self.timer) {
-        [self.timer invalidate];
-        self.timer = nil;
-    }
+//    if (self.timer) {
+//        [self.timer invalidate];
+//        self.timer = nil;
+//    }
 }
 
 - (void)dealloc {
