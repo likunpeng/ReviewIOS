@@ -6,13 +6,18 @@
 //
 
 #import "SecondViewController.h"
+#import "PFTimer.h"
 
 @interface SecondViewController ()
 
 //@property (nonatomic, strong) NSTimer *timer;
 
-@end
+/// 使用PFTimer定义尝试下
+@property (nonatomic, strong) PFTimer *timer;
 
+
+@end
+static NSString *str;
 @implementation SecondViewController
 
 - (void)viewDidLoad {
@@ -27,15 +32,18 @@
     
     // 这种调用方式
     __block int i = 1;
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        NSLog(@"inter vc count = %ld", CFGetRetainCount((__bridge CFTypeRef)self));
-        i = i + 2;
-        NSLog(@"i = %d", i);
-        if (i == 11 && timer) {
-            [timer invalidate];
-            timer = nil;
-        }
-    }];
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:2 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        NSLog(@"inter vc count = %ld", CFGetRetainCount((__bridge CFTypeRef)self));
+//        i = i + 2;
+//        NSLog(@"i = %d", i);
+////        if (i == 100 && timer) {
+////            [timer invalidate];
+////            timer = nil;
+////        }
+//    }];
+    self.timer = [[PFTimer alloc] init];
+    [self.timer startTimer];
+    str = [NSString stringWithFormat:@"hhhh"];
 //    [self.timer fire];
 }
 
@@ -58,15 +66,17 @@
  */
 - (void)viewDidDisappear:(BOOL)animated {
     NSLog(@"viewDidDisappear");
-//    if (self.timer) {
-//        [self.timer invalidate];
-//        self.timer = nil;
-//    }
 }
 
 - (void)dealloc {
     NSLog(@"delloc");
+    NSLog(@"%s", __func__);
+//    if (self.timer) {
+//        [self.timer invalidate];
+//        self.timer = nil;
+//    }
     
+    [self.timer destoryTimer];
     NSLog(@"after invalidate count = %ld", CFGetRetainCount((__bridge CFTypeRef)self));
     
 }

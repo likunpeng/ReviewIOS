@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892A2A7C25CA7EA900939473 /* LMBadgeShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 892A2A7B25CA7EA900939473 /* LMBadgeShareView.m */; };
+		898C60052625697800C6A750 /* LKPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 898C60042625697800C6A750 /* LKPOperation.m */; };
+		8990656125BC060D007A377E /* PFTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8990656025BC060D007A377E /* PFTimer.m */; };
+		89B08ECC25DFC9B300824F55 /* RCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B08ECB25DFC9B300824F55 /* RCManager.m */; };
 		89EB262E2579C95D0000A1C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EB262D2579C95D0000A1C0 /* AppDelegate.m */; };
 		89EB26312579C95D0000A1C0 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EB26302579C95D0000A1C0 /* SceneDelegate.m */; };
 		89EB26372579C95D0000A1C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89EB26352579C95D0000A1C0 /* Main.storyboard */; };
@@ -37,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		892A2A7A25CA7EA800939473 /* LMBadgeShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMBadgeShareView.h; sourceTree = "<group>"; };
+		892A2A7B25CA7EA900939473 /* LMBadgeShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMBadgeShareView.m; sourceTree = "<group>"; };
+		898C60032625697800C6A750 /* LKPOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKPOperation.h; sourceTree = "<group>"; };
+		898C60042625697800C6A750 /* LKPOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKPOperation.m; sourceTree = "<group>"; };
+		8990655F25BC060D007A377E /* PFTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTimer.h; sourceTree = "<group>"; };
+		8990656025BC060D007A377E /* PFTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTimer.m; sourceTree = "<group>"; };
+		89B08ECA25DFC9B300824F55 /* RCManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCManager.h; sourceTree = "<group>"; };
+		89B08ECB25DFC9B300824F55 /* RCManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCManager.m; sourceTree = "<group>"; };
 		89EB26292579C95D0000A1C0 /* reviewNSTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reviewNSTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EB262C2579C95D0000A1C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		89EB262D2579C95D0000A1C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +119,8 @@
 		89EB262B2579C95D0000A1C0 /* reviewNSTimer */ = {
 			isa = PBXGroup;
 			children = (
+				892A2A7A25CA7EA800939473 /* LMBadgeShareView.h */,
+				892A2A7B25CA7EA900939473 /* LMBadgeShareView.m */,
 				89EB2673257A02770000A1C0 /* ViewController.h */,
 				89EB2674257A02770000A1C0 /* ViewController.m */,
 				89EB262C2579C95D0000A1C0 /* AppDelegate.h */,
@@ -120,6 +134,12 @@
 				89EB263E2579C95E0000A1C0 /* main.m */,
 				89EB2679257A035F0000A1C0 /* SecondViewController.h */,
 				89EB267A257A035F0000A1C0 /* SecondViewController.m */,
+				8990655F25BC060D007A377E /* PFTimer.h */,
+				8990656025BC060D007A377E /* PFTimer.m */,
+				89B08ECA25DFC9B300824F55 /* RCManager.h */,
+				89B08ECB25DFC9B300824F55 /* RCManager.m */,
+				898C60032625697800C6A750 /* LKPOperation.h */,
+				898C60042625697800C6A750 /* LKPOperation.m */,
 			);
 			path = reviewNSTimer;
 			sourceTree = "<group>";
@@ -272,9 +292,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89EB267B257A035F0000A1C0 /* SecondViewController.m in Sources */,
+				8990656125BC060D007A377E /* PFTimer.m in Sources */,
 				89EB262E2579C95D0000A1C0 /* AppDelegate.m in Sources */,
+				892A2A7C25CA7EA900939473 /* LMBadgeShareView.m in Sources */,
+				898C60052625697800C6A750 /* LKPOperation.m in Sources */,
 				89EB263F2579C95E0000A1C0 /* main.m in Sources */,
 				89EB2675257A02780000A1C0 /* ViewController.m in Sources */,
+				89B08ECC25DFC9B300824F55 /* RCManager.m in Sources */,
 				89EB26312579C95D0000A1C0 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

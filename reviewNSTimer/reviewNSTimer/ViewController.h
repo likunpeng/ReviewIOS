@@ -9,6 +9,9 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic , assign) BOOL testBool;
+
+//@synthesize testBool = _testBool;
 
 @end
 
