@@ -38,7 +38,22 @@ class ViewController: UIViewController {
 //        testOptional()
 //        testASIS()
 //        testExtension()
+        var arr = [1,1,2]
+        print(removeDuplicates(&arr));
     }
+    
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+           
+           var index = nums.count
+           while index > 0 {
+               print(index)
+               if(nums[index] == nums[index - 1]) {
+                   nums.remove(at:index)
+               }
+               index-=1;
+           }
+           return nums.count
+       }
 
     func testExtension() {
         let oneInch = 25.4.mm
